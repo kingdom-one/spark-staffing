@@ -1,0 +1,18 @@
+.x-site {
+	background-color: transparent !important;
+	#buddypress {
+		margin-top: 25vh;
+	}
+}
+/*
+* TYPOGRAPHY
+*/
+.headline {
+	font-family: $font-headings;
+	text-transform: lowercase;
+}
+.subheadline {
+	font-family: $font-body;
+	font-size: 1em;
+	line-height: 1.2;
+}

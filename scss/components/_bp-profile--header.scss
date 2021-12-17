@@ -1,0 +1,68 @@
+#buddypress {
+	#item-header {
+		border-radius: $rounded-border;
+		overflow: hidden;
+		border: 2px solid $color-grey--light;
+		margin-bottom: 1em;
+		height: auto;
+		background-color: white;
+		#cover-image-container {
+			padding-bottom: 1em;
+			border-radius: inherit;
+
+			#header-cover-image {
+				height: 300px;
+			}
+
+			#item-header-cover-image {
+				display: flex;
+				background-color: transparent;
+
+				#item-header-avatar {
+					align-self: start;
+					margin: 0 2em;
+					width: 200px;
+					& a {
+						border-radius: 50%;
+					}
+					& img {
+						border: 5px solid $color-primary;
+						border-radius: inherit;
+					}
+				}
+				#item-header-content {
+					display: flex;
+					flex-direction: column;
+					.user-nicename {
+						margin-bottom: 8px;
+						overflow: visible;
+						.premium {
+							.x-icon {
+								color: $color-primary;
+								font-size: 0.8em;
+								&:hover {
+									color: $color-secondary;
+								}
+							}
+						}
+					}
+					#item-meta {
+						@extend #item-header-content;
+						justify-content: space-between;
+						height: auto;
+						max-width: 90%;
+						.headline {
+							line-height: 1.2em;
+							margin-bottom: 1em;
+						}
+						.location {
+							font-size: 0.8em;
+							color: $color-grey--dark;
+							margin-top: auto;
+						}
+					}
+				}
+			}
+		}
+	}
+}

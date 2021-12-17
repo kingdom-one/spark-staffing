@@ -1,0 +1,19 @@
+.profile {
+	// Widgets Display
+	.bp-widget {
+		border: 2px solid #ccc;
+		border-radius: 10px;
+		margin-bottom: 1em;
+		padding: 1em;
+		background-color: white;
+		h2 {
+			color: $color-primary;
+			margin: 0;
+			margin-bottom: 20px;
+		}
+	}
+
+	.basic-info {
+		display: none;
+	}
+}

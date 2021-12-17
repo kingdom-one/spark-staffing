@@ -1,0 +1,26 @@
+#bp-members-directory {
+	margin-top: 25vh;
+	#members-directory-form {
+		// grid-column: 1 / -1;
+		.item-list-tabs {
+			width: 100%;
+			ul {
+				padding: 2em 0;
+				display: flex;
+				justify-content: space-evenly;
+				margin: 0;
+			}
+		}
+		#subnav {
+			#members-order-select {
+				display: flex;
+				label {
+					margin-right: 1em;
+				}
+			}
+			ul {
+				padding: 0;
+			}
+		}
+	}
+}

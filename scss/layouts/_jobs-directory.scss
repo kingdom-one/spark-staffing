@@ -1,0 +1,58 @@
+div.job_listings {
+	ul.job_listings {
+		li.job_listing.type-job_listing {
+			transition: all 0.2s ease;
+			&:hover {
+				box-shadow: 4px 4px 6px rgba(black, 0.35);
+				transform: scale(1.003);
+			}
+			a {
+				display: flex;
+				align-items: start;
+				background-color: $color-grey--light;
+				.position-details {
+					h3 {
+						color: black;
+					}
+					&__company {
+						&--name {
+							font-family: $font-headings;
+							text-transform: lowercase;
+							color: black;
+							&--tagline {
+								// color: $color-grey--dark;
+								color: black;
+							}
+						}
+					}
+				}
+				.location {
+					color: black;
+				}
+				.meta {
+					color: black;
+				}
+			}
+		}
+	}
+}
+div.job_listings {
+	ul.job_listings {
+		li.job_listing.type-job_listing.job_position_featured {
+			transition: all 0.2s ease;
+			&:hover {
+				box-shadow: 4px 4px 6px rgba(black, 0.35);
+				transform: scale(1.003);
+			}
+			a {
+				background-color: $color-primary !important;
+				background-image: $linear-gradient--darken;
+				.position-details {
+					h3 {
+						color: white;
+					}
+				}
+			}
+		}
+	}
+}

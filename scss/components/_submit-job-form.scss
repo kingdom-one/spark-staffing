@@ -1,0 +1,90 @@
+.job-manager-form {
+	background-color: $color-grey--light;
+	padding: 1em;
+	&--headings {
+		font-family: $font-headings;
+		font-size: 3em;
+		text-transform: lowercase;
+		color: $color-primary;
+	}
+	.required--icon {
+		width: 20px;
+		height: 20px;
+		position: absolute;
+	}
+
+	.fieldset {
+		font-family: $font-body;
+		font-weight: 700;
+		display: flex;
+		flex-direction: column;
+		&--label {
+			font-size: 1.6em;
+			// width: auto;
+		}
+		&--field input {
+			width: 90%;
+			font-family: $font-body;
+			color: black;
+			font-size: 1em;
+		}
+		&__job,
+		&__application {
+			@extend .fieldset;
+			color: black;
+			label.fieldset--label {
+				width: auto;
+			}
+		}
+		&__job {
+			&_title {
+				@extend .fieldset__job;
+			}
+			&_location {
+				@extend .fieldset__job;
+				small {
+					color: $color-grey--dark;
+					&.description {
+						color: black;
+						font-family: $font-body;
+					}
+				}
+			}
+			&--salary {
+				@extend .fieldset__job;
+			}
+			&_type {
+				@extend .fieldset__job;
+				.fieldset--field {
+					text-transform: capitalize;
+					li.select2-selection__choice {
+						font-size: 1em;
+						color: black;
+						font-family: $font-body;
+					}
+				}
+			}
+			&_description {
+				@extend .fieldset__job;
+			}
+		}
+		&__company {
+			@extend .fieldset;
+			&_name {
+				@extend .fieldset__company;
+			}
+			&_website {
+				@extend .fieldset__company;
+			}
+			&_tagline {
+				@extend .fieldset__company;
+			}
+			&_video {
+				@extend .fieldset__company;
+			}
+			&_logo {
+				@extend .fieldset__company;
+			}
+		}
+	}
+}
