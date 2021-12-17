@@ -10,8 +10,11 @@
 @import 'components/directory-search';
 @import 'components/members-loop';
 @import 'components/submit-job-form';
+@import 'components/job-preview';
+@import 'components/job-dashboard';
+@import 'components/single-job-listing';
+@import 'components/single-job-listing--sidebar';
 
 @import 'layouts/bp-profile';
 @import 'layouts/members-directory';
-@import 'layouts/job-dashboard';
 @import 'layouts/jobs-directory';

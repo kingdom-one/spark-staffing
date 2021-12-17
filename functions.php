@@ -40,6 +40,8 @@ function remove_x_buddypress() {
 }
 add_action('after_setup_theme', 'remove_x_buddypress');
 
-// add_theme_support('job-manager-templates');
+// WP Job Manager Customizations
+// =============================================================================
+add_theme_support('job-manager-templates');
 /** Calls WP Job Manager Hooks & Filters */
 include_once get_theme_file_path('/job_manager/inc/filters.php');

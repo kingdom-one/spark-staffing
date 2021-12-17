@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Single view Company information box
  *
@@ -14,24 +15,22 @@
  * @version     1.32.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
-}
-
-if ( ! get_the_company_name() ) {
-	return;
-}
+if (!defined('ABSPATH')) exit;
+if (!get_the_company_name()) return;
 ?>
 <div class="company">
-	<?php the_company_logo(); ?>
+    <figure class="company__logo">
+        <?php the_company_logo('large'); ?>
+    </figure>
+    <div class="company__info">
+        <?php the_company_name('<h3 class="company__info--name">', '</h3>');
+		if ($website = get_the_company_website()) : ?>
+        <a class="company__info--website" href="<?php echo esc_url($website); ?>" target="_blank" rel="nofollow">
+            <?php esc_html_e(get_the_company_name() . "'s Website", "wp-job-manager"); ?>
+        </a>
+        <?php endif; ?>
 
-	<p class="name">
-		<?php if ( $website = get_the_company_website() ) : ?>
-			<a class="website" href="<?php echo esc_url( $website ); ?>" rel="nofollow"><?php esc_html_e( 'Website', 'wp-job-manager' ); ?></a>
-		<?php endif; ?>
-		<?php the_company_twitter(); ?>
-		<?php the_company_name( '<strong>', '</strong>' ); ?>
-	</p>
-	<?php the_company_tagline( '<p class="tagline">', '</p>' ); ?>
-	<?php the_company_video(); ?>
+
+        <?php the_company_tagline('<p class="company__info--tagline">', '</p>'); ?>
+    </div>
 </div>

@@ -211,6 +211,180 @@
   color: black;
   font-family: "Poppins", sans-serif;
 }
+.job-listing-preview__container {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  width: 100%;
+  padding: 1em;
+  background-color: #545454;
+  margin-bottom: 2em;
+}
+.job-listing-preview__container h1 {
+  margin: 0;
+  color: white;
+}
+.job-listing-preview__container--button-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  height: auto;
+}
+.job-listing-preview__single-job-listing--container {
+  background-color: #ececec;
+  border-radius: 10px;
+  padding: 1em;
+}
+.job-listing-preview__single-job-listing--content {
+  width: 88%;
+}
+.job-listing-preview__single-job-listing--content h2 {
+  margin: 0;
+  font-size: 2em;
+}
+
+.job-manager__button--submit-listing {
+  margin-right: 1em;
+}
+
+#job-manager__job-dashboard .headline {
+  color: #f4c063;
+}
+
+.job-manager__job-table {
+  border: 2px solid #545454;
+  border-radius: 10px;
+  border-collapse: separate;
+}
+.job-manager__job-table--headers {
+  background-color: #545454;
+  color: white;
+}
+.job-manager__job-table--row {
+  transition: all 0.2s ease;
+}
+.job-manager__job-table--row:nth-child(even) {
+  background-color: #ececec;
+}
+.job-manager__job-table--row:hover {
+  background-color: rgba(104, 202, 215, 0.2);
+}
+.job-manager__job-table--row a {
+  color: #16af82;
+}
+.job-manager__job-table--row a:hover {
+  color: rgba(22, 175, 130, 0.7);
+}
+.job-manager__job--job_title {
+  font-size: 1.2em;
+  font-weight: 400;
+  color: #5c2d86;
+}
+.job-manager__job--job_title small {
+  font-family: "Abril Fatface", serif;
+  color: #545454;
+  text-transform: lowercase;
+}
+.job-manager__job--filled {
+  color: #5c2d86;
+}
+.job-manager__job-dashboard-actions {
+  list-style: none;
+  font-size: 0.8rem;
+  display: block;
+  margin: 0;
+  font-weight: 700;
+}
+.job-manager__job-dashboard-actions li {
+  display: inline;
+}
+.job-manager__job-dashboard-actions li:not(:last-child) {
+  margin-right: 1em;
+}
+.job-manager__job-dashboard-actions li a {
+  color: #545454;
+}
+.job-manager__job-dashboard-actions li a:hover {
+  color: rgba(84, 84, 84, 0.6);
+}
+.job-manager__job-dashboard-actions--continue {
+  color: #16af82 !important;
+}
+.job-manager-message {
+  border-top-width: 2px;
+  border-top-color: #5c2d86 !important;
+  color: #545454;
+}
+.job-manager-message::before {
+  color: #5c2d86 !important;
+}
+
+#single-job-listing {
+  margin: 25vh auto 65px auto;
+  width: 88%;
+  padding: 1em;
+}
+
+.single-job-listing .single-job-listing__meta {
+  display: block;
+  margin: 0 3em 0 0;
+}
+.single-job-listing .single-job-listing__meta li {
+  display: inline-block;
+  list-style: none;
+}
+.single-job-listing .single-job-listing__meta li:not(:last-child) {
+  margin-right: 0.8em;
+}
+.single-job-listing__info {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+}
+.single-job-listing__info--meta {
+  display: flex;
+  margin-bottom: 2em;
+}
+.single-job-listing .company {
+  display: flex;
+  background-color: #ececec;
+  border-radius: 10px;
+  padding: 1em;
+}
+.single-job-listing .company__logo {
+  height: 100px;
+  width: 100px;
+  margin: 0;
+  margin-right: 0.5em;
+}
+.single-job-listing .company__logo img.company_logo {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.single-job-listing .company__info {
+  display: flex;
+  flex-direction: column;
+}
+.single-job-listing .company__info--name {
+  font-weight: 700;
+  color: black;
+  margin: 0;
+}
+.single-job-listing .company__info--website {
+  font-weight: 400;
+}
+.single-job-listing .company__info--tagline {
+  font-style: italic;
+  color: #545454;
+  font-weight: 700;
+  font-size: 0.8rem;
+  margin: 0;
+}
+.single-job-listing .job-description {
+  font-size: 1em;
+  line-height: 1.4;
+}
+
 #bp-premium-candidates #buddypress {
   margin-top: 25vh;
   display: grid;
@@ -252,10 +426,6 @@
 }
 #bp-members-directory #members-directory-form #subnav ul {
   padding: 0;
-}
-
-#job-manager-job-dashboard {
-  margin-top: 25vh;
 }
 
 div.job_listings ul.job_listings li.job_listing.type-job_listing {

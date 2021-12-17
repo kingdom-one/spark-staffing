@@ -21,14 +21,12 @@
  */
 
 if (!defined('ABSPATH')) {
-	exit; // Exit if accessed directly.
+    exit; // Exit if accessed directly.
 }
 ?>
-<div id="job-manager-job-dashboard">
-    <h1 class="headline">Job Dashboard</h1>
-    <p><?php esc_html_e('Your listings are shown in the table below.', 'wp-job-manager'); ?></p>
-    <table class="job-manager-jobs">
-        <thead>
+<div id="job-manager__job-dashboard">
+    <table class="job-manager__job-table">
+        <thead class="job-manager__job-table--headers">
             <tr>
                 <?php foreach ($job_dashboard_columns as $key => $column) : ?>
                 <th class="<?php echo esc_attr($key); ?>"><?php echo esc_html($column); ?></th>
@@ -43,9 +41,9 @@ if (!defined('ABSPATH')) {
             </tr>
             <?php else : ?>
             <?php foreach ($jobs as $job) : ?>
-            <tr>
+            <tr class="job-manager__job-table--row">
                 <?php foreach ($job_dashboard_columns as $key => $column) : ?>
-                <td class="<?php echo esc_attr($key); ?>">
+                <td class="job-manager__job--<?php echo esc_attr($key); ?>">
                     <?php if ('job_title' === $key) : ?>
                     <?php if ($job->post_status == 'publish') : ?>
                     <a href="<?php echo esc_url(get_permalink($job->ID)); ?>"><?php wpjm_the_job_title($job); ?></a>
@@ -53,29 +51,29 @@ if (!defined('ABSPATH')) {
                     <?php wpjm_the_job_title($job); ?> <small>(<?php the_job_status($job); ?>)</small>
                     <?php endif; ?>
                     <?php echo is_position_featured($job) ? '<span class="featured-job-icon" title="' . esc_attr__('Featured Job', 'wp-job-manager') . '"></span>' : ''; ?>
-                    <ul class="job-dashboard-actions">
+                    <ul class="job-manager__job-dashboard-actions">
                         <?php
-										if (!empty($job_actions[$job->ID])) {
-											foreach ($job_actions[$job->ID] as $action => $value) {
-												$action_url = add_query_arg([
-													'action' => $action,
-													'job_id' => $job->ID
-												]);
-												if ($value['nonce']) {
-													$action_url = wp_nonce_url($action_url, $value['nonce']);
-												}
-												echo '<li><a href="' . esc_url($action_url) . '" class="job-dashboard-action-' . esc_attr($action) . '">' . esc_html($value['label']) . '</a></li>';
-											}
-										}
-										?>
+                                        if (!empty($job_actions[$job->ID])) {
+                                            foreach ($job_actions[$job->ID] as $action => $value) {
+                                                $action_url = add_query_arg([
+                                                    'action' => $action,
+                                                    'job_id' => $job->ID
+                                                ]);
+                                                if ($value['nonce']) {
+                                                    $action_url = wp_nonce_url($action_url, $value['nonce']);
+                                                }
+                                                echo '<li><a href="' . esc_url($action_url) . '" class="job-manager__job-dashboard-actions--' . esc_attr($action) . '">' . esc_html($value['label']) . '</a></li>';
+                                            }
+                                        }
+                                        ?>
                     </ul>
                     <?php elseif ('date' === $key) : ?>
                     <?php echo esc_html(wp_date(get_option('date_format'), get_post_datetime($job)->getTimestamp())); ?>
                     <?php elseif ('expires' === $key) : ?>
                     <?php
-									$job_expires = WP_Job_Manager_Post_Types::instance()->get_job_expiration($job);
-									echo esc_html($job_expires ? wp_date(get_option('date_format'), $job_expires->getTimestamp()) : '&ndash;');
-									?>
+                                    $job_expires = WP_Job_Manager_Post_Types::instance()->get_job_expiration($job);
+                                    echo esc_html($job_expires ? wp_date(get_option('date_format'), $job_expires->getTimestamp()) : '&ndash;');
+                                    ?>
                     <?php elseif ('filled' === $key) : ?>
                     <?php echo is_position_filled($job) ? '&#10004;' : '&ndash;'; ?>
                     <?php else : ?>
