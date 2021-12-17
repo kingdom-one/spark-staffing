@@ -1,57 +1,86 @@
 div.job_listings {
 	ul.job_listings {
-		li.job_listing.type-job_listing {
-			transition: all 0.2s ease;
-			&:hover {
-				box-shadow: 4px 4px 6px rgba(black, 0.35);
-				transform: scale(1.003);
+		.job_listing {
+			&:not(:last-child) {
+				margin-bottom: 1.5em;
 			}
-			a {
+			&__container {
+				transition: all 0.2s ease;
 				display: flex;
+				border: 2px solid $color-grey--dark;
+				&:hover {
+					box-shadow: 4px 4px 6px rgba(black, 0.35);
+					transform: scale(1.003);
+				}
+			}
+			&__company-logo {
+				width: 150px;
+				height: 150px;
+				margin: 0;
+				margin-right: 0.5em;
+				img.company_logo {
+					object-fit: contain;
+					width: 100%;
+					height: 100%;
+					position: relative;
+					left: 0;
+					float: none;
+					margin: 0;
+				}
+			}
+			&__summary {
+				display: flex;
+				flex-direction: column;
 				align-items: start;
-				background-color: $color-grey--light;
-				.position-details {
-					h3 {
+				flex-grow: 3;
+				&--title {
+					color: black;
+					margin: 0;
+					font-size: 2em;
+				}
+				&--company {
+					&-name {
+						font-family: $font-headings;
+						text-transform: lowercase;
 						color: black;
+						margin: 0;
+						font-size: 1em;
 					}
-					&__company {
-						&--name {
-							font-family: $font-headings;
-							text-transform: lowercase;
-							color: black;
-							&--tagline {
-								// color: $color-grey--dark;
-								color: black;
-							}
-						}
+					&-tagline {
+						color: $color-grey--dark;
+						max-width: 80%;
+						font-style: italic;
 					}
 				}
-				.location {
+			}
+			&__details {
+				display: flex;
+				flex-direction: column;
+				padding: 0 1em;
+				&--location {
 					color: black;
+					font-weight: 700;
 				}
-				.meta {
+				&--meta {
+					list-style: none;
+					display: block;
 					color: black;
+					margin: 0;
+					li {
+						display: block;
+					}
 				}
 			}
 		}
 	}
 }
+/* FEATURED STYLES */
 div.job_listings {
 	ul.job_listings {
-		li.job_listing.type-job_listing.job_position_featured {
-			transition: all 0.2s ease;
-			&:hover {
-				box-shadow: 4px 4px 6px rgba(black, 0.35);
-				transform: scale(1.003);
-			}
-			a {
-				background-color: $color-primary !important;
+		.job_listing.job_position_featured {
+			a.job_listing__container {
+				background-color: $color-primary;
 				background-image: $linear-gradient--darken;
-				.position-details {
-					h3 {
-						color: white;
-					}
-				}
 			}
 		}
 	}
