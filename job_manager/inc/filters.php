@@ -3,7 +3,7 @@ class SparkJobManager {
     function __construct() {
         add_filter('submit_job_form_fields', array($this, 'sparkFormFields'));
     }
-    /** This is your function which takes the fields, modifies them, and returns them
+    /** Edits Front-End Job Submission Fields on /post-a-job
      * @link [View editable fields here](https://github.com/mikejolley/WP-Job-Manager/blob/master/includes/forms/class-wp-job-manager-form-submit-job.php)
      */
     function sparkFormFields($fields) {

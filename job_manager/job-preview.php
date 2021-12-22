@@ -13,7 +13,7 @@
  */
 
 if (!defined('ABSPATH')) {
-	exit; // Exit if accessed directly.
+    exit; // Exit if accessed directly.
 }
 ?>
 <form method="post" id="job_preview" class="job-listing-preview" action="<?php echo esc_url($form->get_action()); ?>">
@@ -23,11 +23,8 @@ if (!defined('ABSPATH')) {
             <?php esc_html_e('Job Preview', 'wp-job-manager'); ?>
         </h1>
         <div class="job-listing-preview__container--button-container">
-            <input type="submit" name="continue" id="job_preview_submit_button"
-                class="button job-manager__button--submit-listing"
-                value="<?php echo esc_attr(apply_filters('submit_job_step_preview_submit_text', __('Submit Listing', 'wp-job-manager'))); ?>" />
-            <input type="submit" name="edit_job" class="button job-manager__button--edit-listing"
-                value="<?php esc_attr_e('Edit listing', 'wp-job-mana.ger'); ?>" />
+            <input type="submit" name="continue" id="job_preview_submit_button" class="button job-manager__button--submit-listing" value="<?php echo esc_attr(apply_filters('submit_job_step_preview_submit_text', __('Submit Listing', 'wp-job-manager'))); ?>" />
+            <input type="submit" name="edit_job" class="button job-manager__button--edit-listing" value="<?php esc_attr_e('Edit listing', 'wp-job-mana.ger'); ?>" />
         </div>
     </div>
     <div class="job-listing-preview__single-job-listing--container">
