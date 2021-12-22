@@ -1,5 +1,5 @@
 # spark* staffing, a child of Pro Theme
-##Overview
+## Overview
 This is a child theme for spark* staffing, a [Kingdom One](https://kingdomone.co) project, that is based on [Pro Theme by Themeco](https://theme.co).
 
 Included are child overrides for Buddypress and WP Job Manager.
@@ -18,7 +18,7 @@ Included are child overrides for Buddypress and WP Job Manager.
 ## BuddyPress
 - 
 ### Plugins Folder
-- `bp-custom.php` acts as BuddyPress's `functions.php' and contains functions to register templates and define avatar size.
+- `bp-custom.php` acts as BuddyPress's `functions.php` and contains functions to register templates and define avatar size.
 ## Job Manager
 - The following files were edited to have classes more-closely conform to BEM:
   - `job-submit.php`
