@@ -48,11 +48,11 @@ do_action('bp_before_member_header');
                 do_action('bp_profile_header_meta');
                 ?>
             </div><!-- #item-meta -->
-            <!-- <div id=" item-buttons">
-                        <?php
-                        // do_action('bp_member_header_actions'); // Fires in the member header actions section.
-                        ?>
-            </div>#item-buttons -->
+            <div id=" item-buttons">
+                <?php
+                do_action('bp_member_header_actions'); // Fires in the member header actions section.
+                ?>
+            </div> <!-- #item-buttons -->
         </div><!-- #item-header-content -->
 
     </div><!-- #item-header-cover-image -->

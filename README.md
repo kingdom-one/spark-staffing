@@ -16,9 +16,19 @@ Included are child overrides for Buddypress and WP Job Manager.
 
 
 ## BuddyPress
-- 
+- Profile is powered by `members/single/profile/profile-loop.php`
 ### Plugins Folder
 - `bp-custom.php` acts as BuddyPress's `functions.php` and contains functions to register templates and define avatar size.
+
+## Plugins to Extend Feature Set
+- BuddyDev
+  - BP Simple Front End Post
+  - BuddyBlog
+  - BuddyPress Featured Memmbers
+  - BuddyPress Profile Completion
+  - BuddyPress XProfile Custom Field Types
+- Conditional Profile Fields for BuddyPress
+
 ## Job Manager
 - The following files were edited to have classes more-closely conform to BEM:
   - `job-submit.php`
@@ -29,6 +39,7 @@ Included are child overrides for Buddypress and WP Job Manager.
   - `content-single-job_listing-company.php` 
 - Added "inc" folder, which includes `filter.php`, which acts as plugin's `functions.php` file
   - Presently, this folder edits Job Submission fields on front-end job submission page (/post-a-job).
+
 ### Plugins Folder
 - PMPro-Customizations folder includes one file, `pmpro-customizations.php`, to modify account registration builder
   - This requires PMPro-Register-Helper add-on

@@ -23,7 +23,6 @@
 			bp_get_template_part('members/single/member-header');
 		endif;
 		?>
-        <h3>hi there.</h3>
     </div><!-- #item-header -->
 
     <div id="item-nav">
