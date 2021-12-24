@@ -44,3 +44,11 @@ Included are child overrides for Buddypress and WP Job Manager.
 - PMPro-Customizations folder includes one file, `pmpro-customizations.php`, to modify account registration builder
   - This requires PMPro-Register-Helper add-on
 
+
+# Page Customizations
+
+## Paid Memberships Pro
+- Almost all pages are edited with **Cornerstone.**
+
+### Membership Checkout Page
+Modifications are located at *Section -> Row -> Column (Element CSS)*
