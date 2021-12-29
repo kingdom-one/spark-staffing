@@ -1,0 +1,113 @@
+#pmpro_form {
+	#pmpro_pricing_fields {
+		padding: 1em;
+		background-color: white;
+		border: 3px solid $color-secondary;
+		border-radius: $rounded-border;
+	}
+	#pmpro_message {
+		border: 3px solid $color-ice-blue;
+		border-radius: $rounded-border;
+		background-color: white;
+	}
+
+	.pmpro_checkout {
+		&:not(:last-child) {
+			margin-bottom: 2em;
+		}
+		hr {
+			border-top: 2px solid $color-purple;
+		}
+		h3 {
+			margin: 0;
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+			span.pmpro_checkout {
+				&-h3-name {
+					font-family: $font-headings;
+					text-transform: lowercase;
+					font-size: 1em;
+				}
+				&-h3-msg {
+					font-size: 16px;
+					font-style: normal;
+					a {
+						font-family: $font-headings;
+						text-transform: lowercase;
+						color: $color-purple;
+						&:hover {
+							color: $color-ice-blue;
+						}
+					}
+				}
+			}
+		}
+		&-fields {
+			label {
+				color: black;
+			}
+			p {
+				margin: 0;
+			}
+			.pmpro_checkout {
+				&-field {
+					.pmpro_asterisk {
+						display: inline-block;
+						background-image: url(http://sparkstaffing.local/wp-content/uploads/2021/11/cropped-Icon-Simple.png);
+						height: 20px;
+						width: 20px;
+						background-size: cover;
+						background-position: center;
+						order: 2;
+						abbr {
+							display: none;
+							// color: $color-ice-blue;
+						}
+					}
+					p small.lite {
+						color: $color-grey--dark;
+						font-style: italic;
+					}
+					&-radio {
+						&-item {
+							display: flex;
+							flex-wrap: wrap;
+							input {
+								margin-right: 0.5em;
+							}
+						}
+					}
+					&-required {
+						.pmpro_asterisk {
+							@extend .pmpro_asterisk;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.spark-pmpro-checkout-fields {
+	&__account-type {
+		display: flex;
+		flex-wrap: wrap;
+		label:first-child {
+			flex-basis: 100%;
+		}
+	}
+	&__church {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		.select2-container {
+			width: 100%;
+			.select2-selection__choice {
+				color: black;
+				&__remove {
+					color: $color-purple;
+				}
+			}
+		}
+	}
+}

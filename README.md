@@ -48,7 +48,12 @@ Included are child overrides for Buddypress and WP Job Manager.
 # Page Customizations
 
 ## Paid Memberships Pro
-- Almost all pages are edited with **Cornerstone.**
+- Almost all pages are edited within **Cornerstone.**
+  - Modifications are located at *Section -> Row -> Column (Element CSS)*
+- Plugin is modified via `pmpro-customizations.php`, which is a self-authored plugin file.
+  - [This is the appropriate way of declaring the plugin-specific `functions.php` file](https://www.paidmembershipspro.com/create-a-plugin-for-pmpro-customizations/)
 
-### Membership Checkout Page
-Modifications are located at *Section -> Row -> Column (Element CSS)*
+### /Checkout Page
+- Moved Checkout Page modifications to SCSS
+- Added JS in Cornerstone to set required label in the appropriate place on `#member_type_div`
+
