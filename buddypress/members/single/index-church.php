@@ -12,27 +12,26 @@ get_header()
 <div class="x-container max width offset">
     <div class="<?php x_main_content_class(); ?>" role="main">
         <?php while (have_posts()) : the_post(); ?>
-        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-            <div class="entry-wrap">
-                <?php do_action('x_before_the_content_begin'); ?>
-                <div class="entry-content content">
-                    <div id="buddypress">
-                        <?php do_action('bp_before_member_home_content');
+            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                <div class="entry-wrap">
+                    <?php do_action('x_before_the_content_begin'); ?>
+                    <div class="entry-content content">
+                        <div id="buddypress">
+                            <?php do_action('bp_before_member_home_content');
                             ?>
-                        <div id="item-header" role="complementary">
-                            <?php
+                            <div id="item-header" role="complementary">
+                                <?php
                                 if (bp_displayed_user_use_cover_image_header()) {
                                     bp_get_template_part('members/single/cover-image-header');
                                 } else {
                                     bp_get_template_part('members/single/member-header');
                                 };
                                 ?>
-                        </div><!-- #item-header -->
+                            </div><!-- #item-header -->
 
-                        <div id="item-body">
-                            <?php
+                            <div id="item-body">
+                                <?php
                                 do_action('bp_before_member_body');
-
                                 if (bp_is_user_front()) :
                                     bp_displayed_user_front_template_part();
                                 elseif (bp_is_user_activity()) :
@@ -60,12 +59,12 @@ get_header()
                                 do_action('bp_after_member_body');
                                 ?>
 
-                        </div><!-- #item-body -->
-                        <?php do_action('bp_after_member_home_content'); ?>
-                    </div><!-- #buddypress -->
-                </div><!-- .entry-content -->
-            </div><!-- .entry-wrap -->
-        </article>
+                            </div><!-- #item-body -->
+                            <?php do_action('bp_after_member_home_content'); ?>
+                        </div><!-- #buddypress -->
+                    </div><!-- .entry-content -->
+                </div><!-- .entry-wrap -->
+            </article>
         <?php endwhile; ?>
     </div><!-- .x-main-->
 </div>

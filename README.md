@@ -16,7 +16,11 @@ Included are child overrides for Buddypress and WP Job Manager.
 
 
 ## BuddyPress
-- Profile is powered by `members/single/profile/profile-loop.php`
+- Public Profiles are custom index-{$slug}.php files
+  - Code Copied from `home.php`, `profile.php` and `profile-loop.php'
+  - Classes added to more-closely follow BEM
+
+
 ### Plugins Folder
 - `bp-custom.php` acts as BuddyPress's `functions.php` and contains functions to register templates and define avatar size.
 

@@ -15,29 +15,29 @@ do_action('bp_before_profile_loop_content');
 if (!is_user_logged_in()) echo '<style>#item-buttons,.x-item-list-tabs-subnav {display: none;}</style>'; ?>
 
 <div class="profile">
-    <?
+	<?
 	if (bp_has_profile()) :
 		while (bp_profile_groups()) : bp_the_profile_group();
 			if (bp_profile_group_has_fields()) :
 				do_action('bp_before_profile_field_content');
 	?>
-    <section class="bp-widget <?php bp_the_profile_group_slug(); ?>">
-        <h2><?php bp_the_profile_group_name(); ?></h2>
+				<section class="bp-widget <?php bp_the_profile_group_slug(); ?>">
+					<h2><?php bp_the_profile_group_name(); ?></h2>
 
-        <section class="profile-fields">
-            <?php while (bp_profile_fields()) : bp_the_profile_field(); ?>
-            <? if (bp_field_has_data()) : ?>
-            <div <?php bp_field_css_class(); ?>>
-                <div class="label"><?php bp_the_profile_field_name(); ?></div>
-                <div class="data"><?php bp_the_profile_field_value(); ?></div>
-            </div>
-            <?php endif; ?>
-            <? do_action('bp_profile_field_item'); ?>
-            <? endwhile; ?>
-        </section>
-    </section>
+					<section class="profile-fields">
+						<?php while (bp_profile_fields()) : bp_the_profile_field(); ?>
+							<? if (bp_field_has_data()) : ?>
+								<div <?php bp_field_css_class(); ?>>
+									<div class="label"><?php bp_the_profile_field_name(); ?></div>
+									<div class="data"><?php bp_the_profile_field_value(); ?></div>
+								</div>
+							<?php endif; ?>
+							<? do_action('bp_profile_field_item'); ?>
+						<? endwhile; ?>
+					</section>
+				</section>
 
-    <?php
+	<?php
 				do_action('bp_after_profile_field_content');
 			endif;
 		endwhile;

@@ -17,10 +17,9 @@
  */
 do_action('bp_before_profile_content');
 ?>
-<div class="item-list-tabs no-ajax" id="subnav"
-    aria-label="<?php esc_attr_e('Member secondary navigation', 'buddypress'); ?>" role="navigation">
+<div class="item-list-tabs no-ajax" id="subnav" aria-label="<?php esc_attr_e('Member secondary navigation', 'buddypress'); ?>" role="navigation">
 
-    <ul><?php bp_get_options_nav(); ?></ul>
+	<ul><?php bp_get_options_nav(); ?></ul>
 </div><!-- .item-list-tabs -->
 <?php
 switch (bp_current_action()):
