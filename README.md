@@ -20,6 +20,18 @@ Included are child overrides for Buddypress and WP Job Manager.
 ### Plugins Folder
 - `bp-custom.php` acts as BuddyPress's `functions.php` and contains functions to register templates and define avatar size.
 
+### Social Media Fields
+- Field Group ID 5
+  - Facebook: 184
+  - Twitter: 185
+  - Instagram: 186
+  - TikTok: 187
+  - LinkedIn: 188
+  - Pinterest: 189
+  - Youtube: 190
+  - Vimeo: 191
+
+
 ## Plugins to Extend Feature Set
 - BuddyDev
   - BP Simple Front End Post

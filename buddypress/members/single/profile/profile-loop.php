@@ -14,7 +14,7 @@ do_action('bp_before_profile_loop_content');
 
 if (!is_user_logged_in()) echo '<style>#item-buttons,.x-item-list-tabs-subnav {display: none;}</style>'; ?>
 
-<div class="profile">Hello.
+<div class="profile">
     <?
 	if (bp_has_profile()) :
 		while (bp_profile_groups()) : bp_the_profile_group();
