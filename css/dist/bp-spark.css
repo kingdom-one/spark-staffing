@@ -91,6 +91,9 @@
 
 .bp-profile__subnav {
   margin-bottom: 1em;
+  background-color: #ececec;
+  border: 2px solid #ececec;
+  border-radius: 10px;
 }
 .bp-profile__subnav--container {
   display: flex;
@@ -98,33 +101,56 @@
   justify-content: space-evenly;
   list-style: none;
   width: 100%;
-  border: 2px solid #ececec;
-  border-radius: 10px;
   margin: 0;
 }
 .bp-profile__subnav--container li {
   display: inline-block;
+  padding: 4px 1em;
+  transition: all 0.2s ease;
 }
 .bp-profile__subnav--container li a {
-  color: black;
+  color: #545454;
+}
+.bp-profile__subnav--container li a:hover {
+  color: #5c2d86;
 }
 .bp-profile__subnav--container li.current.selected a {
   color: #5c2d86;
 }
 
-.profile .bp-widget {
+.bp-profile__section--container {
   border: 3px solid #f4c063;
   border-radius: 10px;
   margin-bottom: 1em;
   padding: 1em;
   background-color: white;
   box-shadow: 0 2px 4px rgba(236, 236, 236, 0.8);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: start;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
 }
-.profile .bp-widget h2 {
+.bp-profile__section--header {
   color: #f4c063;
+  font-family: "Abril Fatface", serif;
+  text-transform: lowercase;
   margin: 0;
-  margin-bottom: 20px;
   font-weight: 700;
+}
+.bp-profile__section--content .profile-fields--label {
+  font-size: 1em;
+}
+.bp-profile .profile {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  gap: 1em;
+}
+
+div#buddypress .profile h2 {
+  margin: 0;
 }
 
 #bp-dir-search.dir-search #search-members-form {
