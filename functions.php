@@ -43,3 +43,8 @@ add_action('after_setup_theme', 'remove_x_buddypress');
 add_theme_support('job-manager-templates');
 /** Calls WP Job Manager Hooks & Filters */
 include_once get_theme_file_path('/job_manager/inc/filters.php');
+
+// Hide WP Admin Bar
+if (!current_user_can('manage_options')) {
+    add_filter('show_admin_bar', '__return_false');
+}
