@@ -143,10 +143,6 @@
   margin: 0;
   margin-bottom: 20px;
 }
-.profile .basic-info {
-  display: none;
-}
-
 #bp-dir-search.dir-search #search-members-form {
   padding: 0;
   margin: 0;
@@ -383,27 +379,6 @@
 .single-job-listing .job-description {
   font-size: 1em;
   line-height: 1.4;
-}
-
-#bp-premium-candidates #buddypress {
-  margin-top: 25vh;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  -moz-column-gap: 2em;
-       column-gap: 2em;
-}
-#bp-premium-candidates #buddypress #item-header {
-  grid-column: 1/2;
-  padding: 0;
-}
-#bp-premium-candidates #buddypress #item-nav {
-  grid-column: 2/3;
-}
-#bp-premium-candidates #buddypress #item-body {
-  grid-column: 1/2;
-}
-#bp-premium-candidates #buddypress #item-body .x-item-list-tabs-subnav {
-  grid-column: 2/3;
 }
 
 #bp-members-directory {

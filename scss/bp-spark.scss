@@ -4,18 +4,18 @@
 
 @import 'base/base';
 
-@import 'components/bp-profile--header';
-@import 'components/bp-profile--nav';
-@import 'components/bp-profile--widgets';
+@import 'components/buddypress/profile--header';
+@import 'components/buddypress/profile--nav';
+@import 'components/buddypress/profile--widgets';
 @import 'components/directory-search';
 @import 'components/members-loop';
-@import 'components/submit-job-form';
-@import 'components/job-preview';
-@import 'components/job-dashboard';
-@import 'components/single-job-listing';
-@import 'components/single-job-listing--sidebar';
+@import 'components/job-manager/submit-job-form';
+@import 'components/job-manager/job-preview';
+@import 'components/job-manager/job-dashboard';
+@import 'components/job-manager/single-job-listing';
+@import 'components/job-manager/single-job-listing--sidebar';
 
-@import 'layouts/bp-profile';
-@import 'layouts/members-directory';
-@import 'layouts/jobs-directory';
-@import 'layouts/pmpro--checkout-fields';
+@import 'layouts/buddypress/bp-profile';
+@import 'layouts/buddypress/members-directory';
+@import 'layouts/job-manager/jobs-directory';
+@import 'layouts/pm-pro/checkout-fields';
