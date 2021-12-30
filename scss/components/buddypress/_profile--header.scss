@@ -5,23 +5,33 @@
 		border: 2px solid $color-grey--light;
 		margin-bottom: 1em;
 		height: auto;
-		background-color: white;
+		background-color: transparent;
 		#cover-image-container {
-			padding-bottom: 1em;
+			padding: 2em;
 			border-radius: inherit;
-
+			background-color: transparent;
+			position: relative;
 			#header-cover-image {
-				height: 300px;
-			}
-
-			#item-header-cover-image {
-				display: flex;
+				height: 225px;
 				background-color: transparent;
-
-				#item-header-avatar {
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			#item-header {
+				&-cover-image {
+					display: flex;
+					background-color: transparent;
+					align-items: flex-end;
+				}
+				&-avatar {
 					align-self: start;
 					margin: 0 2em;
 					width: 200px;
+					z-index: 3;
+					position: absolute;
+					background-color: white;
+					border-radius: 50%;
 					& a {
 						border-radius: 50%;
 					}
@@ -30,12 +40,17 @@
 						border-radius: inherit;
 					}
 				}
-				#item-header-content {
+				&-content {
 					display: flex;
 					flex-direction: column;
+					justify-content: end;
 					.user-nicename {
 						margin-bottom: 8px;
 						overflow: visible;
+						color: black;
+						text-shadow: none;
+						font-size: 2em;
+						text-transform: lowercase;
 						.premium {
 							.x-icon {
 								color: $color-primary;

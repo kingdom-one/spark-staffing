@@ -31,6 +31,7 @@ get_header()
                                 ?>
                         </header><!-- #item-header -->
                         <? do_action('bp_before_profile_content'); ?>
+                        <? if (is_user_logged_in()) : ?>
                         <nav class="bp-profile__subnav item-list-tabs no-ajax" id="subnav"
                             aria-label="<?php esc_attr_e('Member secondary navigation', 'buddypress'); ?>"
                             role="navigation">
@@ -38,6 +39,7 @@ get_header()
                                 <?php bp_get_options_nav(); ?>
                             </ul>
                         </nav>
+                        <? endif; ?>
                         <div id="item-body" class="bp-profile__body">
                             <?php do_action('bp_before_member_body');
                                 if (bp_is_user_activity()) :
