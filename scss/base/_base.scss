@@ -16,3 +16,21 @@
 	font-size: 1em;
 	line-height: 1.2;
 }
+footer.x-colophon.bottom {
+	font-size: 13px;
+	background-color: $color-primary;
+	padding: 2em 0;
+	a {
+		&:hover {
+			color: $color-secondary;
+			text-decoration: underline;
+		}
+	}
+	#copyright a {
+		font-weight: 700;
+	}
+	#menu-footer a:hover {
+		background-color: none;
+		opacity: 1;
+	}
+}

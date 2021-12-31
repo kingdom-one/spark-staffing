@@ -28,6 +28,23 @@
   line-height: 1.2;
 }
 
+footer.x-colophon.bottom {
+  font-size: 13px;
+  background-color: #f4c063;
+  padding: 2em 0;
+}
+footer.x-colophon.bottom a:hover {
+  color: #16af82;
+  text-decoration: underline;
+}
+footer.x-colophon.bottom #copyright a {
+  font-weight: 700;
+}
+footer.x-colophon.bottom #menu-footer a:hover {
+  background-color: none;
+  opacity: 1;
+}
+
 #buddypress #item-header {
   border-radius: 10px;
   overflow: hidden;
@@ -173,6 +190,42 @@ div#buddypress .profile h2 {
   padding: 0;
   margin: 0;
   border-radius: 25px;
+}
+
+#sitewide-notice.admin-bar-off #message.info.notice {
+  margin: 0;
+  background-color: #f4c063;
+  border: 2px solid #f4c063;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+#sitewide-notice.admin-bar-off #message.info.notice strong {
+  text-transform: lowercase;
+  font-family: "Abril Fatface", serif;
+  font-size: 1.4em;
+  margin-bottom: 5px;
+}
+#sitewide-notice.admin-bar-off #message.info.notice p {
+  margin: 0;
+}
+#sitewide-notice.admin-bar-off #message.info.notice #close-notice.bp-tooltip.button {
+  background-color: #5c2d86;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);
+  transition: all 0.2s ease;
+  border: none;
+}
+#sitewide-notice.admin-bar-off #message.info.notice #close-notice.bp-tooltip.button:hover {
+  background-color: #16af82;
+  box-shadow: none;
+  transform: translateY(3px);
 }
 
 #members-list li {

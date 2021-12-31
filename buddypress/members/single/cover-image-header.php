@@ -26,7 +26,7 @@ do_action('bp_before_member_header');
         </a>
     </div><!-- #item-header-avatar -->
     <div id="item-header-content">
-        <h2 class="user-nicename headline">Schweitzer Church
+        <h2 class="user-nicename headline">
             <?
             $memberType = bp_get_member_type(bp_displayed_user_id());
             if ($memberType != 'church') {

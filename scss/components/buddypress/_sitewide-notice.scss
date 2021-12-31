@@ -1,0 +1,35 @@
+#sitewide-notice.admin-bar-off {
+	#message.info.notice {
+		margin: 0;
+		background-color: $color-primary;
+		border: 2px solid $color-primary;
+		border-radius: $rounded-border;
+		display: flex;
+		flex-direction: column;
+		padding: 1em;
+		strong {
+			text-transform: lowercase;
+			font-family: $font-headings;
+			font-size: 1.4em;
+			margin-bottom: 5px;
+		}
+		p {
+			margin: 0;
+		}
+		#close-notice.bp-tooltip.button {
+			background-color: $color-purple;
+			width: max-content;
+			position: absolute;
+			top: 1em;
+			right: 1em;
+			box-shadow: 2px 2px 4px rgba(black, 0.35);
+			transition: all 0.2s ease;
+			border: none;
+			&:hover {
+				background-color: $color-secondary;
+				box-shadow: none;
+				transform: translateY(3px);
+			}
+		}
+	}
+}
