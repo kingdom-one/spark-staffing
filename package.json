@@ -1,0 +1,23 @@
+{
+  "name": "pro-child",
+  "version": "1.0.0",
+  "description": "for spark* staffing WP Site",
+  "main": "index.js",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joontae93/sparkStaffing__WP-childTheme.git"
+  },
+  "author": "KJ Roelke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Joontae93/sparkStaffing__WP-childTheme/issues"
+  },
+  "homepage": "https://github.com/Joontae93/sparkStaffing__WP-childTheme#readme",
+  "devDependencies": {
+    "@wordpress/scripts": "^19.2.2"
+  }
+}
