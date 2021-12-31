@@ -7,7 +7,8 @@
  * @subpackage bp-legacy
  * @version 3.0.0
  */
-get_header()
+get_header();
+
 ?>
 <div class="x-container max width offset">
     <div class="<?php x_main_content_class(); ?>" role="main">
@@ -109,7 +110,7 @@ get_header()
                             <?php else : ?>
 
                             <div id="message" class="info">
-                                <p>This user does not have a profile.</p>
+                                <p>This user has not completed their profile.</p>
                             </div>
 
                             <?php endif;
