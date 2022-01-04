@@ -19,6 +19,7 @@ Included are child overrides for Buddypress and WP Job Manager.
 - Public Profiles are custom index-{$slug}.php files
   - Code Copied from `home.php`, `profile.php` and `profile-loop.php'
   - Classes added to more-closely follow BEM
+- Changed 'Members' Slug to /profile for better URLs (in WP Pages editor)
 
 
 ### Plugins Folder

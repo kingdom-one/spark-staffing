@@ -10,7 +10,9 @@
 
 __webpack_require__.r(__webpack_exports__);
 class ChurchProfile {
-  constructor() {}
+  constructor() {
+    console.log(`I'm from churchProfileScripts.js`);
+  }
 
 }
 
