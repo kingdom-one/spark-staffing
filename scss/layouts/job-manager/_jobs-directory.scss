@@ -8,6 +8,7 @@ div.job_listings {
 				transition: all 0.2s ease;
 				display: flex;
 				border: 2px solid $color-grey--dark;
+				border-radius: $rounded-border;
 				&:hover {
 					box-shadow: 4px 4px 6px rgba(black, 0.35);
 					transform: scale(1.003);
@@ -40,8 +41,7 @@ div.job_listings {
 				}
 				&--company {
 					&-name {
-						font-family: $font-headings;
-						text-transform: lowercase;
+						font-family: $font-body;
 						color: black;
 						margin: 0;
 						font-size: 1em;
@@ -70,17 +70,6 @@ div.job_listings {
 						display: block;
 					}
 				}
-			}
-		}
-	}
-}
-/* FEATURED STYLES */
-div.job_listings {
-	ul.job_listings {
-		.job_listing.job_position_featured {
-			a.job_listing__container {
-				background-color: $color-primary;
-				background-image: $linear-gradient--darken;
 			}
 		}
 	}

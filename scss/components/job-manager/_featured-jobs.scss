@@ -1,0 +1,28 @@
+/* FEATURED STYLES */
+div.job_listings {
+	ul.job_listings {
+		.job_listing {
+			&.job_position_featured {
+				a.job_listing__container {
+					background-color: $color-primary;
+					// background-image: $linear-gradient--darken;
+				}
+				.job_listing__summary {
+					&--company {
+						&-tagline {
+							color: white;
+						}
+					}
+				}
+				.spark__job-feature {
+					color: white;
+					font-size: 2em;
+					font-family: $font-headings;
+					text-transform: lowercase;
+					margin: 6px 0;
+					text-shadow: 2px 2px rgba(black, 0.75);
+				}
+			}
+		}
+	}
+}
