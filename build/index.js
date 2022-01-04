@@ -38,6 +38,28 @@ function sparkCopyrightInjection() {
   copyright.innerHTML = `<p>&copy; ${thisYear} ${brand} All Rights Reserved.<br/>spark* staffing is a product by Kingdom One.<br> Learn more at <a href="https://kingdomone.co" target="_blank">kingdomone.co</a></p>`;
 }
 
+/***/ }),
+
+/***/ "./src/modules/featuredJob.js":
+/*!************************************!*\
+  !*** ./src/modules/featuredJob.js ***!
+  \************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "sparkFeaturedJob": function() { return /* binding */ sparkFeaturedJob; }
+/* harmony export */ });
+function sparkFeaturedJob() {
+  const featured = document.querySelectorAll('.job_position_featured');
+  const feature = 'Featured Job';
+  const sparkle = `<span class="spark__job-feature">${feature}</span>`;
+  featured.forEach(el => {
+    const jobSummary = el.querySelector('.job_listing__summary');
+    jobSummary.insertAdjacentHTML('afterbegin', sparkle);
+  });
+}
+
 /***/ })
 
 /******/ 	});
@@ -105,10 +127,14 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_churchProfileScripts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/churchProfileScripts */ "./src/modules/churchProfileScripts.js");
 /* harmony import */ var _modules_copyright__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/copyright */ "./src/modules/copyright.js");
+/* harmony import */ var _modules_featuredJob__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/featuredJob */ "./src/modules/featuredJob.js");
+
 
 
 const churchProfile = new _modules_churchProfileScripts__WEBPACK_IMPORTED_MODULE_0__["default"]();
-(0,_modules_copyright__WEBPACK_IMPORTED_MODULE_1__.sparkCopyrightInjection)();
+(0,_modules_copyright__WEBPACK_IMPORTED_MODULE_1__.sparkCopyrightInjection)(); // sparkFeaturedJob();
+
+setTimeout(_modules_featuredJob__WEBPACK_IMPORTED_MODULE_2__.sparkFeaturedJob, 7000);
 }();
 /******/ })()
 ;

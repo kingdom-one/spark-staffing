@@ -460,6 +460,22 @@ div#buddypress .profile h2 {
   line-height: 1.4;
 }
 
+/* FEATURED STYLES */
+div.job_listings ul.job_listings .job_listing.job_position_featured a.job_listing__container {
+  background-color: #f4c063;
+}
+div.job_listings ul.job_listings .job_listing.job_position_featured .job_listing__summary--company-tagline {
+  color: white;
+}
+div.job_listings ul.job_listings .job_listing.job_position_featured .spark__job-feature {
+  color: white;
+  font-size: 2em;
+  font-family: "Abril Fatface", serif;
+  text-transform: lowercase;
+  margin: 6px 0;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.75);
+}
+
 #bp-members-directory {
   margin-top: 25vh;
 }
@@ -489,6 +505,7 @@ div.job_listings ul.job_listings .job_listing__container {
   transition: all 0.2s ease;
   display: flex;
   border: 2px solid #545454;
+  border-radius: 10px;
 }
 div.job_listings ul.job_listings .job_listing__container:hover {
   box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.35);
@@ -522,8 +539,7 @@ div.job_listings ul.job_listings .job_listing__summary--title {
   font-size: 2em;
 }
 div.job_listings ul.job_listings .job_listing__summary--company-name {
-  font-family: "Abril Fatface", serif;
-  text-transform: lowercase;
+  font-family: "Poppins", sans-serif;
   color: black;
   margin: 0;
   font-size: 1em;
@@ -552,28 +568,32 @@ div.job_listings ul.job_listings .job_listing__details--meta li {
   display: block;
 }
 
-/* FEATURED STYLES */
-div.job_listings ul.job_listings .job_listing.job_position_featured a.job_listing__container {
-  background-color: #f4c063;
-  background-image: linear-gradient(135deg, transparent 54%, rgba(0, 0, 0, 0.35));
-}
-
 #pmpro_form #pmpro_pricing_fields {
   padding: 1em;
   background-color: white;
   border: 3px solid #16af82;
   border-radius: 10px;
+  grid-column: 1/-1;
+  grid-row: 2/3;
 }
 #pmpro_form #pmpro_message {
+  grid-column: 1/-1;
+  grid-row: 1/2;
   border: 3px solid #68cad7;
   border-radius: 10px;
   background-color: white;
+}
+#pmpro_form .pmpro_checkout {
+  padding: 1em;
+  background-color: white;
+  border: 3px solid #5c2d86;
+  border-radius: 10px;
 }
 #pmpro_form .pmpro_checkout:not(:last-child) {
   margin-bottom: 2em;
 }
 #pmpro_form .pmpro_checkout hr {
-  border-top: 2px solid #5c2d86;
+  display: none;
 }
 #pmpro_form .pmpro_checkout h3 {
   margin: 0;
@@ -598,11 +618,20 @@ div.job_listings ul.job_listings .job_listing.job_position_featured a.job_listin
 #pmpro_form .pmpro_checkout h3 span.pmpro_checkout-h3-msg a:hover {
   color: #68cad7;
 }
+#pmpro_form .pmpro_checkout #second_hint_div.username--alert {
+  border: 2px solid #68cad7;
+  border-radius: 10px;
+  padding: 1em;
+  background-color: aliceblue;
+}
 #pmpro_form .pmpro_checkout-fields label {
   color: black;
 }
 #pmpro_form .pmpro_checkout-fields p {
   margin: 0;
+}
+#pmpro_form .pmpro_checkout-fields .pmpro_checkout-field-username {
+  margin-top: 1em;
 }
 #pmpro_form .pmpro_checkout-fields .pmpro_checkout-field .pmpro_asterisk {
   display: inline-block;
@@ -616,6 +645,9 @@ div.job_listings ul.job_listings .job_listing.job_position_featured a.job_listin
 #pmpro_form .pmpro_checkout-fields .pmpro_checkout-field .pmpro_asterisk abbr {
   display: none;
 }
+#pmpro_form .pmpro_checkout-fields .pmpro_checkout-field p {
+  line-height: 1.4;
+}
 #pmpro_form .pmpro_checkout-fields .pmpro_checkout-field p small.lite {
   color: #545454;
   font-style: italic;
@@ -627,24 +659,37 @@ div.job_listings ul.job_listings .job_listing.job_position_featured a.job_listin
 #pmpro_form .pmpro_checkout-fields .pmpro_checkout-field-radio-item input {
   margin-right: 0.5em;
 }
-.spark-pmpro-checkout-fields__account-type {
+#pmpro_form .spark-pmpro-checkout-fields__account-type {
   display: flex;
   flex-wrap: wrap;
 }
-.spark-pmpro-checkout-fields__account-type label:first-child {
+#pmpro_form .spark-pmpro-checkout-fields__account-type label:first-child {
   flex-basis: 100%;
 }
-.spark-pmpro-checkout-fields__church {
+#pmpro_form .spark-pmpro-checkout-fields__church {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 }
-.spark-pmpro-checkout-fields__church .select2-container {
+#pmpro_form .spark-pmpro-checkout-fields__church .select2-container {
   width: 100%;
 }
-.spark-pmpro-checkout-fields__church .select2-container .select2-selection__choice {
+#pmpro_form .spark-pmpro-checkout-fields__church .select2-container .select2-selection__choice {
   color: black;
 }
-.spark-pmpro-checkout-fields__church .select2-container .select2-selection__choice__remove {
+#pmpro_form .spark-pmpro-checkout-fields__church .select2-container .select2-selection__choice__remove {
   color: #5c2d86;
+}
+#pmpro_form #pmpro_user_fields {
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+#pmpro_form #pmpro_checkout_box-additional {
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+#pmpro_form .pmpro_submit {
+  grid-column: 1/-1;
+  grid-row: 4/-1;
+  margin: 0;
 }
