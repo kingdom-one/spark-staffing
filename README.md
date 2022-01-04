@@ -74,3 +74,7 @@ Included are child overrides for Buddypress and WP Job Manager.
 - Moved Checkout Page modifications to SCSS
 - Added JS in Cornerstone to set required label in the appropriate place on `#member_type_div`
 
+
+# Javascript Files
+- Added `featuredJob.js` module to add "Featured Job" to highlighted posts.
+  - Need to reconfig to `await` jobs
