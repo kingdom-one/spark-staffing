@@ -1,22 +1,34 @@
 #pmpro_form {
+	// display: grid;
+	// grid-template-columns: repeat(2, 1fr);
+	// grid-template-rows: repeat(4, auto);
+	// gap: 30px;
 	#pmpro_pricing_fields {
 		padding: 1em;
 		background-color: white;
 		border: 3px solid $color-secondary;
 		border-radius: $rounded-border;
+		grid-column: 1 / -1;
+		grid-row: 2 / 3;
 	}
 	#pmpro_message {
+		grid-column: 1 / -1;
+		grid-row: 1 / 2;
 		border: 3px solid $color-ice-blue;
 		border-radius: $rounded-border;
 		background-color: white;
 	}
 
 	.pmpro_checkout {
+		padding: 1em;
+		background-color: white;
+		border: 3px solid $color-purple;
+		border-radius: $rounded-border;
 		&:not(:last-child) {
 			margin-bottom: 2em;
 		}
 		hr {
-			border-top: 2px solid $color-purple;
+			display: none;
 		}
 		h3 {
 			margin: 0;
@@ -43,6 +55,14 @@
 				}
 			}
 		}
+
+		#second_hint_div.username--alert {
+			border: 2px solid $color-ice-blue;
+			border-radius: $rounded-border;
+			padding: 1em;
+			background-color: aliceblue;
+		}
+
 		&-fields {
 			label {
 				color: black;
@@ -52,6 +72,9 @@
 			}
 			.pmpro_checkout {
 				&-field {
+					&-username {
+						margin-top: 1em;
+					}
 					.pmpro_asterisk {
 						display: inline-block;
 						background-image: url(http://sparkstaffing.local/wp-content/uploads/2021/11/cropped-Icon-Simple.png);
@@ -65,9 +88,12 @@
 							// color: $color-ice-blue;
 						}
 					}
-					p small.lite {
-						color: $color-grey--dark;
-						font-style: italic;
+					p {
+						line-height: 1.4;
+						small.lite {
+							color: $color-grey--dark;
+							font-style: italic;
+						}
 					}
 					&-radio {
 						&-item {
@@ -87,27 +113,42 @@
 			}
 		}
 	}
-}
-.spark-pmpro-checkout-fields {
-	&__account-type {
-		display: flex;
-		flex-wrap: wrap;
-		label:first-child {
-			flex-basis: 100%;
+
+	.spark-pmpro-checkout-fields {
+		&__account-type {
+			display: flex;
+			flex-wrap: wrap;
+			label:first-child {
+				flex-basis: 100%;
+			}
 		}
-	}
-	&__church {
-		display: flex;
-		flex-direction: column;
-		flex-wrap: wrap;
-		.select2-container {
-			width: 100%;
-			.select2-selection__choice {
-				color: black;
-				&__remove {
-					color: $color-purple;
+		&__church {
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			.select2-container {
+				width: 100%;
+				.select2-selection__choice {
+					color: black;
+					&__remove {
+						color: $color-purple;
+					}
 				}
 			}
 		}
+	}
+
+	#pmpro_user_fields {
+		grid-column: 1 / 2;
+		grid-row: 3 / 4;
+	}
+	#pmpro_checkout_box-additional {
+		grid-column: 2 / 3;
+		grid-row: 3 / 4;
+	}
+	.pmpro_submit {
+		grid-column: 1 / -1;
+		grid-row: 4 / -1;
+		margin: 0;
 	}
 }
