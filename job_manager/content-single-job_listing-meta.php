@@ -23,7 +23,7 @@ global $post;
 
 do_action('single_job_listing_meta_before'); ?>
 
-<ul class="single-job-listing__meta meta">
+<ul class="single-job-listing__meta--listing meta">
 	<?php do_action('single_job_listing_meta_start'); ?>
 	<li class="date-posted"><?php the_job_publish_date(); ?></li>
 	<? if (get_option('job_manager_enable_types')) :

@@ -1,67 +1,109 @@
 #single-job-listing {
 	margin: 25vh auto 65px auto;
 	width: 88%;
-	padding: 1em;
+	display: grid;
+	grid-template-columns: 60% minmax(200px, 40%);
+	gap: 1.5em;
+	background-color: white;
+	border: 3px solid $color-primary;
+	border-radius: $rounded-border;
 }
 .single-job-listing {
-	.single-job-listing__meta {
-		display: block;
-		margin: 0 3em 0 0;
-		li {
-			display: inline-block;
-			list-style: none;
-			&:not(:last-child) {
-				margin-right: 0.8em;
-			}
-		}
+	& > * {
+		@include displayFlex(row, center);
 	}
-	&__info {
-		display: flex;
-		flex-direction: column;
-		width: auto;
-		&--meta {
-			display: flex;
-			margin-bottom: 2em;
-		}
+	&--title {
+		grid-column: 1 / -1;
+		border-bottom: 2px dashed $color-grey--light;
 	}
-
-	.company {
-		display: flex;
-		background-color: $color-grey--light;
-		border-radius: $rounded-border;
+	&__meta {
+		@include displayFlex(row, flex-start, flex-start);
+		height: 1200px;
 		padding: 1em;
-		&__logo {
-			height: 100px;
-			width: 100px;
-			margin: 0;
-			margin-right: 0.5em;
-			img.company_logo {
-				object-fit: cover;
+		position: relative;
+		&--container {
+			grid-column: 2 / 3;
+			background-color: $color-grey--light;
+			border-radius: $rounded-border;
+			border: 3px solid $color-secondary;
+			box-shadow: 3px 3px 10px rgba($color-grey--dark, 0.75);
+			position: sticky;
+			top: 10%;
+			padding: 1em;
+			@include displayFlex(row, space-evenly, center);
+			// width: max-content;
+			// height: max-content;
+
+			& form {
+				margin: 0;
+				@include displayFlex(column, center, center);
+			}
+
+			.company {
+				order: -1;
+				border-radius: $rounded-border;
+				@include displayFlex(row, flex-start, center);
+
+				&__logo {
+					height: 100px;
+					width: 100px;
+					margin: 0 10px 0 0;
+					img.company_logo {
+						object-fit: cover;
+					}
+				}
+
+				&__info {
+					@include displayFlex(column);
+					&--name {
+						font-weight: 700;
+						color: black;
+						margin: 0;
+						font-size: 24px;
+					}
+					&--website {
+						font-weight: 400;
+					}
+					&--tagline {
+						font-style: italic;
+						color: $color-grey--dark;
+						font-weight: 700;
+						font-size: 0.8rem;
+						margin: 0;
+					}
+				}
 			}
 		}
-		&__info {
-			display: flex;
-			flex-direction: column;
-			&--name {
-				font-weight: 700;
-				color: black;
-				margin: 0;
-			}
-			&--website {
-				font-weight: 400;
-			}
-			&--tagline {
-				font-style: italic;
-				color: $color-grey--dark;
-				font-weight: 700;
-				font-size: 0.8rem;
-				margin: 0;
+		&--listing {
+			margin: 0;
+			order: 2;
+			@include displayFlex(row, space-around, flex-start);
+			width: 100%;
+			li {
+				display: inline-block;
+				list-style: none;
 			}
 		}
 	}
-
 	.job-description {
+		grid-row: 2/3;
+		grid-column: 1 / 2;
 		font-size: 1em;
 		line-height: 1.4;
+		padding: 1em;
+		div > strong {
+			font-family: $font-headings;
+			text-transform: lowercase;
+			font-size: 2em;
+			margin-bottom: 1em;
+		}
+	}
+	.job_application {
+		grid-row: 3/4;
+		padding: 1em;
+		@include displayFlex(column);
+		.application_button {
+			width: max-content;
+		}
 	}
 }

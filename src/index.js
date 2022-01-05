@@ -1,3 +1,4 @@
+import '../scss/bp-spark.scss';
 import ChurchProfile from './modules/churchProfileScripts';
 import { sparkCopyrightInjection } from './modules/copyright';
 import { sparkFeaturedJob } from './modules/featuredJob';

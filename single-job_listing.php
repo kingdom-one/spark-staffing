@@ -7,11 +7,12 @@
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <? global $post; ?>
         <div class="single-job-listing" id="single-job-listing">
-            <div class="single-job-listing__info">
-                <h1 class="single-job-listing__info--title">
-                    <? wpjm_the_job_title() ?>
-                </h1>
-                <div class="single-job-listing__info--meta">
+
+            <h1 class="single-job-listing--title">
+                <? wpjm_the_job_title() ?>
+            </h1>
+            <div class="single-job-listing__meta">
+                <div class="single-job-listing__meta--container">
                     <?php if (get_option('job_manager_hide_expired_content', 1) && 'expired' === $post->post_status) : ?>
                     <div class=" job-manager-info">
                         <?php _e('This listing has expired.', 'wp-job-manager'); ?>
@@ -27,6 +28,7 @@
                             if (candidates_can_apply()) get_job_manager_template('job-application.php');
                             do_action('single_job_listing_end'); ?>
             <?php endif; ?>
+
         </div>
     </article>
     <?php endwhile; ?>

@@ -1,7 +1,7 @@
 @mixin displayFlex(
 	$flex-direction: row,
-	$main-axis: start,
-	$cross-axis: start,
+	$main-axis: flex-start,
+	$cross-axis: '',
 	$wrap: wrap
 ) {
 	display: flex;

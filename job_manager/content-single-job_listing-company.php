@@ -23,8 +23,9 @@ if (!get_the_company_name()) return;
         <?php the_company_logo('large'); ?>
     </figure>
     <div class="company__info">
-        <?php the_company_name('<h3 class="company__info--name">', '</h3>');
-		if ($website = get_the_company_website()) : ?>
+        <h3 class="company__info--name">Posted by: <?php the_company_name('', '', true); ?></h3>
+        <?
+        if ($website = get_the_company_website()) : ?>
         <a class="company__info--website" href="<?php echo esc_url($website); ?>" target="_blank" rel="nofollow">
             <?php esc_html_e(get_the_company_name() . "'s Website", "wp-job-manager"); ?>
         </a>

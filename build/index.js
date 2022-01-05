@@ -60,6 +60,18 @@ function sparkFeaturedJob() {
   });
 }
 
+/***/ }),
+
+/***/ "./scss/bp-spark.scss":
+/*!****************************!*\
+  !*** ./scss/bp-spark.scss ***!
+  \****************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
 /***/ })
 
 /******/ 	});
@@ -125,16 +137,18 @@ var __webpack_exports__ = {};
   !*** ./src/index.js ***!
   \**********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_churchProfileScripts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/churchProfileScripts */ "./src/modules/churchProfileScripts.js");
-/* harmony import */ var _modules_copyright__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/copyright */ "./src/modules/copyright.js");
-/* harmony import */ var _modules_featuredJob__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/featuredJob */ "./src/modules/featuredJob.js");
+/* harmony import */ var _scss_bp_spark_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/bp-spark.scss */ "./scss/bp-spark.scss");
+/* harmony import */ var _modules_churchProfileScripts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/churchProfileScripts */ "./src/modules/churchProfileScripts.js");
+/* harmony import */ var _modules_copyright__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/copyright */ "./src/modules/copyright.js");
+/* harmony import */ var _modules_featuredJob__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/featuredJob */ "./src/modules/featuredJob.js");
 
 
 
-const churchProfile = new _modules_churchProfileScripts__WEBPACK_IMPORTED_MODULE_0__["default"]();
-(0,_modules_copyright__WEBPACK_IMPORTED_MODULE_1__.sparkCopyrightInjection)(); // sparkFeaturedJob();
 
-setTimeout(_modules_featuredJob__WEBPACK_IMPORTED_MODULE_2__.sparkFeaturedJob, 7000);
+const churchProfile = new _modules_churchProfileScripts__WEBPACK_IMPORTED_MODULE_1__["default"]();
+(0,_modules_copyright__WEBPACK_IMPORTED_MODULE_2__.sparkCopyrightInjection)(); // sparkFeaturedJob();
+
+setTimeout(_modules_featuredJob__WEBPACK_IMPORTED_MODULE_3__.sparkFeaturedJob, 7000);
 }();
 /******/ })()
 ;
