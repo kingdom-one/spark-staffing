@@ -1,12 +1,11 @@
 .bp-profile__subnav {
 	margin-bottom: 1em;
-	background-color: $color-grey--light;
-	border: 2px solid $color-grey--light;
-	border-radius: $rounded-border;
+	background-color: white;
+	border-top: 2px dashed $color-grey--light;
+	border-bottom-left-radius: $rounded-border;
+	border-bottom-right-radius: $rounded-border;
 	&--container {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-evenly;
+		@include displayFlex(row, space-evenly);
 		list-style: none;
 		width: 100%;
 		margin: 0;

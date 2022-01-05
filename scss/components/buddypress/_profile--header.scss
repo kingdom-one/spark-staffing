@@ -1,38 +1,29 @@
 #buddypress {
-	#item-header {
-		border-radius: $rounded-border;
-		overflow: hidden;
-		border: 2px solid $color-grey--light;
-		margin-bottom: 1em;
-		height: auto;
-		background-color: transparent;
+	#item-header.bp-profile__header {
 		#cover-image-container {
-			padding: 2em;
-			border-radius: inherit;
-			background-color: transparent;
+			border: 2px 2px 0 2px solid $color-grey--light;
+			border-top-left-radius: $rounded-border;
+			border-top-right-radius: $rounded-border;
+			overflow: hidden;
 			position: relative;
 			#header-cover-image {
-				height: 225px;
-				background-color: transparent;
-				position: absolute;
-				top: 0;
-				left: 0;
+				z-index: 0;
+				position: relative;
+				background-size: cover;
 			}
 			#item-header {
-				&-cover-image {
-					display: flex;
-					background-color: transparent;
-					align-items: flex-end;
+				&__container {
+					@include displayFlex(row, start, center);
+					position: relative;
+					background-color: white;
 				}
 				&-avatar {
-					align-self: start;
-					margin: 0 2em;
-					width: 200px;
-					z-index: 3;
-					position: absolute;
+					margin: 1em;
 					background-color: white;
 					border-radius: 50%;
+					width: 200px;
 					& a {
+						z-index: 3;
 						border-radius: 50%;
 					}
 					& img {
@@ -41,40 +32,16 @@
 					}
 				}
 				&-content {
-					display: flex;
-					flex-direction: column;
-					justify-content: end;
-					.user-nicename {
-						margin-bottom: 8px;
-						overflow: visible;
-						color: black;
-						text-shadow: none;
-						font-size: 2em;
-						text-transform: lowercase;
-						.premium {
-							.x-icon {
-								color: $color-primary;
-								font-size: 0.8em;
-								&:hover {
-									color: $color-secondary;
-								}
-							}
-						}
+					@include displayFlex(column, center, start);
+					.user-nicename.headline {
+						margin: 0;
+						font-size: 3em;
 					}
 					#item-meta {
-						@extend #item-header-content;
-						justify-content: space-between;
-						height: auto;
-						max-width: 90%;
-						.headline {
-							line-height: 1.2em;
-							margin-bottom: 1em;
-						}
-						.location {
-							font-size: 0.8em;
-							color: $color-grey--dark;
-							margin-top: auto;
-						}
+						@include displayFlex(column);
+					}
+					.location {
+						color: $color-secondary;
 					}
 				}
 			}

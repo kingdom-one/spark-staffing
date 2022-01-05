@@ -1,0 +1,12 @@
+@mixin displayFlex(
+	$flex-direction: row,
+	$main-axis: start,
+	$cross-axis: start,
+	$wrap: wrap
+) {
+	display: flex;
+	flex-direction: $flex-direction;
+	justify-content: $main-axis;
+	align-items: $cross-axis;
+	flex-wrap: $wrap;
+}

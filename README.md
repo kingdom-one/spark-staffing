@@ -20,6 +20,7 @@ Included are child overrides for Buddypress and WP Job Manager.
   - Code Copied from `home.php`, `profile.php` and `profile-loop.php'
   - Classes added to more-closely follow BEM
 - Changed 'Members' Slug to /profile for better URLs (in WP Pages editor)
+- Updated `index-church.php` header class to pull in spark* styles.
 
 
 ### Plugins Folder

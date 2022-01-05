@@ -20,7 +20,7 @@ get_header();
                     <div id="buddypress" class="bp-church-profile">
                         <?php do_action('bp_before_member_home_content');
                             ?>
-                        <header id="item-header" role="complementary">
+                        <header id="item-header" class="bp-profile__header" role="complementary">
                             <?php
                                 if (bp_displayed_user_use_cover_image_header()) {
                                     bp_get_template_part('members/single/cover-image-header');
