@@ -4,8 +4,7 @@
 		background-color: $color-primary;
 		border: 2px solid $color-primary;
 		border-radius: $rounded-border;
-		display: flex;
-		flex-direction: column;
+		@include displayFlex(column);
 		padding: 1em;
 		strong {
 			text-transform: lowercase;

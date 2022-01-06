@@ -146,8 +146,9 @@ footer.x-colophon.bottom #menu-footer a:hover {
   box-shadow: 0 2px 4px rgba(236, 236, 236, 0.8);
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: "";
   flex-wrap: wrap;
-  justify-content: start;
   height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
@@ -187,6 +188,9 @@ div#buddypress .profile h2 {
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: "";
+  flex-wrap: wrap;
   padding: 1em;
 }
 #sitewide-notice.admin-bar-off #message.info.notice strong {
@@ -243,6 +247,9 @@ div#buddypress .profile h2 {
   font-weight: 700;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: "";
+  flex-wrap: wrap;
 }
 .job-manager-form .fieldset--label {
   font-size: 1.6em;
@@ -276,8 +283,10 @@ div#buddypress .profile h2 {
 }
 .job-listing-preview__container {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   width: 100%;
   padding: 1em;
   background-color: #545454;
@@ -289,8 +298,10 @@ div#buddypress .profile h2 {
 }
 .job-listing-preview__container--button-container {
   display: flex;
+  flex-direction: row;
+  justify-content: "";
+  align-items: center;
   flex-wrap: wrap;
-  align-content: center;
   height: auto;
 }
 .job-listing-preview__single-job-listing--container {
@@ -498,6 +509,7 @@ div#buddypress .profile h2 {
   list-style: none;
 }
 .single-job-listing .job-description {
+  display: block;
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2/3;

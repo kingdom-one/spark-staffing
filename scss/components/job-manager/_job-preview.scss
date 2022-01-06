@@ -1,8 +1,6 @@
 .job-listing-preview {
 	&__container {
-		display: flex;
-		justify-content: space-between;
-		align-content: center;
+		@include displayFlex(row, space-between, center);
 		width: 100%;
 		padding: 1em;
 		background-color: $color-grey--dark;
@@ -12,9 +10,7 @@
 			color: white;
 		}
 		&--button-container {
-			display: flex;
-			flex-wrap: wrap;
-			align-content: center;
+			@include displayFlex(row, '', center);
 			height: auto;
 		}
 	}

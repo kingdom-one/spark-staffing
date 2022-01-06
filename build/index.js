@@ -2,24 +2,6 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/modules/churchProfileScripts.js":
-/*!*********************************************!*\
-  !*** ./src/modules/churchProfileScripts.js ***!
-  \*********************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-class ChurchProfile {
-  constructor() {
-    console.log(`I'm from churchProfileScripts.js`);
-  }
-
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (ChurchProfile);
-
-/***/ }),
-
 /***/ "./src/modules/copyright.js":
 /*!**********************************!*\
   !*** ./src/modules/copyright.js ***!
@@ -138,17 +120,16 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scss_bp_spark_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/bp-spark.scss */ "./scss/bp-spark.scss");
-/* harmony import */ var _modules_churchProfileScripts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/churchProfileScripts */ "./src/modules/churchProfileScripts.js");
-/* harmony import */ var _modules_copyright__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/copyright */ "./src/modules/copyright.js");
-/* harmony import */ var _modules_featuredJob__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/featuredJob */ "./src/modules/featuredJob.js");
+/* harmony import */ var _modules_copyright__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/copyright */ "./src/modules/copyright.js");
+/* harmony import */ var _modules_featuredJob__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/featuredJob */ "./src/modules/featuredJob.js");
+ // import ChurchProfile from './modules/churchProfileScripts';
 
 
+ // const churchProfile = new ChurchProfile();
 
+(0,_modules_copyright__WEBPACK_IMPORTED_MODULE_1__.sparkCopyrightInjection)(); // sparkFeaturedJob();
 
-const churchProfile = new _modules_churchProfileScripts__WEBPACK_IMPORTED_MODULE_1__["default"]();
-(0,_modules_copyright__WEBPACK_IMPORTED_MODULE_2__.sparkCopyrightInjection)(); // sparkFeaturedJob();
-
-setTimeout(_modules_featuredJob__WEBPACK_IMPORTED_MODULE_3__.sparkFeaturedJob, 7000);
+setTimeout(_modules_featuredJob__WEBPACK_IMPORTED_MODULE_2__.sparkFeaturedJob, 7000);
 }();
 /******/ })()
 ;

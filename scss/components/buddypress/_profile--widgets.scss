@@ -8,10 +8,7 @@
 			padding: 1em;
 			background-color: white;
 			box-shadow: 0 2px 4px rgba($color-grey--light, 0.8);
-			display: flex;
-			flex-direction: column;
-			flex-wrap: wrap;
-			justify-content: start;
+			@include displayFlex(column, flex-start);
 			height: min-content;
 		}
 		&--header {

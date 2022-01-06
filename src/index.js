@@ -1,8 +1,8 @@
 import '../scss/bp-spark.scss';
-import ChurchProfile from './modules/churchProfileScripts';
+// import ChurchProfile from './modules/churchProfileScripts';
 import { sparkCopyrightInjection } from './modules/copyright';
 import { sparkFeaturedJob } from './modules/featuredJob';
-const churchProfile = new ChurchProfile();
+// const churchProfile = new ChurchProfile();
 
 sparkCopyrightInjection();
 // sparkFeaturedJob();
