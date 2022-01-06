@@ -38,12 +38,12 @@ Included are child overrides for Buddypress and WP Job Manager.
   - Vimeo: 191
 
 
-## Plugins to Extend Feature Set
+## Plugins to Extend Feature Set?
 - BuddyDev
-  - BP Simple Front End Post
-  - BuddyBlog
-  - BuddyPress Featured Memmbers
-  - BuddyPress Profile Completion
+  - BP Simple Front End Post (inactive)
+  - BuddyBlog (inactive)
+  - BuddyPress Featured Memmbers (inactive)
+  - BuddyPress Profile Completion (inactive)
   - BuddyPress XProfile Custom Field Types
 - Conditional Profile Fields for BuddyPress
 
@@ -57,11 +57,14 @@ Included are child overrides for Buddypress and WP Job Manager.
   - `content-single-job_listing-company.php` 
 - Added "inc" folder, which includes `filter.php`, which acts as plugin's `functions.php` file
   - Presently, this folder edits Job Submission fields on front-end job submission page (/post-a-job).
+- Added **Bookmarks,** **WC Paid Listings** and **Job Alerts** Add-ons
+
 
 ### Plugins Folder
 - PMPro-Customizations folder includes one file, `pmpro-customizations.php`, to modify account registration builder
   - This requires PMPro-Register-Helper add-on
 
+---
 
 # Page Customizations
 
