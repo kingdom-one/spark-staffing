@@ -1,5 +1,6 @@
 export default function loggedOutHeaderControl() {
 	const parentEl = document.querySelector('.btn--register');
+	if (!parentEl) return;
 	parentEl.addEventListener('mouseover', (el) => {
 		if (!el.target.classList.contains('btn--register')) return;
 		parentEl
