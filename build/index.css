@@ -48,6 +48,14 @@ footer.x-colophon.bottom #menu-footer a:hover {
   opacity: 1;
 }
 
+.hoverText {
+  color: var(--color-primary) !important;
+}
+
+.hoverTextBackground {
+  background-color: transparent !important;
+}
+
 #buddypress #item-header.bp-profile__header #cover-image-container {
   border: 2px 2px 0 2px solid #ececec;
   border-top-left-radius: 10px;

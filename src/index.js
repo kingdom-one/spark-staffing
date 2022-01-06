@@ -3,7 +3,8 @@ import '../scss/bp-spark.scss';
 import { sparkCopyrightInjection } from './modules/copyright';
 import { sparkFeaturedJob } from './modules/featuredJob';
 // const churchProfile = new ChurchProfile();
-
+import loggedOutHeaderControl from './modules/loggedOutHeader';
 sparkCopyrightInjection();
+loggedOutHeaderControl();
 // sparkFeaturedJob();
 setTimeout(sparkFeaturedJob, 7000);

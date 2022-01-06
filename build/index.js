@@ -44,6 +44,27 @@ function sparkFeaturedJob() {
 
 /***/ }),
 
+/***/ "./src/modules/loggedOutHeader.js":
+/*!****************************************!*\
+  !*** ./src/modules/loggedOutHeader.js ***!
+  \****************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ loggedOutHeaderControl; }
+/* harmony export */ });
+function loggedOutHeaderControl() {
+  const parentEl = document.querySelector('.btn--register');
+  parentEl.addEventListener('mouseover', el => {
+    if (!el.target.classList.contains('btn--register')) return;
+    parentEl.querySelector('.x-anchor-text-primary').classList.toggle('hoverText');
+    parentEl.querySelector('.x-anchor').classList.toggle('hoverTextBackground');
+  });
+}
+
+/***/ }),
+
 /***/ "./scss/bp-spark.scss":
 /*!****************************!*\
   !*** ./scss/bp-spark.scss ***!
@@ -122,12 +143,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scss_bp_spark_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/bp-spark.scss */ "./scss/bp-spark.scss");
 /* harmony import */ var _modules_copyright__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/copyright */ "./src/modules/copyright.js");
 /* harmony import */ var _modules_featuredJob__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/featuredJob */ "./src/modules/featuredJob.js");
+/* harmony import */ var _modules_loggedOutHeader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/loggedOutHeader */ "./src/modules/loggedOutHeader.js");
  // import ChurchProfile from './modules/churchProfileScripts';
 
 
  // const churchProfile = new ChurchProfile();
 
-(0,_modules_copyright__WEBPACK_IMPORTED_MODULE_1__.sparkCopyrightInjection)(); // sparkFeaturedJob();
+
+(0,_modules_copyright__WEBPACK_IMPORTED_MODULE_1__.sparkCopyrightInjection)();
+(0,_modules_loggedOutHeader__WEBPACK_IMPORTED_MODULE_3__["default"])(); // sparkFeaturedJob();
 
 setTimeout(_modules_featuredJob__WEBPACK_IMPORTED_MODULE_2__.sparkFeaturedJob, 7000);
 }();
