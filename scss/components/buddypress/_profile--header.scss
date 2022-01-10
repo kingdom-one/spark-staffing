@@ -16,6 +16,7 @@
 					@include displayFlex(row, start, center);
 					position: relative;
 					background-color: white;
+					padding: 1em;
 				}
 				&-avatar {
 					margin: 1em;
@@ -39,6 +40,9 @@
 					}
 					#item-meta {
 						@include displayFlex(column);
+						.subheadline {
+							margin: 1em 0;
+						}
 					}
 					.location {
 						color: $color-secondary;

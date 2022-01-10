@@ -45,6 +45,14 @@ footer.x-colophon.bottom #menu-footer a:hover {
   opacity: 1;
 }
 
+.hoverText {
+  color: #f4c063 !important;
+}
+
+.hoverTextBackground {
+  background-color: transparent !important;
+}
+
 #buddypress #item-header.bp-profile__header #cover-image-container {
   border: 2px 2px 0 2px solid #ececec;
   border-top-left-radius: 10px;
@@ -65,6 +73,7 @@ footer.x-colophon.bottom #menu-footer a:hover {
   flex-wrap: wrap;
   position: relative;
   background-color: white;
+  padding: 1em;
 }
 #buddypress #item-header.bp-profile__header #cover-image-container #item-header-avatar {
   margin: 1em;
@@ -94,9 +103,12 @@ footer.x-colophon.bottom #menu-footer a:hover {
 #buddypress #item-header.bp-profile__header #cover-image-container #item-header-content #item-meta {
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-items: start;
+  justify-content: flex-start;
+  align-items: "";
   flex-wrap: wrap;
+}
+#buddypress #item-header.bp-profile__header #cover-image-container #item-header-content #item-meta .subheadline {
+  margin: 1em 0;
 }
 #buddypress #item-header.bp-profile__header #cover-image-container #item-header-content .location {
   color: #16af82;
@@ -113,7 +125,7 @@ footer.x-colophon.bottom #menu-footer a:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  align-items: start;
+  align-items: "";
   flex-wrap: wrap;
   list-style: none;
   width: 100%;
@@ -143,8 +155,9 @@ footer.x-colophon.bottom #menu-footer a:hover {
   box-shadow: 0 2px 4px rgba(236, 236, 236, 0.8);
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: "";
   flex-wrap: wrap;
-  justify-content: start;
   height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
@@ -182,6 +195,9 @@ div#buddypress .profile h2 {
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: "";
+  flex-wrap: wrap;
   padding: 1em;
 }
 #sitewide-notice.admin-bar-off #message.info.notice strong {
@@ -238,6 +254,9 @@ div#buddypress .profile h2 {
   font-weight: 700;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: "";
+  flex-wrap: wrap;
 }
 .job-manager-form .fieldset--label {
   font-size: 1.6em;
@@ -271,8 +290,10 @@ div#buddypress .profile h2 {
 }
 .job-listing-preview__container {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   width: 100%;
   padding: 1em;
   background-color: #545454;
@@ -284,8 +305,10 @@ div#buddypress .profile h2 {
 }
 .job-listing-preview__container--button-container {
   display: flex;
+  flex-direction: row;
+  justify-content: "";
+  align-items: center;
   flex-wrap: wrap;
-  align-content: center;
   height: auto;
 }
 .job-listing-preview__single-job-listing--container {
@@ -380,67 +403,141 @@ div#buddypress .profile h2 {
 #single-job-listing {
   margin: 25vh auto 65px auto;
   width: 88%;
-  padding: 1em;
+  display: grid;
+  grid-template-columns: 60% minmax(200px, 40%);
+  gap: 1.5em;
+  background-color: white;
+  border: 3px solid #f4c063;
+  border-radius: 10px;
 }
 
-.single-job-listing .single-job-listing__meta {
-  display: block;
-  margin: 0 3em 0 0;
-}
-.single-job-listing .single-job-listing__meta li {
-  display: inline-block;
-  list-style: none;
-}
-.single-job-listing .single-job-listing__meta li:not(:last-child) {
-  margin-right: 0.8em;
-}
-.single-job-listing__info {
+.single-job-listing > * {
   display: flex;
-  flex-direction: column;
-  width: auto;
+  flex-direction: row;
+  justify-content: center;
+  align-items: "";
+  flex-wrap: wrap;
 }
-.single-job-listing__info--meta {
-  display: flex;
-  margin-bottom: 2em;
+.single-job-listing--title {
+  grid-column: 1/-1;
+  border-bottom: 2px dashed #ececec;
 }
-.single-job-listing .company {
+.single-job-listing__meta {
   display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  height: 1200px;
+  padding: 1em;
+  position: relative;
+}
+.single-job-listing__meta--container {
+  grid-column: 2/3;
   background-color: #ececec;
   border-radius: 10px;
+  border: 3px solid #16af82;
+  box-shadow: 3px 3px 10px rgba(84, 84, 84, 0.75);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 10%;
   padding: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
 }
-.single-job-listing .company__logo {
+.single-job-listing__meta--container form {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.single-job-listing__meta--container .company {
+  order: -1;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.single-job-listing__meta--container .company__logo {
   height: 100px;
   width: 100px;
-  margin: 0;
-  margin-right: 0.5em;
+  margin: 0 10px 0 0;
 }
-.single-job-listing .company__logo img.company_logo {
+.single-job-listing__meta--container .company__logo img.company_logo {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.single-job-listing .company__info {
+.single-job-listing__meta--container .company__info {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: "";
+  flex-wrap: wrap;
 }
-.single-job-listing .company__info--name {
+.single-job-listing__meta--container .company__info--name {
   font-weight: 700;
   color: black;
   margin: 0;
+  font-size: 24px;
 }
-.single-job-listing .company__info--website {
+.single-job-listing__meta--container .company__info--website {
   font-weight: 400;
 }
-.single-job-listing .company__info--tagline {
+.single-job-listing__meta--container .company__info--tagline {
   font-style: italic;
   color: #545454;
   font-weight: 700;
   font-size: 0.8rem;
   margin: 0;
 }
+.single-job-listing__meta--listing {
+  margin: 0;
+  order: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.single-job-listing__meta--listing li {
+  display: inline-block;
+  list-style: none;
+}
 .single-job-listing .job-description {
+  display: block;
+  grid-row: 2/3;
+  grid-column: 1/2;
   font-size: 1em;
   line-height: 1.4;
+  padding: 1em;
+}
+.single-job-listing .job-description div > strong {
+  font-family: "Abril Fatface", serif;
+  text-transform: lowercase;
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+.single-job-listing .job_application {
+  grid-row: 3/4;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: "";
+  flex-wrap: wrap;
+}
+.single-job-listing .job_application .application_button {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 /* FEATURED STYLES */
@@ -618,7 +715,7 @@ div.job_listings ul.job_listings .job_listing__details--meta li {
 }
 #pmpro_form .pmpro_checkout-fields .pmpro_checkout-field .pmpro_asterisk {
   display: inline-block;
-  background-image: url(http://sparkstaffing.local/wp-content/uploads/2021/11/cropped-Icon-Simple.png);
+  background-image: url(https://staging5.sparkstaffing.co/wp-content/uploads/2021/11/cropped-Icon-Simple.png);
   height: 20px;
   width: 20px;
   background-size: cover;

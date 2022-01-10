@@ -66,6 +66,35 @@ function loggedOutHeaderControl() {
 
 /***/ }),
 
+/***/ "./src/modules/membershipAsterisk.js":
+/*!*******************************************!*\
+  !*** ./src/modules/membershipAsterisk.js ***!
+  \*******************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "controlAsterisk": function() { return /* binding */ controlAsterisk; }
+/* harmony export */ });
+const parent = document.getElementById('pmpro_form'),
+      required = document.querySelectorAll('.pmpro_required'),
+      asterisk = ` <span class="pmpro_asterisk"></span>`;
+
+function addAsterisk(nodeList) {
+  nodeList.forEach(item => {
+    const owner = item.closest('.pmpro_checkout-field');
+    const label = owner.querySelector('label');
+    if (label.childElementCount === 0) owner.firstElementChild.insertAdjacentHTML('beforeend', asterisk);
+  });
+}
+
+function controlAsterisk() {
+  required.forEach(el => parent.querySelector('.pmpro_asterisk').remove());
+  addAsterisk(required);
+}
+
+/***/ }),
+
 /***/ "./scss/bp-spark.scss":
 /*!****************************!*\
   !*** ./scss/bp-spark.scss ***!
@@ -145,16 +174,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_copyright__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/copyright */ "./src/modules/copyright.js");
 /* harmony import */ var _modules_featuredJob__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/featuredJob */ "./src/modules/featuredJob.js");
 /* harmony import */ var _modules_loggedOutHeader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/loggedOutHeader */ "./src/modules/loggedOutHeader.js");
+/* harmony import */ var _modules_membershipAsterisk__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/membershipAsterisk */ "./src/modules/membershipAsterisk.js");
  // import ChurchProfile from './modules/churchProfileScripts';
 
 
  // const churchProfile = new ChurchProfile();
 
 
-(0,_modules_copyright__WEBPACK_IMPORTED_MODULE_1__.sparkCopyrightInjection)();
-(0,_modules_loggedOutHeader__WEBPACK_IMPORTED_MODULE_3__["default"])(); // sparkFeaturedJob();
 
-setTimeout(_modules_featuredJob__WEBPACK_IMPORTED_MODULE_2__.sparkFeaturedJob, 7000);
+
+function init() {
+  (0,_modules_copyright__WEBPACK_IMPORTED_MODULE_1__.sparkCopyrightInjection)();
+  (0,_modules_loggedOutHeader__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  let URL = window.location.href; // sparkFeaturedJob();
+
+  if (URL.includes('checkout')) {
+    window.addEventListener('load', _modules_membershipAsterisk__WEBPACK_IMPORTED_MODULE_4__.controlAsterisk);
+  }
+
+  setTimeout(_modules_featuredJob__WEBPACK_IMPORTED_MODULE_2__.sparkFeaturedJob, 7000);
+}
+
+init();
 }();
 /******/ })()
 ;

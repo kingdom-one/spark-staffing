@@ -83,20 +83,26 @@ get_header()
                                         // Display XProfile
                                         if (bp_is_active('xprofile')) : ?>
                             <div class="profile">
-                                <?
-                                                if (bp_has_profile()) :
-                                                    while (bp_profile_groups()) : bp_the_profile_group();
-                                                        if (bp_profile_group_has_fields()) :
-                                                            do_action('bp_before_profile_field_content');
-                                                ?>
+                                <? if (bp_has_profile()) : ?>
+                                <? while (bp_profile_groups()) : bp_the_profile_group(); ?>
+                                <? if (bp_profile_group_has_fields()) : ?>
+                                <? do_action('bp_before_profile_field_content'); ?>
                                 <section
                                     class="bp-widget bp-profile__section--container <?php bp_the_profile_group_slug(); ?>">
                                     <h2 class="bp-profile__section--header">
-                                        <?php bp_the_profile_group_name(); ?>
+                                        <?php $user = wp_get_current_user(); ?>
+                                        <? if (bp_get_the_profile_group_id() === 2) : ?>
+                                        <? echo bp_get_the_profile_group_name() . ' ' . $user->first_name; ?>
+                                        <? elseif (bp_get_the_profile_group_id() === 5) : echo 'Get connected:'; ?>
+                                        <? else : bp_the_profile_group_name(); ?>
+                                        <? endif; ?>
                                     </h2>
                                     <div class="profile-fields bp-profile__section--content">
                                         <?php while (bp_profile_fields()) : bp_the_profile_field(); ?>
                                         <? if (bp_field_has_data()) : ?>
+                                        <?
+                                                                            // if (in_array('field_type_web', bp_field_css_class())) { echo 'hello'};
+                                                                            ?>
                                         <div <?php bp_field_css_class(); ?>>
                                             <h3 class="profile-fields--label"><?php bp_the_profile_field_name(); ?></h3>
                                             <div class="profile-fields--value"><?php bp_the_profile_field_value(); ?>

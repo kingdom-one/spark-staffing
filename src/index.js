@@ -4,7 +4,16 @@ import { sparkCopyrightInjection } from './modules/copyright';
 import { sparkFeaturedJob } from './modules/featuredJob';
 // const churchProfile = new ChurchProfile();
 import loggedOutHeaderControl from './modules/loggedOutHeader';
-sparkCopyrightInjection();
-loggedOutHeaderControl();
-// sparkFeaturedJob();
-setTimeout(sparkFeaturedJob, 7000);
+import { controlAsterisk } from './modules/membershipAsterisk';
+
+function init() {
+	sparkCopyrightInjection();
+	loggedOutHeaderControl();
+	let URL = window.location.href;
+	// sparkFeaturedJob();
+	if (URL.includes('checkout')) {
+		window.addEventListener('load', controlAsterisk);
+	}
+	setTimeout(sparkFeaturedJob, 7000);
+}
+init();

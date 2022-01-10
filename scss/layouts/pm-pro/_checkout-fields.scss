@@ -72,12 +72,13 @@
 			}
 			.pmpro_checkout {
 				&-field {
+					@include displayFlex(column);
 					&-username {
 						margin-top: 1em;
 					}
 					.pmpro_asterisk {
 						display: inline-block;
-						background-image: url(http://sparkstaffing.local/wp-content/uploads/2021/11/cropped-Icon-Simple.png);
+						background-image: url(https://staging5.sparkstaffing.co/wp-content/uploads/2021/11/cropped-Icon-Simple.png);
 						height: 20px;
 						width: 20px;
 						background-size: cover;

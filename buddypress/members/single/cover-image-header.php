@@ -33,17 +33,14 @@ do_action('bp_before_member_header');
                 if ($memberType != 'church') {
                     bp_displayed_user_fullname();
                 } else bp_member_profile_data('field=Church Name');
-                if (strpos('premium', $memberType) != false) :  ?>
-                <span class="premium">
-                    <a href="/members/type/<?php echo $memberType ?>"><i class="x-icon " data-x-icon-s=""
-                            aria-hidden="true"></i></a>
-                </span>
-                <? endif; ?>
+                ?>
             </h2>
             <div id="item-meta">
                 <span class="subheadline">
                     <?php
-                    bp_member_profile_data('field=Headline');
+                    if ($memberType != 'church') {
+                        bp_member_profile_data('field=Headline');
+                    } else bp_member_profile_data('field=Church Tagline');
                     ?>
                 </span>
                 <span class="location"><em>

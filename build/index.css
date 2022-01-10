@@ -76,6 +76,7 @@ footer.x-colophon.bottom #menu-footer a:hover {
   flex-wrap: wrap;
   position: relative;
   background-color: white;
+  padding: 1em;
 }
 #buddypress #item-header.bp-profile__header #cover-image-container #item-header-avatar {
   margin: 1em;
@@ -108,6 +109,9 @@ footer.x-colophon.bottom #menu-footer a:hover {
   justify-content: flex-start;
   align-items: "";
   flex-wrap: wrap;
+}
+#buddypress #item-header.bp-profile__header #cover-image-container #item-header-content #item-meta .subheadline {
+  margin: 1em 0;
 }
 #buddypress #item-header.bp-profile__header #cover-image-container #item-header-content .location {
   color: #16af82;
@@ -725,12 +729,19 @@ div.job_listings ul.job_listings .job_listing__details--meta li {
 #pmpro_form .pmpro_checkout-fields p {
   margin: 0;
 }
+#pmpro_form .pmpro_checkout-fields .pmpro_checkout-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: "";
+  flex-wrap: wrap;
+}
 #pmpro_form .pmpro_checkout-fields .pmpro_checkout-field-username {
   margin-top: 1em;
 }
 #pmpro_form .pmpro_checkout-fields .pmpro_checkout-field .pmpro_asterisk {
   display: inline-block;
-  background-image: url(http://sparkstaffing.local/wp-content/uploads/2021/11/cropped-Icon-Simple.png);
+  background-image: url(https://staging5.sparkstaffing.co/wp-content/uploads/2021/11/cropped-Icon-Simple.png);
   height: 20px;
   width: 20px;
   background-size: cover;
