@@ -42,29 +42,12 @@ get_header()
                         <? endif; ?>
                         <div id="item-body" class="bp-profile__body">
                             <?php do_action('bp_before_member_body');
-                                if (bp_is_user_activity()) :
-                                    bp_get_template_part('members/single/activity');
-                                elseif (bp_is_user_blogs()) :
-                                    bp_get_template_part('members/single/blogs');
-                                elseif (bp_is_user_friends()) :
-                                    bp_get_template_part('members/single/friends');
-                                elseif (bp_is_user_groups()) :
-                                    bp_get_template_part('members/single/groups');
-                                elseif (bp_is_user_messages()) :
-                                    bp_get_template_part('members/single/messages');
-                                elseif (bp_is_user_notifications()) :
-                                    bp_get_template_part('members/single/notifications');
-                                elseif (bp_is_user_members_invitations()) :
-                                    bp_get_template_part('members/single/invitations');
-                                elseif (bp_is_user_settings()) :
-                                    bp_get_template_part('members/single/settings');
-                                // If nothing sticks, load a generic template
-                                else :
-                                    bp_get_template_part('members/single/plugins');
-                                endif;
-                                do_action('bp_after_member_body');
+                                /** 
+                                 * REMOVED IF/ELSE STATEMENT FROM MEMBERS/SINGLE/HOME.PHP
+                                 * IF THIS BREAKS FUNCTIONALITY, ADD IT BACK IN */
                                 ?>
                             <?php
+                                $memberType = bp_get_member_type(bp_displayed_user_id());
                                 switch (bp_current_action()):
                                         // Edit
                                     case 'edit':
@@ -81,67 +64,27 @@ get_header()
                                         // Compose
                                     case 'public':
                                         // Display XProfile
-                                        if (bp_is_active('xprofile')) : ?>
-                            <div class="profile">
-                                <? if (bp_has_profile()) : ?>
-                                <? while (bp_profile_groups()) : bp_the_profile_group(); ?>
-                                <? if (bp_profile_group_has_fields()) : ?>
-                                <? do_action('bp_before_profile_field_content'); ?>
-                                <section
-                                    class="bp-widget bp-profile__section--container <?php bp_the_profile_group_slug(); ?>">
-                                    <h2 class="bp-profile__section--header">
-                                        <?php $user = wp_get_current_user(); ?>
-                                        <? if (bp_get_the_profile_group_id() === 2) : ?>
-                                        <? echo bp_get_the_profile_group_name() . ' ' . $user->first_name; ?>
-                                        <? elseif (bp_get_the_profile_group_id() === 5) : echo 'Get connected:'; ?>
-                                        <? else : bp_the_profile_group_name(); ?>
-                                        <? endif; ?>
-                                    </h2>
-                                    <div class="profile-fields bp-profile__section--content">
-                                        <?php while (bp_profile_fields()) : bp_the_profile_field(); ?>
-                                        <? if (bp_field_has_data()) : ?>
-                                        <?
-                                                                            // if (in_array('field_type_web', bp_field_css_class())) { echo 'hello'};
-                                                                            ?>
-                                        <div <?php bp_field_css_class(); ?>>
-                                            <h3 class="profile-fields--label"><?php bp_the_profile_field_name(); ?></h3>
-                                            <div class="profile-fields--value"><?php bp_the_profile_field_value(); ?>
-                                            </div>
-                                        </div>
-                                        <?php endif; ?>
-                                        <? do_action('bp_profile_field_item'); ?>
-                                        <? endwhile; ?>
-                                    </div>
-                                </section>
-
-                                <?php
-                                                            do_action('bp_after_profile_field_content');
-                                                        endif;
-                                                    endwhile;
-                                                    do_action('bp_profile_field_buttons');
-                                                endif;
-                                                do_action('bp_after_profile_loop_content');
-
-
+                                        if (bp_is_active('xprofile')) {
+                                            if ($memberType === 'candidate') bp_get_template_part('members/single/profile/candidate-fields-loop');
+                                        } else {
                                             // Display WordPress profile (fallback)
-                                            else :
-                                                bp_get_template_part('members/single/profile/profile-wp');
-                                            endif;
-                                            break;
-                                            // Any other
-                                        default:
-                                            bp_get_template_part('members/single/plugins');
-                                            break;
-                                    endswitch;
-                                    ?>
+                                            bp_get_template_part('members/single/profile/profile-wp');
+                                        }
+                                        break;
+                                        // Any other
+                                    default:
+                                        bp_get_template_part('members/single/plugins');
+                                        break;
+                                endswitch;
+                                ?>
 
-                            </div><!-- #item-body -->
+                        </div><!-- #item-body -->
 
-                            <?php do_action('bp_after_member_home_content'); ?>
-                            <!-- END HOME.PHP -->
-                        </div><!-- #buddypress -->
-                    </div><!-- .entry-content -->
-                </div><!-- .entry-wrap -->
+                        <?php do_action('bp_after_member_home_content'); ?>
+                        <!-- END HOME.PHP -->
+                    </div><!-- #buddypress -->
+                </div><!-- .entry-content -->
+            </div><!-- .entry-wrap -->
         </article>
         <?php
         endwhile;
