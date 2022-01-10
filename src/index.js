@@ -1,8 +1,7 @@
 import '../scss/bp-spark.scss';
-// import ChurchProfile from './modules/churchProfileScripts';
+import socials from './modules/churchProfileScripts';
 import { sparkCopyrightInjection } from './modules/copyright';
 import { sparkFeaturedJob } from './modules/featuredJob';
-// const churchProfile = new ChurchProfile();
 import loggedOutHeaderControl from './modules/loggedOutHeader';
 import { controlAsterisk } from './modules/membershipAsterisk';
 
@@ -14,6 +13,10 @@ function init() {
 	if (URL.includes('checkout')) {
 		window.addEventListener('load', controlAsterisk);
 	}
+	if (URL.includes('profile')) {
+		socials();
+	}
+
 	setTimeout(sparkFeaturedJob, 7000);
 }
 init();

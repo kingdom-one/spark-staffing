@@ -175,6 +175,17 @@ footer.x-colophon.bottom #menu-footer a:hover {
 .bp-profile__section--content .profile-fields--label {
   font-size: 1em;
 }
+.bp-profile__section--content .social__container {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: "";
+  flex-wrap: wrap;
+}
+.bp-profile__section--content .social__container p {
+  margin: 0;
+}
 .bp-profile .profile {
   display: -ms-grid;
   display: grid;

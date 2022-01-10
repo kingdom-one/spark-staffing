@@ -24,6 +24,13 @@
 					font-size: 1em;
 				}
 			}
+			.social__container {
+				padding: 10px;
+				@include displayFlex;
+				p {
+					margin: 0;
+				}
+			}
 		}
 	}
 
