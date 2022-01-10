@@ -16,24 +16,29 @@ if (!is_user_logged_in()) echo '<style>#item-buttons,.x-item-list-tabs-subnav {d
     <? do_action('bp_before_profile_field_content'); ?>
     <section class="bp-widget bp-profile__section--container <?php bp_the_profile_group_slug(); ?>">
         <h2 class="bp-profile__section--header">
-            <?php $user = wp_get_current_user(); ?>
-            <? if (bp_get_the_profile_group_id() === 2) : ?>
-            <? echo bp_get_the_profile_group_name() . ' ' . $user->first_name; ?>
-            <? elseif (bp_get_the_profile_group_id() === 5) : echo 'Get connected:'; ?>
-            <? else : bp_the_profile_group_name(); ?>
-            <? endif; ?>
+            <?php
+                        $user = wp_get_current_user();
+                        if (bp_get_the_profile_group_id() === 2) {
+                            echo bp_get_the_profile_group_name() . ' ' . $user->first_name;
+                        } elseif (bp_get_the_profile_group_id() === 5) {
+                            echo 'Get connected';
+                        } else  bp_the_profile_group_name();
+                        ?>
         </h2>
         <div class="profile-fields bp-profile__section--content">
             <?php while (bp_profile_fields()) : bp_the_profile_field(); ?>
             <? if (bp_field_has_data()) : ?>
-            <?
-                                // if (in_array('field_type_web', bp_field_css_class())) { echo 'hello'};
-                                ?>
+            <? if (bp_get_the_profile_field_type() === 'web') : ?>
+            <div <?php bp_field_css_class('social__container'); ?>>
+                <? bp_the_profile_field_value() ?>
+            </div>
+            <? else : ?>
             <div <?php bp_field_css_class(); ?>>
                 <h3 class="profile-fields--label"><?php bp_the_profile_field_name(); ?></h3>
                 <div class="profile-fields--value"><?php bp_the_profile_field_value(); ?>
                 </div>
             </div>
+            <?php endif; ?>
             <?php endif; ?>
             <? do_action('bp_profile_field_item'); ?>
             <? endwhile; ?>
