@@ -1,7 +1,8 @@
 #buddypress {
 	#item-header.bp-profile__header {
 		#cover-image-container {
-			border: 2px 2px 0 2px solid $color-grey--light;
+			border: 3px solid $color-grey--light;
+			border-bottom: none;
 			border-top-left-radius: $rounded-border;
 			border-top-right-radius: $rounded-border;
 			overflow: hidden;

@@ -1,0 +1,13 @@
+#buddypress.bp-profile {
+	.bp-profile {
+		&__body {
+			margin-top: 1em;
+			.profile {
+				display: grid;
+				grid-template-columns: 0.6fr 0.4fr;
+				justify-content: space-between;
+				gap: 20px;
+			}
+		}
+	}
+}
