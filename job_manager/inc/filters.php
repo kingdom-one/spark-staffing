@@ -2,6 +2,7 @@
 class SparkJobManager {
     function __construct() {
         add_filter('submit_job_form_fields', array($this, 'sparkFormFields'));
+        add_filter('single_job_listing_meta_start', array($this, 'dm_display_wpjm_single_categories'));
     }
     /** Edits Front-End Job Submission Fields on /post-a-job
      * @link [View editable fields here](https://github.com/mikejolley/WP-Job-Manager/blob/master/includes/forms/class-wp-job-manager-form-submit-job.php)
@@ -31,6 +32,19 @@ class SparkJobManager {
         $fields['company']['company_tagline']['priority'] = 7;
 
         return $fields;
+    }
+    /** Display Job Categories on Single Job Posts. */
+    function dm_display_wpjm_single_categories() {
+        $terms = wp_get_post_terms(get_the_ID(), 'job_listing_category');
+        if (!empty($terms) && !is_wp_error($terms)) {
+            if (count($terms) > 1) {
+                echo '<ul class="single-job-listing__meta--categories"> Job Categories: ';
+            } else echo '<ul class="single-job-listing__meta--categories">Job Category: ';
+            foreach ($terms as $term) {
+                echo '<li>' . '<a href="' . esc_url(get_term_link($term)) . '">' . $term->name . '</a></li>';
+            }
+            echo '</ul>';
+        }
     }
 }
 
