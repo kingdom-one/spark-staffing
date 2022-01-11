@@ -659,6 +659,11 @@ div.job_listings ul.job_listings .job_listing.job_position_featured .spark__job-
   -ms-grid-row-align: stretch;
       align-self: stretch;
 }
+#buddypress.bp-profile .bp-profile__body .profile .bp-profile__section--container.social-media {
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+}
 
 #bp-members-directory {
   margin-top: 25vh;
