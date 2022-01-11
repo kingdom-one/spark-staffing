@@ -10,3 +10,12 @@
 	align-items: $cross-axis;
 	flex-wrap: $wrap;
 }
+@mixin cssHover {
+	box-shadow: 4px 4px 6px rgba(black, 0.35);
+	transform: scale(1.003);
+}
+
+@mixin sparkBorder($color: $color-primary) {
+	border: 3px solid $color;
+	border-radius: $rounded-border;
+}

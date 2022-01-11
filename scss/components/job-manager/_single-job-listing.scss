@@ -77,11 +77,25 @@
 		&--listing {
 			margin: 0;
 			order: 2;
-			@include displayFlex(row, space-around, flex-start);
+			@include displayFlex;
 			width: 100%;
+			font-weight: 700;
+			font-style: italic;
+			color: $color-grey--dark;
 			li {
 				display: inline-block;
 				list-style: none;
+				&:not(:last-child) {
+					margin-right: 1em;
+				}
+			}
+		}
+		&--categories {
+			@extend .single-job-listing__meta--listing;
+			@include displayFlex(row);
+			li {
+				margin-left: 1em;
+				font-weight: 400;
 			}
 		}
 	}

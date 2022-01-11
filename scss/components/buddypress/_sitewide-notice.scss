@@ -1,10 +1,9 @@
 #sitewide-notice.admin-bar-off {
 	#message.info.notice {
+		@include sparkBorder;
+		@include displayFlex(column);
 		margin: 0;
 		background-color: $color-primary;
-		border: 2px solid $color-primary;
-		border-radius: $rounded-border;
-		@include displayFlex(column);
 		padding: 1em;
 		strong {
 			text-transform: lowercase;

@@ -235,7 +235,9 @@ function init() {
     (0,_modules_churchProfileScripts__WEBPACK_IMPORTED_MODULE_1__["default"])();
   }
 
-  setTimeout(_modules_featuredJob__WEBPACK_IMPORTED_MODULE_3__.sparkFeaturedJob, 7000);
+  if (URL.includes('jobs')) {
+    setTimeout(_modules_featuredJob__WEBPACK_IMPORTED_MODULE_3__.sparkFeaturedJob, 3000);
+  }
 }
 
 init();

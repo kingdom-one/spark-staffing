@@ -5,7 +5,6 @@ div.job_listings {
 			&.job_position_featured {
 				a.job_listing__container {
 					background-color: $color-primary;
-					// background-image: $linear-gradient--darken;
 				}
 				.job_listing__summary {
 					&--company {

@@ -6,14 +6,13 @@
 			width: 100%;
 			ul {
 				padding: 2em 0;
-				display: flex;
-				justify-content: space-evenly;
+				@include displayFlex(row, space-evenly);
 				margin: 0;
 			}
 		}
 		#subnav {
 			#members-order-select {
-				display: flex;
+				@include displayFlex;
 				label {
 					margin-right: 1em;
 				}

@@ -7,11 +7,9 @@ div.job_listings {
 			&__container {
 				transition: all 0.2s ease;
 				display: flex;
-				border: 2px solid $color-grey--dark;
-				border-radius: $rounded-border;
+				@include sparkBorder($color-grey--dark);
 				&:hover {
-					box-shadow: 4px 4px 6px rgba(black, 0.35);
-					transform: scale(1.003);
+					@include cssHover;
 				}
 			}
 			&__company-logo {
@@ -71,6 +69,18 @@ div.job_listings {
 					}
 				}
 			}
+		}
+	}
+	a.load_more_jobs {
+		margin-top: 1em;
+		@include sparkBorder($color-secondary);
+		background-color: white;
+		transition: all 0.2s ease;
+		&:hover {
+			background-color: $color-secondary;
+			border: 3px solid transparent;
+			color: white;
+			@include cssHover;
 		}
 	}
 }

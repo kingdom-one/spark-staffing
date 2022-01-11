@@ -15,11 +15,10 @@
 
 	.fieldset {
 		font-family: $font-body;
-		font-weight: 700;
 		@include displayFlex(column);
 		&--label {
+			font-weight: 700;
 			font-size: 1.6em;
-			// width: auto;
 		}
 		&--field input {
 			width: 90%;

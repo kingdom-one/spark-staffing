@@ -16,7 +16,8 @@ function init() {
 	if (URL.includes('profile')) {
 		socials();
 	}
-
-	setTimeout(sparkFeaturedJob, 7000);
+	if (URL.includes('jobs')) {
+		setTimeout(sparkFeaturedJob, 3000);
+	}
 }
 init();

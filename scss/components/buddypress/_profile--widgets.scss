@@ -2,13 +2,12 @@
 	// Widgets Display
 	&__section {
 		&--container {
-			border: 3px solid $color-primary;
-			border-radius: 10px;
+			@include sparkBorder;
+			@include displayFlex(column, flex-start);
 			margin-bottom: 1em;
 			padding: 1em;
 			background-color: white;
 			box-shadow: 0 2px 4px rgba($color-grey--light, 0.8);
-			@include displayFlex(column, flex-start);
 			height: min-content;
 		}
 		&--header {
