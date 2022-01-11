@@ -1,5 +1,5 @@
 import '../scss/bp-spark.scss';
-import socials from './modules/churchProfileScripts';
+import socials from './modules/profileScripts';
 import { sparkCopyrightInjection } from './modules/copyright';
 import { sparkFeaturedJob } from './modules/featuredJob';
 import loggedOutHeaderControl from './modules/loggedOutHeader';
