@@ -14,7 +14,7 @@ const socialIcons = [
 	[tiktok, '#000000'],
 	[pinterest, '#BD081C'],
 	[youtube, '#FF0000'],
-	[(vimeo, '#1AB7EA')],
+	[vimeo, '#1AB7EA'],
 ];
 
 export default function socials() {
