@@ -28,9 +28,7 @@ div.job_listings {
 				}
 			}
 			&__summary {
-				display: flex;
-				flex-direction: column;
-				align-items: start;
+				@include displayFlex(column, flex-start, flex-start);
 				flex-grow: 3;
 				&--title {
 					color: black;
@@ -52,8 +50,7 @@ div.job_listings {
 				}
 			}
 			&__details {
-				display: flex;
-				flex-direction: column;
+				@include displayFlex(column);
 				padding: 0 1em;
 				&--location {
 					color: black;

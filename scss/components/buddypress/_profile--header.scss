@@ -14,7 +14,7 @@
 			}
 			#item-header {
 				&__container {
-					@include displayFlex(row, start, center);
+					@include displayFlex(row, flex-start, center);
 					position: relative;
 					background-color: white;
 					padding: 1em;
@@ -34,7 +34,7 @@
 					}
 				}
 				&-content {
-					@include displayFlex(column, center, start);
+					@include displayFlex(column, center, flex-start);
 					.user-nicename.headline {
 						margin: 0;
 						font-size: 3em;
