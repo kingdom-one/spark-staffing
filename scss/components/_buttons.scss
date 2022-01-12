@@ -1,0 +1,17 @@
+input.button,
+input.x-btn,
+input[type='submit'],
+button.button {
+	border: none;
+	padding: 0.813em 1.125em;
+	&:hover,
+	&:focus,
+	&:active {
+		transform: translateY(-4px);
+		box-shadow: 4px 4px 6px rgba(black, 0.35);
+	}
+}
+// input.button:hover,
+// input.x-btn:hover,
+// input[type='submit']:hover {
+// }

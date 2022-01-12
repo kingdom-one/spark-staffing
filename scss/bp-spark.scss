@@ -4,6 +4,8 @@
 
 @import 'base/base';
 
+@import 'components/buttons';
+
 @import 'components/buddypress/profile--header';
 @import 'components/buddypress/profile--nav';
 @import 'components/buddypress/profile--widgets';
@@ -17,6 +19,7 @@
 @import 'components/job-manager/single-job-listing';
 @import 'components/job-manager/single-job-listing--sidebar';
 @import 'components/job-manager/featured-jobs';
+@import 'components/job-manager/choose-package';
 
 @import 'layouts/buddypress/bp-profile';
 @import 'layouts/buddypress/members-directory';
