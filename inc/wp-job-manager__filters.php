@@ -1,4 +1,7 @@
-<?
+<?php
+
+add_theme_support('job-manager-templates');
+
 class SparkJobManager {
     function __construct() {
         add_filter('submit_job_form_fields', array($this, 'sparkFormFields'));

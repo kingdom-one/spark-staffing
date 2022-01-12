@@ -28,9 +28,11 @@ function child_enqueue_styles() {
 }
 add_action('wp_enqueue_scripts', 'child_enqueue_styles');
 
+include_once get_theme_file_path('/inc/wp-job-manager__filters.php');
+include_once get_theme_file_path('/inc/paid-memberships-pro__register-helper.php');
+include_once get_theme_file_path('/inc/buddypress__filters.php');
 
-// BuddyPress Customizations
-// =============================================================================
+
 /**
  * Remove BuddyPress styles from X theme queue
  */
@@ -39,11 +41,13 @@ function remove_x_buddypress() {
 }
 add_action('after_setup_theme', 'remove_x_buddypress');
 
+
+
+
 // WP Job Manager Customizations
 // =============================================================================
-add_theme_support('job-manager-templates');
-/** Calls WP Job Manager Hooks & Filters */
-include_once get_theme_file_path('/job_manager/inc/filters.php');
+
+
 
 // Hide WP Admin Bar
 // if (!current_user_can('manage_options')) {
