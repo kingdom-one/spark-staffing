@@ -1,0 +1,40 @@
+#job_package_selection {
+	@include sparkBorder($color-primary);
+	border-width: 5px;
+	overflow: hidden;
+	.job_listing_packages_title {
+		@include displayFlex(row-reverse, space-between, center);
+		background-color: $color-grey--dark;
+		padding: 1em;
+		h2 {
+			color: white;
+		}
+	}
+	.job_listing_packages {
+		background-color: white;
+		border: none;
+		.job_packages {
+			.job-package {
+				@include displayFlex;
+				transition: all 0.2s ease;
+				cursor: pointer;
+
+				&:nth-child(even) {
+					background-color: $color-grey--light;
+				}
+				& > *:not(:last-child) {
+					margin-right: 1em;
+				}
+				&:hover,
+				&:focus,
+				&:active {
+					@include cssHover;
+					background-color: rgba($color-ice-blue, 0.5);
+				}
+				.woocommerce-Price-amount {
+					margin-right: 5px;
+				}
+			}
+		}
+	}
+}

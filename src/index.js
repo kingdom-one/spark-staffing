@@ -3,22 +3,26 @@ import { socials } from './modules/profileScripts';
 import { sparkCopyrightInjection } from './modules/copyright';
 import { sparkFeaturedJob } from './modules/featuredJob';
 import { loggedOutHeaderControl, preventPageReload } from './modules/headers';
-import { controlAsterisk } from './modules/membershipAsterisk';
+import { packageSelector } from './modules/postAJob';
+import { replacedRequiredTag, controlAsterisk } from './modules/requiredFields';
 
 function init() {
 	sparkCopyrightInjection();
 	loggedOutHeaderControl();
 	preventPageReload();
+	replacedRequiredTag();
 	let URL = window.location.href;
-	// sparkFeaturedJob();
 	if (URL.includes('checkout')) {
-		window.addEventListener('load', controlAsterisk);
+		controlAsterisk();
 	}
 	if (URL.includes('profile')) {
 		socials();
 	}
 	if (URL.includes('jobs')) {
 		setTimeout(sparkFeaturedJob, 3000);
+	}
+	if (URL.includes('post-a-job')) {
+		packageSelector();
 	}
 }
 init();
