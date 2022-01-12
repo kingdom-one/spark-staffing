@@ -1,4 +1,4 @@
-export default function loggedOutHeaderControl() {
+export function loggedOutHeaderControl() {
 	const parentEl = document.querySelector('.btn--register');
 	if (!parentEl) return;
 	parentEl.addEventListener('mouseover', (el) => {
@@ -7,5 +7,12 @@ export default function loggedOutHeaderControl() {
 			.querySelector('.x-anchor-text-primary')
 			.classList.toggle('hoverText');
 		parentEl.querySelector('.x-anchor').classList.toggle('hoverTextBackground');
+	});
+}
+export function preventPageReload() {
+	const topLinks = document.querySelectorAll('.prevent-default');
+	topLinks.forEach((el) => {
+		const link = el.querySelector('a');
+		link.addEventListener('click', (e) => e.preventDefault());
 	});
 }

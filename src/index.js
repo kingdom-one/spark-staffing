@@ -2,12 +2,13 @@ import '../scss/bp-spark.scss';
 import { socials } from './modules/profileScripts';
 import { sparkCopyrightInjection } from './modules/copyright';
 import { sparkFeaturedJob } from './modules/featuredJob';
-import loggedOutHeaderControl from './modules/loggedOutHeader';
+import { loggedOutHeaderControl, preventPageReload } from './modules/headers';
 import { controlAsterisk } from './modules/membershipAsterisk';
 
 function init() {
 	sparkCopyrightInjection();
 	loggedOutHeaderControl();
+	preventPageReload();
 	let URL = window.location.href;
 	// sparkFeaturedJob();
 	if (URL.includes('checkout')) {
