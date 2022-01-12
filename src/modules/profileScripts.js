@@ -31,6 +31,9 @@ export function socials() {
 		socialMediaSection.querySelector(
 			'.bp-profile__section--content',
 		).style.display = 'flex';
+		socialMediaSection.querySelector(
+			'.bp-profile__section--content',
+		).style.flexWrap = 'wrap';
 	});
 }
 
