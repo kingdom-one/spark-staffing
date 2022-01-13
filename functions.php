@@ -34,6 +34,22 @@ include_once get_theme_file_path('/inc/wp-job-manager__filters.php');
 include_once get_theme_file_path('/inc/paid-memberships-pro__register-helper.php');
 include_once get_theme_file_path('/inc/buddypress__filters.php');
 
+// Customize Login Screen
+
+add_action('login_enqueue_scripts', 'ourLoginCSS');
+function ourLoginCSS() {
+    wp_enqueue_script('loginfonts', 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap', array());
+    wp_enqueue_style('pro-child', get_theme_file_uri() . ('/build/index.css'), array());
+};
+
+add_filter('login_headertitle', 'theLoginTitle');
+function theLoginTitle() {
+    return get_bloginfo('name');
+}
+add_filter('login_headerurl', 'ourHeaderUrl');
+function ourHeaderUrl() {
+    return esc_url(site_url('/'));
+};
 
 /**
  * Remove BuddyPress styles from X theme queue

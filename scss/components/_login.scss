@@ -1,0 +1,59 @@
+body.login {
+	background-color: $color-grey--light;
+	padding: 8vh 0;
+	@include displayFlex(row, center);
+	height: 100vh;
+	font-family: $font-body;
+	font-weight: 400;
+	font-size: 62.5%;
+	& > * {
+		font-size: 1.6rem;
+	}
+}
+#login {
+	margin: 0;
+	padding: 0;
+	width: max-content;
+	@include displayFlex(column, flex-start, stretch);
+	h1 {
+		a {
+			background-image: url(http://sparkstaffing.local/wp-content/uploads/2021/11/Horizontal-Logo-Full@2x.png);
+			height: 10rem;
+			width: auto;
+			background-size: contain;
+			text-align: center;
+		}
+	}
+	p.message {
+		border-left: 4px solid $color-ice-blue;
+		font-size: 1.4rem;
+	}
+	#loginform {
+		@include sparkBorder($color-primary);
+		width: 100%;
+		p {
+			font-size: 1.6rem;
+			&.submit {
+				#wp-submit {
+					@include sparkBorder;
+					background-color: $color-primary;
+					transition: all 0.2s ease;
+					&:hover {
+						background-color: white;
+						color: $color-primary;
+					}
+				}
+			}
+			&.forgetmenot {
+				label {
+					font-weight: 400;
+				}
+			}
+		}
+		label {
+			font-family: $font-body;
+			font-weight: 700;
+			font-size: 1.4rem;
+		}
+	}
+}
