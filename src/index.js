@@ -13,7 +13,7 @@ function init() {
 	replacedRequiredTag();
 	let URL = window.location.href;
 	if (URL.includes('checkout')) {
-		controlAsterisk();
+		setTimeout(controlAsterisk, 500);
 	}
 	if (URL.includes('profile')) {
 		socials();
