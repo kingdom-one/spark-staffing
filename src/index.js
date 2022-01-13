@@ -1,17 +1,15 @@
 import '../scss/bp-spark.scss';
 import { socials } from './modules/profileScripts';
-import { sparkCopyrightInjection } from './modules/copyright';
+import Footer from './modules/footerScripts';
+import Header from './modules/headers';
 import { sparkFeaturedJob } from './modules/featuredJob';
-import { loggedOutHeaderControl, preventPageReload } from './modules/headers';
 import { packageSelector } from './modules/postAJob';
 import { replacedRequiredTag, controlAsterisk } from './modules/requiredFields';
-
 function init() {
-	sparkCopyrightInjection();
-	loggedOutHeaderControl();
-	preventPageReload();
-	replacedRequiredTag();
+	const footer = new Footer();
+	const header = new Header();
 	let URL = window.location.href;
+	replacedRequiredTag();
 	if (URL.includes('checkout')) {
 		setTimeout(controlAsterisk, 500);
 	}
