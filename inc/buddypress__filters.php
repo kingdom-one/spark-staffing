@@ -3,15 +3,11 @@
 /**
  * Declare Custom Index types
  */
-
 add_filter('bp_template_hierarchy_members_single_item', function ($templates) {
     $member_types = bp_get_member_type(bp_displayed_user_id(), false);
     if ($member_types) {
         foreach ($member_types as $member_type) {
             array_unshift($templates, "members/single/index-{$member_type}.php");
-            echo "<script>
-    console.log(" . $member_type . ")
-</script>";
         };
     }
     // else {
@@ -19,10 +15,10 @@ add_filter('bp_template_hierarchy_members_single_item', function ($templates) {
     // }
     return $templates;
 });
+
 /**
  * Limit how many memebers should be shown per page
  */
-
 add_filter('bp_after_has_members_parse_args', function ($args) {
     $args['per_page'] = 50;
     return $args;
@@ -38,7 +34,7 @@ if (!defined('BP_AVATAR_THUMB_HEIGHT')) define('BP_AVATAR_THUMB_HEIGHT', 250);
 if (!defined('BP_AVATAR_FULL_WIDTH')) define('BP_AVATAR_FULL_WIDTH', 500);
 if (!defined('BP_AVATAR_FULL_HEIGHT')) define('BP_AVATAR_FULL_HEIGHT', 500);
 
-/** Exclude Profile Fields on View Profile from [BuddyDev Blog](https://buddydev.com/hiding-buddypress-profile-field-groups-conditionally/) */
+/** Exclude Profile Fields on View Profile (from the [BuddyDev Blog](https://buddydev.com/hiding-buddypress-profile-field-groups-conditionally/)) */
 function spark_exclude_profile_field_groups_on_view_profile($args) {
     /*
 // allow site admin and the user himself to view the profile

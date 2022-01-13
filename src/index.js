@@ -17,7 +17,7 @@ function init() {
 		socials();
 	}
 	if (URL.includes('jobs')) {
-		setTimeout(sparkFeaturedJob, 3000);
+		setTimeout(sparkFeaturedJob, 2500);
 	}
 	if (URL.includes('post-a-job')) {
 		packageSelector();
