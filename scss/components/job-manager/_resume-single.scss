@@ -1,0 +1,25 @@
+article.resume {
+	padding-top: 15vh;
+	header.entry-header {
+		display: none;
+	}
+	.single-resume-content {
+		@include displayFlex(column, center, stretch);
+	}
+	.resume__header {
+		@include sparkBorder($color-primary);
+		margin: 0;
+		padding: 2em;
+		height: 20vh;
+		@include displayFlex;
+		.candidate {
+			&--photo {
+				width: 4em;
+				height: 4em;
+			}
+			&__info {
+				@include displayFlex(column);
+			}
+		}
+	}
+}
