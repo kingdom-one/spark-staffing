@@ -1,15 +1,17 @@
 #job-manager__job-dashboard {
+	@include sparkBorder($color-purple);
 	.headline {
 		color: $color-primary;
 	}
 }
 .job-manager {
 	&__job-table {
-		@include sparkBorder($color-grey--dark);
-		border-collapse: separate;
 		&--headers {
-			background-color: $color-grey--dark;
+			background-color: $color-purple;
 			color: white;
+			th {
+				padding: 1em 0;
+			}
 		}
 		&--row {
 			transition: all 0.2s ease;

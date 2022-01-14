@@ -1,6 +1,7 @@
 .job-manager-form {
 	background-color: $color-grey--light;
 	padding: 1em;
+	@include sparkBorder($color-primary);
 	&--headings {
 		font-family: $font-headings;
 		font-size: 3em;
@@ -82,6 +83,16 @@
 			}
 			&_logo {
 				@extend .fieldset__company;
+			}
+		}
+		&__type {
+			&--term-multiselect {
+				& > .fieldset--field {
+					min-width: 100%;
+				}
+			}
+			&--wp-editor {
+				@extend .fieldset__type--term-multiselect;
 			}
 		}
 	}
