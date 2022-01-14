@@ -19,3 +19,8 @@
 	border: 3px solid $color;
 	border-radius: $rounded-border;
 }
+
+@mixin fontHeadings {
+	font-family: $font-headings;
+	text-transform: lowercase;
+}

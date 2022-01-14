@@ -1,24 +1,105 @@
-article.resume {
-	padding-top: 15vh;
-	header.entry-header {
-		display: none;
+.single-resume-content {
+	.wp-job-manager-bookmarks-form {
+		@include sparkBorder($color-ice-blue);
+		box-shadow: 2px 4px 4px rgba(black, 0.35);
 	}
-	.single-resume-content {
-		@include displayFlex(column, center, stretch);
-	}
-	.resume__header {
-		@include sparkBorder($color-primary);
-		margin: 0;
-		padding: 2em;
-		height: 20vh;
-		@include displayFlex;
-		.candidate {
-			&--photo {
-				width: 4em;
-				height: 4em;
+	.resume {
+		&__header {
+			@include displayFlex(row, flex-start, center);
+			@include sparkBorder($color-secondary);
+			margin: 0;
+			padding: 1em;
+			.candidate {
+				&--photo {
+					border-radius: 100%;
+					width: 150px;
+					height: 150px;
+					margin: 0;
+					.candidate_photo {
+						width: auto;
+						height: auto;
+						border-radius: 100%;
+						position: relative;
+						margin: 0;
+						top: unset;
+						left: unset;
+						float: unset;
+						vertical-align: unset;
+					}
+				}
+				&__info {
+					@include displayFlex(column);
+					margin-left: 1em;
+					p {
+						margin: 0;
+						font-size: 1.4em;
+					}
+					&--job-title {
+						font-weight: 700;
+					}
+					&--location {
+						font-style: italic;
+						color: white;
+					}
+				}
+				&__links {
+					@include displayFlex(column);
+					margin-left: auto;
+					&--link {
+						color: white;
+						margin: 0;
+						float: unset;
+						&:not(:last-child) {
+							margin-right: 10px;
+						}
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+				}
 			}
-			&__info {
-				@include displayFlex(column);
+		}
+		&__description {
+			padding: 2em 0;
+		}
+		&__section {
+			@include sparkBorder($color-primary);
+			background-color: white;
+			padding: 1em;
+			&--header {
+				@include fontHeadings;
+				margin: 0;
+			}
+			dl {
+				border-top: 2px solid $color-ice-blue;
+				dt {
+					border-left: 3px dashed $color-ice-blue;
+					h3 {
+						font-size: 2em;
+						&:before {
+							background-color: white;
+							border: 3px solid $color-secondary;
+							border-radius: 50%;
+						}
+					}
+				}
+			}
+		}
+		&_contact {
+			@include displayFlex(column);
+			overflow: visible;
+			input {
+				@extend .button;
+				@include sparkBorder(transparent);
+				transition: all 0.2s ease;
+				border-radius: 10px;
+				background-color: $color-primary;
+				color: white;
+				&:hover {
+					@include sparkBorder($color-primary);
+					background-color: white;
+					color: $color-primary;
+				}
 			}
 		}
 	}
