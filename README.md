@@ -31,7 +31,7 @@ Included are child overrides for Buddypress and WP Job Manager.
 - Excludes Single Profile Fields
 
 
-## Job Manager
+## WP Job Manager
 - The following files were edited to have classes more-closely conform to BEM:
   - `job-submit.php`
   - `job-preview.php`
@@ -39,32 +39,41 @@ Included are child overrides for Buddypress and WP Job Manager.
   - `content-single-job_listing-meta.php`
   - `content-job_listing.php`
   - `content-single-job_listing-company.php` 
-- Added **Bookmarks,** **WC Paid Listings** and **Job Alerts** Add-ons
+
 
 ### Filters File
 - edits Job Submission fields on front-end job submission page (/post-a-job).
 
 ## Paid Memberships Pro
+- Almost all pages are edited within **Cornerstone.**
+  - Modifications are located at *Section -> Row -> Column (Element CSS)*
+
+
 ### Filters File
 - modifies account registration builder
   
 
 ---
 
-# Page Customizations
+# Plugin-Specific Notes
 
 ## Paid Memberships Pro
-- Almost all pages are edited within **Cornerstone.**
-  - Modifications are located at *Section -> Row -> Column (Element CSS)*
-- Plugin is modified via `pmpro-customizations.php`, which is a self-authored plugin file.
-  - [This is the appropriate way of declaring the plugin-specific `functions.php` file](https://www.paidmembershipspro.com/create-a-plugin-for-pmpro-customizations/)
 
-### /Checkout Page
+### /checkout Page
 - Moved Checkout Page modifications to SCSS
-- Added JS in Cornerstone to set required label in the appropriate place on `#member_type_div`
 
-### Plugins Folder
-- modifies account registration builder
+===
+
+## WP Job Manager 
+
+### Additional Plugins
+- Bookmarks
+- WC Paid Listings
+- Job Alerts
+- Applications
+- Resume Manager
+
+---
 
 # Javascript Files
 `index.js` is bundled with @wordpress/scripts module
