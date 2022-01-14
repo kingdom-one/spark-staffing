@@ -13,7 +13,7 @@ class SparkJobManager {
     function sparkFormFields($fields) {
         // Job Fields
         $fields['job']['job_description']['label'] = 'Job Description';
-        $fields['job']['application']['description'] = 'Where applicants can apply or send their resumes.';
+        // $fields['job']['application']['description'] = 'Where applicants can apply or send their resumes.';
         $fields['job']['job--salary'] = array(
             'label'       => __('Salary Range', 'job_manager'),
             'type'        => 'text',

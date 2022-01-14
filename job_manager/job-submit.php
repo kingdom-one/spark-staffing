@@ -41,7 +41,7 @@ if (isset($resume_edit) && $resume_edit) {
     <?php foreach ($job_fields as $key => $field) : ?>
     <fieldset class="fieldset__<?php echo esc_attr($key); ?> fieldset__type--<?php echo esc_attr($field['type']); ?>">
         <label class="fieldset--label" for="<?php echo esc_attr($key); ?>">
-            <?php echo wp_kses_post($field['label']) . wp_kses_post(apply_filters('submit_job_form_required_label', $field['required'] ? ' <img class="required--icon" src=' . wp_get_attachment_url(13) . '>' : '')); ?>
+            <?php echo wp_kses_post($field['label']) . wp_kses_post(apply_filters('submit_job_form_required_label', $field['required'] ? ' <img class="requiredAsterisk" src=' . wp_get_attachment_url(13) . '>' : '')); ?>
         </label>
         <div class="fieldset--field <?php echo $field['required'] ? 'required-field' : ''; ?>">
             <?php get_job_manager_template('form-fields/' . $field['type'] . '-field.php', ['key' => $key, 'field' => $field]); ?>
@@ -54,7 +54,7 @@ if (isset($resume_edit) && $resume_edit) {
     <!-- Company Information Fields -->
     <?php if ($company_fields) : ?>
     <h2 class="job-manager-form--headings">
-        <?php esc_html_e('Company Details', 'wp-job-manager'); ?>
+        <?php esc_html_e('Organization Details', 'wp-job-manager'); ?>
     </h2>
     <?php do_action('submit_job_form_company_fields_start'); ?>
     <?php foreach ($company_fields as $key => $field) : ?>
