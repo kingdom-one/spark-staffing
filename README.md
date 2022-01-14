@@ -16,6 +16,7 @@ Included are child overrides for Buddypress and WP Job Manager.
   - This will be modified to add a sidebar with new jobs.
   - This contains re-worked classes to more-closely conform to BEM system.
 
+---
 
 ## BuddyPress
 - Public Profiles are custom `index-{$slug}.php` files
@@ -30,6 +31,7 @@ Included are child overrides for Buddypress and WP Job Manager.
 - Excludes Profile Field Groups from Public view
 - Excludes Single Profile Fields
 
+---
 
 ## WP Job Manager
 - The following files were edited to have classes more-closely conform to BEM:
@@ -44,6 +46,8 @@ Included are child overrides for Buddypress and WP Job Manager.
 ### Filters File
 - edits Job Submission fields on front-end job submission page (/post-a-job).
 
+---
+
 ## Paid Memberships Pro
 - Almost all pages are edited within **Cornerstone.**
   - Modifications are located at *Section -> Row -> Column (Element CSS)*
@@ -52,8 +56,7 @@ Included are child overrides for Buddypress and WP Job Manager.
 ### Filters File
 - modifies account registration builder
   
-
----
+===
 
 # Plugin-Specific Notes
 
@@ -62,7 +65,7 @@ Included are child overrides for Buddypress and WP Job Manager.
 ### /checkout Page
 - Moved Checkout Page modifications to SCSS
 
-===
+---
 
 ## WP Job Manager 
 
@@ -73,7 +76,7 @@ Included are child overrides for Buddypress and WP Job Manager.
 - Applications
 - Resume Manager
 
----
+===
 
 # Javascript Files
 `index.js` is bundled with @wordpress/scripts module
@@ -88,7 +91,7 @@ Included are child overrides for Buddypress and WP Job Manager.
   - `profileScripts.js` controls social Icons swap/svg generation
   - `postAJob.js` allows click on whole `li` to select appropriate radio box.
 
----
+===
 
 ## Plugins to Extend Feature Set?
 - BuddyDev
