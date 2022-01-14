@@ -77,17 +77,7 @@
 						margin-top: 1em;
 					}
 					.pmpro_asterisk {
-						display: inline-block;
-						background-image: url(https://staging5.sparkstaffing.co/wp-content/uploads/2021/11/cropped-Icon-Simple.png);
-						height: 20px;
-						width: 20px;
-						background-size: cover;
-						background-position: center;
-						order: 2;
-						abbr {
-							display: none;
-							// color: $color-ice-blue;
-						}
+						@extend .requiredAsterisk;
 					}
 					p {
 						line-height: 1.4;
