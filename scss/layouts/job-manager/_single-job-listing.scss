@@ -1,0 +1,74 @@
+#single-job-listing {
+	display: grid;
+	grid-template-columns: 60% minmax(200px, 40%);
+	gap: 1.5em;
+	margin: 25vh auto 65px auto;
+	width: 88%;
+	justify-items: start;
+	align-items: flex-start;
+
+	.single-job-listing {
+		& > * {
+			@include displayFlex(row, center);
+		}
+		&--title {
+			grid-column: 1 / -1;
+		}
+		.job-description {
+			display: block;
+			grid-row: 2/3;
+			grid-column: 1 / 2;
+		}
+		.job_application {
+			grid-row: 3/4;
+			@include displayFlex(column);
+			.application_button {
+				width: max-content;
+			}
+		}
+		&__meta {
+			// @include displayFlex(row, flex-start, flex-start);
+			height: 1200px;
+			position: relative;
+			grid-column: 2 / 3;
+			top: 10%;
+			&--container {
+				position: sticky;
+				@include displayFlex(row, space-evenly, center);
+
+				& form {
+					margin: 0;
+					@include displayFlex(column, center, center);
+				}
+
+				.company {
+					order: -1;
+					@include displayFlex(row, flex-start, center);
+
+					&__info {
+						@include displayFlex(column);
+					}
+				}
+			}
+			&--listing {
+				margin: 0;
+				order: 2;
+				@include displayFlex;
+				width: 100%;
+				li {
+					display: inline-block;
+					&:not(:last-child) {
+						margin-right: 1em;
+					}
+				}
+			}
+			&--categories {
+				@extend .single-job-listing__meta--listing;
+				@include displayFlex(row);
+				li {
+					margin-left: 1em;
+				}
+			}
+		}
+	}
+}
