@@ -1,78 +1,55 @@
 #job-manager__job-dashboard {
-	@include sparkBorder($color-purple);
-	.headline {
-		color: $color-primary;
+	.job-manager {
+		&__job {
+			&--job_title {
+				font-size: 1.2em;
+				font-weight: 700;
+				color: $color-purple;
+				& > a {
+					color: black;
+				}
+				small {
+					font-family: $font-headings;
+					color: $color-grey--dark;
+					text-transform: lowercase;
+				}
+			}
+			&--filled {
+				color: $color-purple;
+			}
+		}
+		&__job-dashboard-actions {
+			font-size: 0.8rem;
+			display: block;
+			margin: 0;
+			font-weight: 400;
+			li {
+				display: inline;
+				color: $color-grey--dark;
+
+				&:not(:last-child) {
+					margin-right: 1em;
+				}
+				a {
+					&:hover {
+						color: rgba($color-grey--dark, 0.6);
+					}
+				}
+			}
+			&--delete {
+				color: red;
+			}
+			&--continue {
+				font-weight: 700;
+			}
+		}
 	}
 }
-.job-manager {
-	&__job-table {
-		&--headers {
-			background-color: $color-purple;
-			color: white;
-			th {
-				padding: 1em 0;
-			}
-		}
-		&--row {
-			transition: all 0.2s ease;
-			&:nth-child(even) {
-				background-color: $color-grey--light;
-			}
-			&:hover {
-				background-color: rgba($color-ice-blue, 0.2);
-			}
-			a {
-				color: $color-secondary;
-				&:hover {
-					color: rgba($color-secondary, 0.7);
-				}
-			}
-		}
-	}
-	&__job {
-		&--job_title {
-			font-size: 1.2em;
-			font-weight: 400;
-			color: $color-purple;
-			small {
-				font-family: $font-headings;
-				color: $color-grey--dark;
-				text-transform: lowercase;
-			}
-		}
-		&--filled {
-			color: $color-purple;
-		}
-	}
-	&__job-dashboard-actions {
-		list-style: none;
-		font-size: 0.8rem;
-		display: block;
-		margin: 0;
-		font-weight: 700;
-		li {
-			display: inline;
-
-			&:not(:last-child) {
-				margin-right: 1em;
-			}
-			a {
-				color: $color-grey--dark;
-				&:hover {
-					color: rgba($color-grey--dark, 0.6);
-				}
-			}
-		}
-		&--continue {
-			color: $color-secondary !important;
-		}
-	}
-	&-message {
-		border-top-width: 2px;
-		border-top-color: $color-purple !important;
-		color: $color-grey--dark;
-		&::before {
-			color: $color-purple !important;
-		}
+.job-manager-message {
+	border-top-width: 2px;
+	border-top-color: $color-purple !important;
+	color: $color-grey--dark;
+	&::before {
+		color: $color-purple !important;
 	}
 }

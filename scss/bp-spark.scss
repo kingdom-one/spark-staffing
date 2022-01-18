@@ -15,6 +15,7 @@
 @import 'components/buddypress/directory-search';
 @import 'components/buddypress/sitewide-notice';
 
+@import 'components/job-manager/tables';
 @import 'components/job-manager/submit-job-form';
 @import 'components/job-manager/job-preview';
 @import 'components/job-manager/job-dashboard';
@@ -22,7 +23,7 @@
 @import 'components/job-manager/single-job-listing--sidebar';
 @import 'components/job-manager/featured-jobs';
 @import 'components/job-manager/choose-package';
-@import 'components/job-manager/resume-manager';
+// @import 'components/job-manager/resume-manager';
 @import 'components/job-manager/resume-single';
 
 @import 'layouts/buddypress/bp-profile';

@@ -1,0 +1,34 @@
+#pmpro-dashboard-table table {
+	@include sparkBorder($color-purple);
+	border-collapse: unset;
+	thead {
+		background-color: $color-purple;
+		color: white;
+		th {
+			padding: 1em 0.5em;
+		}
+	}
+	tbody {
+		tr {
+			transition: all 0.2s ease;
+			&:nth-child(even) {
+				background-color: $color-grey--light;
+			}
+			&:hover {
+				@include cssHover;
+				background-color: rgba($color-ice-blue, 0.2);
+			}
+			a {
+				color: $color-secondary;
+				&:hover {
+					color: rgba($color-secondary, 0.7);
+				}
+			}
+		}
+	}
+	tfoot {
+		tr td {
+			padding: 1em;
+		}
+	}
+}
