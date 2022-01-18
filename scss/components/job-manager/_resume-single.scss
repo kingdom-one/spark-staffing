@@ -30,9 +30,14 @@
 				&__info {
 					@include displayFlex(column);
 					margin-left: 1em;
-					p {
+					font-size: 1.4em;
+					& > * {
 						margin: 0;
-						font-size: 1.4em;
+					}
+					&--name {
+						@include fontHeadings;
+						font-size: 2em;
+						color: $color-secondary;
 					}
 					&--job-title {
 						font-weight: 700;

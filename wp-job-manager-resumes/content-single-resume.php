@@ -13,7 +13,7 @@
  */
 
 if (!defined('ABSPATH')) {
-	exit;
+    exit;
 }
 
 if (resume_manager_user_can_view_resume($post->ID)) : ?>
@@ -24,10 +24,9 @@ if (resume_manager_user_can_view_resume($post->ID)) : ?>
             <?php the_candidate_photo('full'); ?>
         </figure>
         <div class="candidate__info">
-            <p class="candidate__info--name">
-                <? $post = get_post();
-					echo $post->username; ?>
-            </p>
+            <h2 class="candidate__info--name">
+                <? echo bp_core_get_userlink(get_the_author_meta('ID')) ?>
+            </h2>
             <p class="candidate__info--job-title"><?php the_candidate_title(); ?></p>
             <p class="candidate__info--location"><?php the_candidate_location(); ?></p>
         </div>
@@ -68,8 +67,8 @@ if (resume_manager_user_can_view_resume($post->ID)) : ?>
                 </dd>
 
                 <?php
-						endforeach;
-						?>
+                        endforeach;
+                        ?>
             </dl>
         </div>
     </section>
