@@ -42,9 +42,26 @@
 					&--job-title {
 						font-weight: 700;
 					}
-					&--location {
-						font-style: italic;
-						color: white;
+					&--meta {
+						@include displayFlex(row, space-evenly);
+						color: $color-grey--dark;
+						font-size: 1rem;
+						& > * {
+							margin: 0;
+						}
+						.space {
+							margin: 0 4px;
+						}
+						a {
+							color: $color-grey--dark;
+							font-style: italic;
+							transition: all 0.2s ease;
+							border-bottom: 3px solid transparent;
+							&:hover {
+								color: $color-secondary;
+								border-bottom: 3px solid $color-secondary;
+							}
+						}
 					}
 				}
 				&__links {

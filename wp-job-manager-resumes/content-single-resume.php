@@ -28,7 +28,16 @@ if (resume_manager_user_can_view_resume($post->ID)) : ?>
                 <? echo bp_core_get_userlink(get_the_author_meta('ID')) ?>
             </h2>
             <p class="candidate__info--job-title"><?php the_candidate_title(); ?></p>
-            <p class="candidate__info--location"><?php the_candidate_location(); ?></p>
+            <div class="candidate__info--meta">
+                <p class="candidate__info--location"><?php the_candidate_location(); ?>
+                </p>
+                <span class="space"> • </span>
+                <p class="candidate__info--profile">
+                    <a href="<? echo bp_core_get_userlink(get_the_author_meta('ID'), false, true) ?>">
+                        View Profile
+                    </a>
+                </p>
+            </div>
         </div>
         <?php the_resume_links(); ?>
         <?php the_candidate_video(); ?>
