@@ -28,7 +28,8 @@
 			font-size: 1em;
 		}
 		&__job,
-		&__application {
+		&__application,
+		&__job_category {
 			@extend .fieldset;
 			color: black;
 			label.fieldset--label {
@@ -88,7 +89,7 @@
 		&__type {
 			&--term-multiselect {
 				& > .fieldset--field {
-					min-width: 100%;
+					min-width: 90%;
 				}
 			}
 			&--wp-editor {

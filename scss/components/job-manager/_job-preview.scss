@@ -1,65 +1,80 @@
 .job-listing-preview {
 	&__container {
 		@include displayFlex(row, space-between, center);
+		@include sparkBorder($color-grey--dark);
 		width: 100%;
-		padding: 1em;
-		background-color: white;
-		@include sparkBorder($color-ice-blue);
+		padding: 2em;
+		background-color: $color-grey--dark;
 		margin-bottom: 2em;
 		h1 {
 			margin: 0;
-			color: $color-ice-blue;
+			color: white;
 			font-family: $font-headings;
 			text-transform: lowercase;
 		}
 		&--button-container {
-			@include displayFlex(row, '', center);
+			@include displayFlex(row, flex-start, center);
 			height: auto;
 		}
 	}
 	&__single-job-listing {
 		&--container {
-			@include sparkBorder;
-			@include displayFlex(column, flex-start, stretch);
-			background-color: white;
-			padding: 1em;
-			.single-job-listing {
-				border-top: 3px dashed $color-grey--light;
-				padding-top: 1em;
-				@include displayFlex(column);
-
-				&__meta {
-					&--listing {
-						@include displayFlex(row, space-evenly);
-						width: auto;
-					}
-					&--categories {
-						margin-left: 1em;
-					}
+			.job-listing-preview__single-job-listing--content {
+				@include sparkBorder;
+				@include displayFlex(column, flex-start);
+				h2 {
+					margin: 1em 0;
+					font-size: 2em;
+					align-self: center;
 				}
-				.company {
-					@include displayFlex(row, flex-start, center);
+				.single-job-listing {
+					@include displayFlex(column, flex-start);
+					margin: 0;
+					border: none;
 					width: 100%;
-					figure {
-						max-width: 150px;
-						margin: 0;
+					border-top: 3px dashed $color-grey--light;
+					padding-top: 2em;
+					& > * {
+						margin: 0 1em;
 					}
-					&__info {
-						margin-left: 1em;
-						&--name {
+					&__meta {
+						&--listing {
+							order: 3;
+							@include displayFlex(row, space-between);
+							background-color: $color-grey--light;
+							align-self: flex-end;
 							margin: 0;
-							font-size: 1em;
+							padding: 1em;
+							font-style: italic;
+							& > * {
+								margin: 0;
+							}
+						}
+						&--categories {
+							@include displayFlex(column, flex-start, flex-end);
+							width: unset;
+							padding: 0;
 						}
 					}
+					.company {
+						order: 1;
+						align-self: flex-end;
+						figure {
+							max-width: 150px;
+							margin: 0;
+						}
+						&__info {
+							margin-left: 1em;
+							&--name {
+								margin: 0;
+								font-size: 1em;
+							}
+						}
+					}
+					.job-description {
+						order: 2;
+					}
 				}
-			}
-		}
-		&--content {
-			@include displayFlex(column, flex-start, stretch);
-			h2 {
-				margin: 0;
-				font-size: 2em;
-				align-self: center;
 			}
 		}
 	}
