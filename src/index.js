@@ -5,6 +5,7 @@ import Header from './modules/headers';
 import { sparkFeaturedJob } from './modules/featuredJob';
 import { packageSelector } from './modules/postAJob';
 import { replacedRequiredTag, controlAsterisk } from './modules/requiredFields';
+import highlightApplications from './modules/jobApplications';
 function init() {
 	const footer = new Footer();
 	const header = new Header();
@@ -21,6 +22,9 @@ function init() {
 	}
 	if (URL.includes('post-a-job')) {
 		packageSelector();
+	}
+	if (URL.includes('job-dashboard')) {
+		highlightApplications();
 	}
 }
 init();
