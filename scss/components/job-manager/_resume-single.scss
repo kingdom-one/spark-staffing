@@ -15,16 +15,19 @@
 					width: 150px;
 					height: 150px;
 					margin: 0;
+					overflow: hidden;
 					.candidate_photo {
 						width: auto;
 						height: auto;
-						border-radius: 100%;
+						// border-radius: 100%;
 						position: relative;
 						margin: 0;
 						top: unset;
 						left: unset;
 						float: unset;
 						vertical-align: unset;
+						object-fit: cover;
+						object-position: center;
 					}
 				}
 				&__info {
@@ -97,7 +100,7 @@
 				dt {
 					border-left: 3px dashed $color-ice-blue;
 					h3 {
-						font-size: 2em;
+						font-size: 1.4em;
 						&:before {
 							background-color: white;
 							border: 3px solid $color-secondary;
