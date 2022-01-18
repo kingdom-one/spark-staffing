@@ -97,7 +97,7 @@
 			}
 			dl {
 				border-top: 2px solid $color-ice-blue;
-				dt {
+				& > * {
 					border-left: 3px dashed $color-ice-blue;
 					h3 {
 						font-size: 1.4em;
