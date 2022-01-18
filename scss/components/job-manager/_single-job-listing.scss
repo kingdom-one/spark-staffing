@@ -1,12 +1,13 @@
-#single-job-listing {
+.single-job-listing {
 	background-color: white;
 	border: 3px solid $color-primary;
 	border-radius: $rounded-border;
-}
-.single-job-listing {
+	&__header {
+		border-bottom: 3px dashed $color-grey--light;
+		padding: 1em;
+	}
 	&--title {
-		border-bottom: 2px dashed $color-grey--light;
-		text-align: center;
+		font-size: 3vw;
 	}
 
 	.job-description {

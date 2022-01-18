@@ -1,73 +1,78 @@
-#single-job-listing {
+.single-job-listing {
 	display: grid;
-	grid-template-columns: 60% minmax(200px, 40%);
-	gap: 1.5em;
+	grid-template-columns: minmax(300px, 60vw) minmax(300px, 40vw);
+	grid-template-rows: repeat(3, min-content);
+	// gap: 1.5em;
 	margin: 25vh auto 65px auto;
 	width: 88%;
 	justify-items: start;
 	align-items: flex-start;
-
-	.single-job-listing {
-		& > * {
-			@include displayFlex(row, center);
+	& > * {
+		@include displayFlex(row, center, center);
+	}
+	&__header {
+		grid-column: span 2;
+		width: 100%;
+	}
+	&--title {
+		justify-self: center;
+	}
+	.job-description {
+		grid-column: 1 / 2;
+		max-height: min-content;
+		max-width: max-content;
+	}
+	.job_application {
+		grid-row: 3/4;
+		@include displayFlex(column);
+		.application_button {
+			width: max-content;
 		}
-		&--title {
-			grid-column: 1 / -1;
-		}
-		.job-description {
-			display: block;
-			grid-row: 2/3;
-			grid-column: 1 / 2;
-		}
-		.job_application {
-			grid-row: 3/4;
-			@include displayFlex(column);
-			.application_button {
-				width: max-content;
-			}
-		}
-		&__meta {
-			// @include displayFlex(row, flex-start, flex-start);
-			height: 1200px;
-			position: relative;
-			grid-column: 2 / 3;
+	}
+	&__meta {
+		position: relative;
+		grid-column: 2 / 3;
+		grid-row: 2 / 3;
+		height: 100%;
+		@include displayFlex(column);
+		// max-width: minmax(min-content, 500px);
+		&--container {
 			top: 10%;
-			&--container {
-				position: sticky;
-				@include displayFlex(row, space-evenly, center);
+			position: sticky;
+			z-index: 1000;
+			@include displayFlex(column, flex-start, stretch);
 
-				& form {
-					margin: 0;
-					@include displayFlex(column, center, center);
-				}
-
-				.company {
-					order: -1;
-					@include displayFlex(row, flex-start, center);
-
-					&__info {
-						@include displayFlex(column);
-					}
-				}
-			}
-			&--listing {
+			& form {
 				margin: 0;
-				order: 2;
-				@include displayFlex;
-				width: 100%;
-				li {
-					display: inline-block;
-					&:not(:last-child) {
-						margin-right: 1em;
-					}
+				@include displayFlex(column, center, center);
+			}
+
+			.company {
+				order: -1;
+				@include displayFlex(row, flex-start, center);
+
+				&__info {
+					@include displayFlex(column);
 				}
 			}
-			&--categories {
-				@extend .single-job-listing__meta--listing;
-				@include displayFlex(row);
-				li {
-					margin-left: 1em;
+		}
+		&--listing {
+			margin: 0;
+			order: 2;
+			@include displayFlex;
+			width: 100%;
+			li {
+				display: inline-block;
+				&:not(:last-child) {
+					margin-right: 1em;
 				}
+			}
+		}
+		&--categories {
+			@extend .single-job-listing__meta--listing;
+			@include displayFlex(row);
+			li {
+				margin-left: 1em;
 			}
 		}
 	}

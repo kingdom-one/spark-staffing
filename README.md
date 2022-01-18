@@ -51,6 +51,8 @@ Included are child overrides for Buddypress and WP Job Manager.
 ## Paid Memberships Pro
 - Almost all pages are edited within **Cornerstone.**
   - Modifications are located at *Section -> Row -> Column (Element CSS)*
+- Pages that display Tables (resume dashboard, job dashboard and application dashboard) are now styled with `scss/components/_tables.scss` with overrides where necessary
+  - Cornerstone Sections containing shortcodes are given the `#pmpro-dashboard-table` ID to power this function.
 
 
 ### Filters File
