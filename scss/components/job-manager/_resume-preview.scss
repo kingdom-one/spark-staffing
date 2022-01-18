@@ -1,0 +1,18 @@
+#resume_preview {
+	@include sparkBorder($color-grey--dark);
+	.job_listing_preview_title {
+		@include displayFlex(row-reverse, flex-start, center);
+		background-color: $color-grey--dark;
+		padding: 1em;
+		h2 {
+			color: white;
+			margin-right: auto;
+		}
+	}
+	.resume_preview {
+		border: none;
+		.single-resume-content aside:first-child {
+			margin-bottom: 1em;
+		}
+	}
+}

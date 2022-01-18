@@ -13,7 +13,7 @@
  */
 
 if (!defined('ABSPATH')) {
-	exit;
+    exit;
 }
 
 wp_enqueue_script('wp-resume-manager-resume-submission');
@@ -36,7 +36,7 @@ wp_enqueue_script('wp-resume-manager-resume-submission');
     <?php foreach ($resume_fields as $key => $field) : ?>
     <fieldset class="fieldset-<?php esc_attr_e($key); ?>">
         <label
-            for="<?php esc_attr_e($key); ?>"><?php echo $field['label'] . apply_filters('submit_resume_form_required_label', $field['required'] ? '' : ' <small>' . __('(Recommended)', 'wp-job-manager-resumes') . '</small>', $field); ?></label>
+            for="<?php esc_attr_e($key); ?>"><?php echo $field['label'] . apply_filters('submit_resume_form_required_label', $field['required'] ? ' <img class="requiredAsterisk" src=' . wp_get_attachment_url(13) . '>' : ' <small>' . __('(Recommended)', 'wp-job-manager-resumes') . '</small>', $field); ?></label>
         <div class="field">
             <?php $class->get_field_template($key, $field); ?>
         </div>

@@ -3,13 +3,13 @@ article.resume {
 	header.entry-header {
 		display: none;
 	}
-	.single-resume-content {
-		@include displayFlex(column, space-evenly, stretch);
-		& > * {
-			margin-bottom: 2em;
-		}
-		.wp-job-manager-bookmarks-form {
-			align-self: flex-start;
-		}
+}
+.single-resume-content {
+	@include displayFlex(column, space-evenly, stretch);
+	& > * {
+		margin-bottom: 2em;
+	}
+	.wp-job-manager-bookmarks-form {
+		align-self: flex-start;
 	}
 }

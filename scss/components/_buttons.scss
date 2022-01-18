@@ -1,7 +1,8 @@
 input.button,
 input.x-btn,
 input[type='submit'],
-button.button {
+button.button,
+a.button {
 	border: none;
 	padding: 0.813em 1.125em;
 	&:hover,
