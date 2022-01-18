@@ -4,10 +4,12 @@
 
 @import 'base/base';
 
+// Global Styles
 @import 'components/requiredAsterisk';
 @import 'components/buttons';
 @import 'components/login';
 
+// BuddyPress Styles
 @import 'components/buddypress/profile--header';
 @import 'components/buddypress/profile--nav';
 @import 'components/buddypress/profile--widgets';
@@ -15,20 +17,41 @@
 @import 'components/buddypress/directory-search';
 @import 'components/buddypress/sitewide-notice';
 
+// Job Manager Styles
+/* Table Styles: Overriden by Dashboard--{slug}*/
 @import 'components/job-manager/tables';
-@import 'components/job-manager/submit-job-form';
+
+// Dashboards (Tables)
+@import 'components/job-manager/dashboard--jobs';
+@import 'components/job-manager/dashboard--resumes';
+
+// Loops
+@import 'components/job-manager/featured-jobs';
+@import 'components/job-manager/job-applications';
+
+// Jobs
 @import 'components/job-manager/job-preview';
-@import 'components/job-manager/job-dashboard';
 @import 'components/job-manager/single-job-listing';
 @import 'components/job-manager/single-job-listing--sidebar';
-@import 'components/job-manager/featured-jobs';
+@import 'components/job-manager/submit-job-form';
 @import 'components/job-manager/choose-package';
-@import 'components/job-manager/resume-single';
-@import 'components/job-manager/resume-preview';
 
+// Resumes
+@import 'components/job-manager/resume--single';
+@import 'components/job-manager/resume--preview';
+
+// BuddyPress
 @import 'layouts/buddypress/bp-profile';
 @import 'layouts/buddypress/members-directory';
+
+// Job Manager
+
+// Loops
 @import 'layouts/job-manager/jobs-directory';
+
+// Singles
 @import 'layouts/job-manager/single-job-listing';
 @import 'layouts/job-manager/single-resume';
+
+// Paid Membership Pro
 @import 'layouts/pm-pro/checkout-fields';
