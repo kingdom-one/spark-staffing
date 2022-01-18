@@ -13,9 +13,9 @@
 	.job_listing_packages {
 		background-color: white;
 		border: none;
-		.job_packages {
+		ul.job_packages {
 			.job-package {
-				@include displayFlex;
+				@include displayFlex(row, flex-start, center);
 				transition: all 0.2s ease;
 				cursor: pointer;
 
@@ -33,6 +33,51 @@
 				}
 				.woocommerce-Price-amount {
 					margin-right: 5px;
+				}
+				&-featured {
+					label {
+						@include fontHeadings;
+						color: $color-secondary;
+					}
+				}
+			}
+		}
+		ul.user-job_packages {
+			list-style: none outside;
+			margin: 0;
+			padding: 0;
+			& > * {
+				padding: 1em;
+			}
+			.package-section {
+				font-weight: 700;
+				margin: 0;
+				// padding: 1em;
+			}
+			.user-job-package {
+				// padding: 1em;
+				@include displayFlex(row, flex-start, center);
+				transition: all 0.2s ease;
+				cursor: pointer;
+
+				&:nth-child(even) {
+					background-color: $color-grey--light;
+				}
+				& > *:not(:last-child) {
+					margin-right: 1em;
+				}
+				&:hover,
+				&:focus,
+				&:active {
+					@include cssHover;
+					background-color: rgba($color-ice-blue, 0.5);
+				}
+				&-featured {
+					@include displayFlex(row, flex-start, center);
+					label {
+						@include fontHeadings;
+						color: $color-secondary;
+					}
 				}
 			}
 		}
