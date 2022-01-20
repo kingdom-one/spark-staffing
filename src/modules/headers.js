@@ -2,6 +2,7 @@ export default class Header {
 	constructor() {
 		this.loggedOutHeaderControl();
 		this.preventPageReload();
+		this.toggleCart();
 	}
 	loggedOutHeaderControl() {
 		const parentEl = document.querySelector('.btn--register');
@@ -21,6 +22,22 @@ export default class Header {
 		topLinks.forEach((el) => {
 			const link = el.querySelector('a');
 			link.addEventListener('click', (e) => e.preventDefault());
+		});
+	}
+	toggleCart() {
+		jQuery(function ($) {
+			if (
+				$('.widget_shopping_cart_content').children(
+					'p.woocommerce-mini-cart__empty-message',
+				)
+			) {
+				$('#cartToggle').css('display', 'none');
+			}
+			$('.add_to_cart_button').on('click', function () {
+				if ($('#cartToggle').css('display') == 'none') {
+					$('#cartToggle').css('display', 'inline-flex');
+				}
+			});
 		});
 	}
 }
