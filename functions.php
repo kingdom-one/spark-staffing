@@ -34,6 +34,11 @@ include_once get_theme_file_path('/inc/wp-job-manager__filters.php');
 include_once get_theme_file_path('/inc/paid-memberships-pro__register-helper.php');
 include_once get_theme_file_path('/inc/buddypress__filters.php');
 
+function accessRestricted() {
+    echo '<div class="access-restricted">You must have a premium membership to view this content.<span class="access-restricted--links"><a href="/product-category/memberships" class="upsell">Get yours now!</a><a class="dismissThis">Dismiss this notice.</a></span></div>';
+}
+
+
 // Customize Login Screen
 
 add_action('login_enqueue_scripts', 'ourLoginCSS');

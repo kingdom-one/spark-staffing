@@ -7,12 +7,14 @@ import { packageSelector } from './modules/postAJob';
 import { replacedRequiredTag, controlAsterisk } from './modules/requiredFields';
 import highlightApplications from './modules/jobApplications';
 import { ProfileScripts } from './modules/profileScripts';
+import dismissals from './modules/dismissThis';
 function init() {
 	const footer = new Footer();
 	const header = new Header();
-	let URL = window.location.href;
 	const profileScipts = new ProfileScripts();
+	let URL = window.location.href;
 	replacedRequiredTag();
+	dismissals();
 	if (URL.includes('checkout')) setTimeout(controlAsterisk, 500);
 	if (URL.includes('profile')) profileScipts.socials();
 	if (URL.includes('profile') && URL.includes('shop'))

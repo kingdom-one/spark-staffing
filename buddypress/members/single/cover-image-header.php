@@ -47,15 +47,20 @@ do_action('bp_before_member_header');
                         <? bp_member_profile_data('field=Location'); ?>
                     </em>
                 </span>
-                <?php
-                // do_action('bp_profile_header_meta');
-                ?>
+                <?php if (!bp_is_user_profile() || !pmpro_hasMembershipLevel(array('3', '4'))) : ?>
+                <? accessRestricted(); ?>
+                <? else :  ?>
+                <?php if (bp_get_member_profile_data('field=Open to new opportunities?') == 'Yes') : ?>
+                <span>Open to Opportunities!</span>
+                <? endif; ?>
+                <?php if (bp_get_member_profile_data('field=Open to Relocating?') == 'Yes') : ?>
+                <span>Open to Relocating!</span>
+                <?php endif; ?>
+
+                <?php endif; ?>
+
+
             </div><!-- #item-meta -->
-            <div id=" item-buttons">
-                <?php
-                // do_action('bp_member_header_actions'); // Fires in the member header actions section.
-                ?>
-            </div> <!-- #item-buttons -->
         </div><!-- #item-header-content -->
     </div>
 
