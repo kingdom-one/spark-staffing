@@ -5,7 +5,10 @@ export default function dismissals() {
 	});
 	function dismissThis(e) {
 		e.target.closest('.access-restricted').style.opacity = 0;
-		e.target.closest('.access-restricted').style.position = absolute;
 		e.target.closest('.access-restricted').style.bottom = 0;
+		setTimeout(
+			() => (e.target.closest('.access-restricted').style.display = 'none'),
+			100,
+		);
 	}
 }

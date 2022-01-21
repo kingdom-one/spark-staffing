@@ -7,18 +7,20 @@
 	margin: 5px;
 	color: white;
 	display: block;
-	@include float(2s, 5);
+	@include float(2s, 3);
 	@include cssHover;
 	transition: all 0.2s ease;
 	&--links {
 		@include displayFlex;
 		font-size: 0.8em;
 		font-style: italic;
-
 		a {
 			color: $color-grey--dark;
 			font-weight: 700;
 			margin-right: 1em;
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 	}
 }

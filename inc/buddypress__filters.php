@@ -56,14 +56,10 @@ add_filter('bp_before_has_profile_parse_args', 'spark_exclude_profile_field_grou
  */
 function skip_church_xprofile_fields($args) {
     // hide account type
-    if (!is_admin()) {
-        $args['exclude_fields'] = array(63);
-        return $args;
-    }
     // display if editing profile
     if (bp_is_user_profile_edit() || is_admin()) return $args;
     if (bp_is_user_profile()) {
-        $args['exclude_fields'] = array(181);
+        $args['exclude_fields'] = array(63, 181);
         return $args;
     }
 }

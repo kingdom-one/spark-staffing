@@ -41,3 +41,5 @@ export const socialIcons = [
 	},
 ];
 export const SITE_URL = `https://staging5.sparkstaffing.co`;
+
+export const ACCESS_RESTRICTED = `<div class="access-restricted">You must have a premium membership to view this content.<span class="access-restricted--links"><a href="/product-category/membership" class="upsell">Get yours now!</a><a class="dismissThis">Dismiss this notice.</a></span></div>`;

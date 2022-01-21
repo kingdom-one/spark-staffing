@@ -1,0 +1,6 @@
+.premium-access {
+	@include sparkBorder($color-ice-blue);
+	@include displayFlex(column);
+	background-color: white;
+	padding: 1em;
+}

@@ -1,4 +1,4 @@
-import { socialIcons } from './abstracts.js';
+import { socialIcons, ACCESS_RESTRICTED } from './abstracts.js';
 
 export class ProfileScripts {
 	constructor() {
@@ -57,3 +57,12 @@ export class ProfileScripts {
 		svg.style.fill = `${socialIcons[icon].brand}`;
 	}
 }
+// function getFields(ids) {
+// 	ids.forEach((id) => {
+// 		const field = document.querySelector(`.field_${id}`);
+// 		console.log(field);
+// 		field.querySelector('.profile-fields--value').innerHTML = ACCESS_RESTRICTED;
+// 	});
+// }
+// const fields = [232, 243];
+// getFields(fields);

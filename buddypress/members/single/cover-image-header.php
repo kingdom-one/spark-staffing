@@ -47,19 +47,20 @@ do_action('bp_before_member_header');
                         <? bp_member_profile_data('field=Location'); ?>
                     </em>
                 </span>
-                <?php if (!bp_is_user_profile() || !pmpro_hasMembershipLevel(array('3', '4'))) : ?>
-                <? accessRestricted(); ?>
-                <? else :  ?>
-                <?php if (bp_get_member_profile_data('field=Open to new opportunities?') == 'Yes') : ?>
-                <span>Open to Opportunities!</span>
-                <? endif; ?>
-                <?php if (bp_get_member_profile_data('field=Open to Relocating?') == 'Yes') : ?>
-                <span>Open to Relocating!</span>
+                <?php if (
+                    $memberType == 'candidate' && bp_is_user_profile() || pmpro_hasMembershipLevel(array('3', '4'))
+                ) : ?>
+                <div class="premium-access">
+                    <?php if (bp_get_member_profile_data('field=Open to new opportunities?') == 'Yes') : ?>
+                    <span>Open to Opportunities!</span>
+                    <? endif; ?>
+                    <?php if (bp_get_member_profile_data('field=Open to Relocating?') == 'Yes') : ?>
+                    <span>Open to Relocating!</span>
+                    <?php endif; ?>
+                </div>
+                <? elseif ($memberType == 'church') : return;
+                else : accessRestricted(); ?>
                 <?php endif; ?>
-
-                <?php endif; ?>
-
-
             </div><!-- #item-meta -->
         </div><!-- #item-header-content -->
     </div>
