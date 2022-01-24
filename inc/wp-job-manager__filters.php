@@ -6,6 +6,7 @@ class SparkJobManager {
     function __construct() {
         add_filter('submit_job_form_fields', array($this, 'sparkFormFields'));
         add_filter('single_job_listing_meta_start', array($this, 'dm_display_wpjm_single_categories'));
+        add_action('single_job_listing_meta_end', array($this, 'display_job_salary_data'));
     }
     /** Edits Front-End Job Submission Fields on /post-a-job
      * @link [View editable fields here](https://github.com/mikejolley/WP-Job-Manager/blob/master/includes/forms/class-wp-job-manager-form-submit-job.php)
@@ -48,6 +49,28 @@ class SparkJobManager {
             }
             echo '</ul>';
         }
+    }
+    function display_job_salary_data() {
+        global $post;
+        $salary = get_post_meta($post->ID, '_job--salary', true);
+        if ($salary) {
+            echo '<div class="salary">Salary Range:';
+            if (bp_is_user_profile() || pmpro_hasMembershipLevel(array('3', '4'))) {
+                echo '<div class="premium-access">' . esc_html($salary) . '</div></div>';
+            } else {
+                accessRestricted();
+                echo '</div>';
+            }
+        }
+    }
+    function admin_add_salary_field($fields) {
+        $fields['_job--salary'] = array(
+            'label'       => __('Salary ($)', 'job_manager'),
+            'type'        => 'text',
+            'placeholder' => 'e.g. $20,000 to $50,000',
+            'description' => ''
+        );
+        return $fields;
     }
 }
 

@@ -59,6 +59,32 @@
 						margin-right: 1em;
 					}
 				}
+				.salary {
+					order: 4;
+					@include displayFlex;
+					.access-restricted {
+						display: inline-block;
+						border: none;
+						background-color: transparent;
+						color: black;
+						margin: 0;
+						animation: none;
+						box-shadow: unset;
+						font-size: 16px;
+						padding: 0;
+						&--links a {
+							color: $color-secondary;
+						}
+					}
+					.premium-access {
+						background-color: transparent;
+						display: inline-block;
+						padding: unset;
+						border: none;
+						color: $color-ice-blue;
+						margin-left: 10px;
+					}
+				}
 			}
 			&--categories {
 				@extend .single-job-listing__meta--listing;

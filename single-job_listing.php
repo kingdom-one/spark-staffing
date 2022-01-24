@@ -4,34 +4,44 @@
 <div class="x-main full <?php //x_main_content_class(); 
                         ?>" role="main">
     <?php while (have_posts()) : the_post(); ?>
-    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-        <? global $post; ?>
-        <div class="single-job-listing" id="single-job-listing">
-            <div class="single-job-listing__header">
-                <h1 class="single-job-listing--title">
-                    <? wpjm_the_job_title() ?>
-                </h1>
-            </div>
-            <div class="job-description">
-                <?php wpjm_the_job_description(); ?>
-            </div>
-            <div class="single-job-listing__meta">
-                <div class="single-job-listing__meta--container">
-                    <?php if (get_option('job_manager_hide_expired_content', 1) && 'expired' === $post->post_status) : ?>
-                    <div class=" job-manager-info">
-                        <?php _e('This listing has expired.', 'wp-job-manager'); ?>
-                    </div>
-                    <?php else : ?>
-                    <?php do_action('single_job_listing_start'); ?>
+        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+            <? global $post; ?>
+            <div class="single-job-listing" id="single-job-listing">
+                <div class="single-job-listing__header">
+                    <h1 class="single-job-listing--title">
+                        <? wpjm_the_job_title() ?>
+                    </h1>
                 </div>
-            </div>
-            <?php
+                <div class="job-description">
+                    <?php wpjm_the_job_description(); ?>
+                </div>
+                <div class="single-job-listing__meta">
+                    <div class="single-job-listing__meta--container">
+                        <?php if (get_option('job_manager_hide_expired_content', 1) && 'expired' === $post->post_status) : ?>
+                            <div class=" job-manager-info">
+                                <?php _e('This listing has expired.', 'wp-job-manager'); ?>
+                            </div>
+                        <?php else : ?>
+                            <?php do_action('single_job_listing_start');
+                            // function display_job_salary_data() {
+                            //     global $post;
+                            //     $salary = get_post_meta($post->ID, '_job_salary', true);
+
+                            //     if ($salary) {
+                            //         echo '<li>' . __('Salary:') . ' $' . esc_html($salary) . '</li>';
+                            //     }
+                            // }
+                            // display_job_salary_data(); 
+                            ?>
+                    </div>
+                </div>
+                <?php
                             if (candidates_can_apply()) get_job_manager_template('job-application.php');
                             do_action('single_job_listing_end'); ?>
             <?php endif; ?>
 
-        </div>
-    </article>
+            </div>
+        </article>
     <?php endwhile; ?>
 </div>
 <!-- <?php //get_sidebar(); 
