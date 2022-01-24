@@ -5,9 +5,9 @@ export class ProfileScripts {
 		this.nav = document.querySelector(
 			'nav.bp-profile__subnav.item-list-tabs.no-ajax',
 		);
-		this.socialContainer = document.querySelectorAll('.social__container'); // the div
-		this.socialMediaSection = document.querySelector('.social-media'); // the Parent
-		// Step 2: Store HTML, then Erase
+		this.socialContainer = document.querySelectorAll('.social__container');
+		this.socialMediaSection = document.querySelector('.social-media');
+		this.restricted = document.querySelectorAll('.restricted');
 	}
 	/** Swap URLs for branded Icons */
 	socials() {
@@ -56,13 +56,12 @@ export class ProfileScripts {
 		const svg = el.querySelector('svg');
 		svg.style.fill = `${socialIcons[icon].brand}`;
 	}
+	restrictAccess() {
+		this.restricted.forEach((el) => {
+			if (el.classList.contains('church-info')) {
+				const e = el.querySelector('.profile-fields');
+				e.innerHTML = ACCESS_RESTRICTED;
+			}
+		});
+	}
 }
-// function getFields(ids) {
-// 	ids.forEach((id) => {
-// 		const field = document.querySelector(`.field_${id}`);
-// 		console.log(field);
-// 		field.querySelector('.profile-fields--value').innerHTML = ACCESS_RESTRICTED;
-// 	});
-// }
-// const fields = [232, 243];
-// getFields(fields);

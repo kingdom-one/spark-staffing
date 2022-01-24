@@ -16,7 +16,10 @@ function init() {
 	replacedRequiredTag();
 	dismissals();
 	if (URL.includes('checkout')) setTimeout(controlAsterisk, 500);
-	if (URL.includes('profile')) profileScipts.socials();
+	if (URL.includes('profile')) {
+		profileScipts.socials();
+		profileScipts.restrictAccess();
+	}
 	if (URL.includes('profile') && URL.includes('shop'))
 		profileScipts.hideWooNav();
 	if (URL.includes('jobs')) setTimeout(sparkFeaturedJob, 2500);
