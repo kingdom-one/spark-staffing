@@ -25,19 +25,20 @@ export default class Header {
 		});
 	}
 	toggleCart() {
-		jQuery(function ($) {
-			if (
-				$('.widget_shopping_cart_content').children(
-					'p.woocommerce-mini-cart__empty-message',
-				)
-			) {
-				$('#cartToggle').css('display', 'none');
-			}
-			$('.add_to_cart_button').on('click', function () {
-				if ($('#cartToggle').css('display') == 'none') {
-					$('#cartToggle').css('display', 'inline-flex');
-				}
-			});
+		const cart = document.querySelector('.widget_shopping_cart_content');
+		const cartToggle = document.getElementById('cartToggle');
+		const addToCart = document.querySelector('.add_to_cart_button');
+		console.log(cart);
+		console.log(cart.children.length);
+		for (let i = 0; i < cart.children.length; i++) {
+			console.log(cart.children[i].tagName);
+		}
+		if (cart.children.length === 0) {
+			cartToggle.style.display = 'none';
+		}
+		addToCart.addEventListener('click', () => {
+			if (!cartToggle.style.display === 'none') return;
+			cartToggle.style.display = 'inline-flex';
 		});
 	}
 }
