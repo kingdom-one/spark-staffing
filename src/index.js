@@ -2,7 +2,7 @@ import '../scss/bp-spark.scss';
 
 import Footer from './modules/footerScripts';
 import Header from './modules/headers';
-import { sparkFeaturedJob } from './modules/featuredJob';
+import { sparkFeaturedJob } from './modules/jobsLoop';
 import { packageSelector } from './modules/postAJob';
 import { replacedRequiredTag, controlAsterisk } from './modules/requiredFields';
 import highlightApplications from './modules/jobApplications';

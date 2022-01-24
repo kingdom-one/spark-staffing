@@ -6,7 +6,7 @@
 
 // Global Styles
 @import 'components/requiredAsterisk';
-@import 'components/buttons';
+@import 'components/input-fields';
 @import 'components/login';
 @import 'components/access--restricted';
 @import 'components/access--premium';
@@ -28,7 +28,7 @@
 @import 'components/job-manager/dashboard--resumes';
 
 // Loops
-@import 'components/job-manager/featured-jobs';
+@import 'components/job-manager/loop--jobs';
 @import 'components/job-manager/job-applications';
 @import 'components/job-manager/job-applications--applied';
 
