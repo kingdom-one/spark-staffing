@@ -2,7 +2,7 @@ export default class Header {
 	constructor() {
 		this.loggedOutHeaderControl();
 		this.preventPageReload();
-		this.toggleCart();
+		// this.toggleCart();
 	}
 	loggedOutHeaderControl() {
 		const parentEl = document.querySelector('.btn--register');
