@@ -14,7 +14,8 @@ if (!is_user_logged_in()) echo '<style>#item-buttons,.x-item-list-tabs-subnav {d
     <? while (bp_profile_groups()) : bp_the_profile_group(); ?>
     <? if (bp_profile_group_has_fields()) : ?>
     <? do_action('bp_before_profile_field_content'); ?>
-    <section class="bp-widget bp-profile__section--container <?php bp_the_profile_group_slug(); ?>">
+    <section class="bp-widget bp-profile__section--container <?php echo (!bp_is_my_profile() && !pmpro_hasMembershipLevel(array('3', '4'))) ? 'restricted ' : ' ';
+                                                                            bp_the_profile_group_slug(); ?>">
         <h2 class="bp-profile__section--header">
             <?php
                         $user = wp_get_current_user();

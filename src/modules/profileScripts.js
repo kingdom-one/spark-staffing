@@ -62,6 +62,10 @@ export class ProfileScripts {
 				const e = el.querySelector('.profile-fields');
 				e.innerHTML = ACCESS_RESTRICTED;
 			}
+			if (el.classList.contains('next-level-info')) {
+				const e = el.querySelector('.profile-fields');
+				e.innerHTML = ACCESS_RESTRICTED;
+			}
 		});
 	}
 }
