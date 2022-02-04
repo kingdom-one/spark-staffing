@@ -4,6 +4,7 @@
 
 @import 'base/base';
 
+///////////////////////
 // Global Styles
 @import 'components/requiredAsterisk';
 @import 'components/input-fields';
@@ -11,6 +12,7 @@
 @import 'components/access--restricted';
 @import 'components/access--premium';
 
+///////////////////////
 // BuddyPress Styles
 @import 'components/buddypress/profile--header';
 @import 'components/buddypress/profile--nav';
@@ -19,6 +21,7 @@
 @import 'components/buddypress/directory-search';
 @import 'components/buddypress/sitewide-notice';
 
+///////////////////////
 // Job Manager Styles
 /* Table Styles: Overriden by Dashboard--{slug}*/
 @import 'components/job-manager/tables';
@@ -43,12 +46,13 @@
 @import 'components/job-manager/resume--single';
 @import 'components/job-manager/resume--preview';
 
+///////////////////////
 // BuddyPress
 @import 'layouts/buddypress/bp-profile';
 @import 'layouts/buddypress/members-directory';
 
+///////////////////////
 // Job Manager
-
 // Loops
 @import 'layouts/job-manager/jobs-directory';
 
@@ -56,5 +60,6 @@
 @import 'layouts/job-manager/single-job-listing';
 @import 'layouts/job-manager/single-resume';
 
+///////////////////////
 // Paid Membership Pro
 @import 'layouts/pm-pro/checkout-fields';

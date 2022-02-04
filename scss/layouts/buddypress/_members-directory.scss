@@ -1,12 +1,41 @@
-#bp-members-directory {
-	margin-top: 25vh;
+#buddypress {
+	#members-dir-search {
+		float: unset;
+		margin: 15vh 0 0 0;
+		@include sparkBorder;
+		background-color: white;
+		padding: 1rem;
+		#search-members-form {
+			label {
+				&::before {
+					content: 'Enter search term:';
+					margin-right: 1rem;
+					color: $color-grey--dark;
+				}
+			}
+			input {
+				@include sparkBorder($color-grey--light);
+
+				&[type='submit'] {
+					@include sparkBorder($color-secondary);
+					border-radius: 100em;
+					padding: 0.5rem;
+					background-color: white;
+					&:hover {
+						background-color: $color-secondary;
+						color: white;
+					}
+				}
+			}
+		}
+	}
 	#members-directory-form {
 		// grid-column: 1 / -1;
 		.item-list-tabs {
 			width: 100%;
 			ul {
 				padding: 2em 0;
-				@include displayFlex(row, space-evenly);
+				@include displayFlex;
 				margin: 0;
 			}
 		}
@@ -19,6 +48,54 @@
 			}
 			ul {
 				padding: 0;
+			}
+		}
+		#members-dir-list {
+			#members-list {
+				.member-item {
+					@include sparkBorder;
+					@include displayFlex(row, space-between);
+					background-color: white;
+					padding: 1rem;
+					transition: $transition--standard;
+					&:not(:last-child) {
+						margin-bottom: 2rem;
+					}
+					&:hover {
+						@include cssHover;
+					}
+					.x-list-item {
+						&-header {
+							@include displayFlex(row, flex-start, center);
+							.item-avatar {
+								border-radius: 100%;
+								overflow: hidden;
+								width: 150px;
+								height: 150px;
+								margin-right: 1rem;
+								& img {
+									object-fit: contain;
+									float: unset;
+									margin: unset;
+								}
+							}
+							&-info {
+								p {
+									@include displayFlex(column);
+									:not(span) {
+										@include fontHeadings;
+										font-size: 2rem;
+									}
+								}
+							}
+						}
+						&-meta {
+							position: relative;
+							top: unset;
+							right: unset;
+						}
+					}
+				}
 			}
 		}
 	}
