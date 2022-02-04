@@ -58,11 +58,11 @@ export class ProfileScripts {
 	}
 	restrictAccess() {
 		this.restricted.forEach((el) => {
-			if (el.classList.contains('church-info')) {
-				const e = el.querySelector('.profile-fields');
-				e.innerHTML = ACCESS_RESTRICTED;
-			}
-			if (el.classList.contains('next-level-info')) {
+			if (
+				el.classList.contains('church-info') ||
+				el.classList.contains('next-level-info')
+			) {
+				el.style.border = '3px solid #68cad7';
 				const e = el.querySelector('.profile-fields');
 				e.innerHTML = ACCESS_RESTRICTED;
 			}
