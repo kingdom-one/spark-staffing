@@ -23,6 +23,8 @@
 			input[type='text'],
 			input[type='select2-search__field'],
 			input[type='password'],
+			input[type='email'],
+			textarea,
 			.input {
 				@include sparkBorder($color-grey--light);
 			}
