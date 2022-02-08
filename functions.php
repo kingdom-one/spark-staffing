@@ -66,7 +66,15 @@ add_action('after_setup_theme', 'remove_x_buddypress');
 
 
 
-// Hide WP Admin Bar
-// if (!current_user_can('manage_options')) {
-//     add_filter('show_admin_bar', '__return_false');
-// }
+/**
+ * Auto Complete all WooCommerce orders.
+ */
+add_action('woocommerce_thankyou', 'custom_woocommerce_auto_complete_order');
+function custom_woocommerce_auto_complete_order($order_id) {
+    if (!$order_id) {
+        return;
+    }
+
+    $order = wc_get_order($order_id);
+    $order->update_status('completed');
+}
