@@ -22,17 +22,7 @@
                                 <?php _e('This listing has expired.', 'wp-job-manager'); ?>
                             </div>
                         <?php else : ?>
-                            <?php do_action('single_job_listing_start');
-                            // function display_job_salary_data() {
-                            //     global $post;
-                            //     $salary = get_post_meta($post->ID, '_job_salary', true);
-
-                            //     if ($salary) {
-                            //         echo '<li>' . __('Salary:') . ' $' . esc_html($salary) . '</li>';
-                            //     }
-                            // }
-                            // display_job_salary_data(); 
-                            ?>
+                            <?php do_action('single_job_listing_start'); ?>
                     </div>
                 </div>
                 <?php

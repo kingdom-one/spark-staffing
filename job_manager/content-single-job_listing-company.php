@@ -33,7 +33,7 @@ if (!get_the_company_name()) return;
             <?
             if ($website = get_the_company_website()) : ?>
             •
-            <a class="company__info--website" href="<?php echo esc_url($website); ?>" target="_blank" rel="nofollow">
+            <a class="company__info--website" href="<?php echo esc_url($website); ?>">
                 <?php esc_html_e("Website", "wp-job-manager"); ?>
             </a>
             <?php endif; ?>
