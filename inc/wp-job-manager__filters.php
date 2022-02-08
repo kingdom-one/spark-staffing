@@ -7,6 +7,7 @@ class SparkJobManager {
         add_filter('submit_job_form_fields', array($this, 'sparkFormFields'));
         add_filter('single_job_listing_meta_start', array($this, 'dm_display_wpjm_single_categories'));
         add_action('single_job_listing_meta_end', array($this, 'display_job_salary_data'));
+        add_filter('job_manager_job_listing_data_fields', array($this, 'admin_add_salary_field'));
     }
     /** Edits Front-End Job Submission Fields on /post-a-job
      * @link [View editable fields here](https://github.com/mikejolley/WP-Job-Manager/blob/master/includes/forms/class-wp-job-manager-form-submit-job.php)
