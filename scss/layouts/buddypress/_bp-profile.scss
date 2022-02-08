@@ -6,6 +6,9 @@
 				display: grid;
 				grid-template-columns: 0.6fr 0.4fr;
 				gap: 20px;
+				@include respond(iPhone) {
+					grid-template-columns: 1fr;
+				}
 				& > * {
 					justify-items: space-between;
 				}
@@ -15,11 +18,17 @@
 					}
 					&.social-media {
 						grid-column: 2 / 3;
+						@include respond(iPhone) {
+							grid-column: unset;
+						}
 						grid-row: 1 / 2;
 						height: min-content;
 					}
 					&.next-level-info {
 						grid-column: 1 / 2;
+						@include respond(iPhone) {
+							grid-column: unset;
+						}
 						grid-row: 2 / 3;
 					}
 				}

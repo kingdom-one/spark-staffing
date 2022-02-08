@@ -48,6 +48,15 @@
 					}
 				}
 			}
+			.job-manager-applications-applied-notice {
+				@include cssHover;
+				@include sparkBorder($color-purple);
+				background-color: $color-purple;
+				color: white;
+				padding: 1em;
+				font-style: italic;
+				margin-top: 1em;
+			}
 			&--listing {
 				font-weight: 700;
 				font-style: italic;
@@ -55,6 +64,9 @@
 				li {
 					display: inline-block;
 					list-style: none;
+					@include respond(Tablet) {
+						margin-bottom: 1em;
+					}
 					&:not(:last-child) {
 						margin-right: 1em;
 					}
@@ -87,7 +99,7 @@
 				}
 			}
 			&--categories {
-				@extend .single-job-listing__meta--listing;
+				margin-left: unset;
 				li {
 					margin-left: 1em;
 					font-weight: 400;

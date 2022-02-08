@@ -32,6 +32,7 @@
 
 // Loops
 @import 'components/job-manager/loop--jobs';
+@import 'components/job-manager/loop--resumes';
 @import 'components/job-manager/job-applications';
 @import 'components/job-manager/job-applications--applied';
 
@@ -54,7 +55,8 @@
 ///////////////////////
 // Job Manager
 // Loops
-@import 'layouts/job-manager/jobs-directory';
+@import 'layouts/job-manager/loop--jobs';
+@import 'layouts/job-manager/loop--resumes';
 
 // Singles
 @import 'layouts/job-manager/single-job-listing';

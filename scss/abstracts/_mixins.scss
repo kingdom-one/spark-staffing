@@ -45,3 +45,39 @@
 		transform: translate(0, -0px);
 	}
 }
+
+// MEDIA QUERY MANAGER
+/*
+Desktop - 1200
+Laptop - 979
+Tablet - 767
+iPhone - 480
+Tiny - 320px
+*/
+@mixin respond($breakpoint) {
+	@if $breakpoint == Tiny {
+		@media only screen and (max-width: 20em) {
+			@content;
+		}
+	}
+	@if $breakpoint == iPhone {
+		@media only screen and (max-width: 30em) {
+			@content;
+		}
+	}
+	@if $breakpoint == Tablet {
+		@media only screen and (max-width: 48em) {
+			@content;
+		}
+	}
+	@if $breakpoint == Laptop {
+		@media only screen and (max-width: 61em) {
+			@content;
+		}
+	}
+	@if $breakpoint == Desktop {
+		@media only screen and (max-width: 75em) {
+			@content;
+		}
+	}
+}

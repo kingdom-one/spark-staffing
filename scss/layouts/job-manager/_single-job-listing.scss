@@ -1,14 +1,20 @@
+article.type-job_listing {
+	@include displayFlex(column, center);
+	padding: 0 6%;
+}
 .single-job-listing {
 	display: grid;
+	margin: 25vh auto 65px auto;
 	grid-template-columns: minmax(300px, 60vw) minmax(300px, 40vw);
 	grid-template-rows: repeat(3, min-content);
-	// gap: 1.5em;
-	margin: 25vh auto 65px auto;
-	width: 88%;
-	justify-items: start;
-	align-items: flex-start;
+	@include respond(Tablet) {
+		grid-template-columns: unset;
+		grid-template-rows: repeat(3, min-content);
+	}
 	& > * {
 		@include displayFlex(row, center, center);
+		justify-self: flex-start;
+		align-self: flex-start;
 	}
 	&__header {
 		grid-column: span 2;
@@ -19,6 +25,9 @@
 	}
 	.job-description {
 		grid-column: 1 / 2;
+		@include respond(Tablet) {
+			grid-column: 1 / -1;
+		}
 		max-height: min-content;
 		max-width: max-content;
 	}
@@ -31,11 +40,13 @@
 	}
 	&__meta {
 		position: relative;
+		@include displayFlex(column);
 		grid-column: 2 / 3;
 		grid-row: 2 / 3;
-		height: 100%;
-		@include displayFlex(column);
-		// max-width: minmax(min-content, 500px);
+		@include respond(Tablet) {
+			grid-column: 1 / -1;
+		}
+		width: minmax(min-content, max-content);
 		&--container {
 			top: 10%;
 			position: sticky;
@@ -59,7 +70,7 @@
 		&--listing {
 			margin: 0;
 			order: 2;
-			@include displayFlex;
+			@include displayFlex(column);
 			width: 100%;
 			li {
 				display: inline-block;
@@ -67,9 +78,11 @@
 					margin-right: 1em;
 				}
 			}
+			@include respond(Tablet) {
+				@include displayFlex(column);
+			}
 		}
 		&--categories {
-			@extend .single-job-listing__meta--listing;
 			@include displayFlex(row);
 			li {
 				margin-left: 1em;

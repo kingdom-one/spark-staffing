@@ -1,12 +1,26 @@
 div.job_listings {
+	form.job_filters {
+		aside.job-types {
+			@include displayFlex(row);
+			.job-types__list {
+				@include displayFlex(row, space-evenly, center);
+				@include respond(iPhone) {
+					@include displayFlex(column);
+				}
+			}
+		}
+	}
 	ul.job_listings {
 		.job_listing {
 			&:not(:last-child) {
 				margin-bottom: 1.5em;
 			}
 			&__container {
-				transition: all 0.2s ease;
-				display: flex;
+				transition: $transition--standard;
+				@include displayFlex(row, space-between, center, nowrap);
+				@include respond(Tablet) {
+					@include displayFlex(column);
+				}
 				@include sparkBorder($color-grey--dark);
 				&:hover {
 					@include cssHover;
@@ -18,12 +32,15 @@ div.job_listings {
 				margin: 0;
 				margin-right: 0.5em;
 				img.company_logo {
+					@include respond(Tablet) {
+						visibility: unset;
+					}
 					object-fit: contain;
 					width: 100%;
 					height: 100%;
 					position: relative;
-					left: 0;
-					float: none;
+					left: unset;
+					float: unset;
 					margin: 0;
 				}
 			}
@@ -31,9 +48,11 @@ div.job_listings {
 				@include displayFlex(column, flex-start, flex-start);
 				flex-grow: 3;
 				&--title {
-					color: black;
-					margin: 0;
-					font-size: 2em;
+					@include displayFlex(column-reverse);
+					margin: unset;
+					span.job-manager-applications-applied-notice {
+						margin-left: auto;
+					}
 				}
 				&--company {
 					&-name {
@@ -50,8 +69,11 @@ div.job_listings {
 				}
 			}
 			&__details {
+				align-self: flex-start;
 				@include displayFlex(column);
-				padding: 0 1em;
+				@include respond(Tablet) {
+					margin-top: 1em;
+				}
 				&--location {
 					color: black;
 					font-weight: 700;

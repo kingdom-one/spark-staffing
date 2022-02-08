@@ -1,23 +1,19 @@
 // Jobs Loop
 .job_filters {
 	background-color: transparent;
-
 	.search_jobs {
 		@include sparkBorder(transparent);
 		background-color: $color-grey--light;
 	}
 	.job-types {
-		@include displayFlex(row);
 		margin: 1em 0;
 		padding: 1em 0;
 		&--header {
 			margin: 0;
 		}
 		&__list {
-			@include displayFlex(row, space-evenly, center);
 			background-color: transparent;
 			border: none;
-
 			li {
 				border: none;
 				float: unset;
@@ -35,9 +31,9 @@
 .job_listing {
 	&__summary {
 		&--title {
-			@include displayFlex;
+			color: black;
+			font-size: 2em;
 			span.job-manager-applications-applied-notice {
-				margin-left: 10px;
 				color: $color-ice-blue;
 				&::before {
 					content: unset;
@@ -55,6 +51,14 @@
 			}
 		}
 	}
+	&__details {
+		@include respond(Tablet) {
+			@include sparkBorder($color-grey--light);
+			background-color: $color-grey--light;
+			padding: 1em;
+		}
+	}
+
 	&__company-logo {
 		border-radius: 100em;
 		overflow: hidden;

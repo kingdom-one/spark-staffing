@@ -1,0 +1,38 @@
+ul.resumes {
+	li.resume {
+		&:not(:last-child) {
+			margin-bottom: 2em;
+		}
+		padding: 1em;
+		a.candidate {
+			padding: unset;
+			@include displayFlex(row, flex-start, center);
+			figure.candidate__photo {
+				margin-left: 5px;
+				& img {
+					float: unset;
+					position: unset;
+					left: unset;
+				}
+			}
+			div.candidate__info.candidate-column {
+				@include displayFlex(column);
+				padding: 1em;
+			}
+			div.candidate__meta {
+				@include displayFlex(column);
+
+				div.candidate-location-column {
+					float: unset;
+					width: unset;
+					margin-left: auto;
+				}
+
+				.resume-posted-column {
+					float: unset;
+					width: unset;
+				}
+			}
+		}
+	}
+}
