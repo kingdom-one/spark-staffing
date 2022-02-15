@@ -36,7 +36,8 @@ if (!is_user_logged_in()) echo '<style>#item-buttons,.x-item-list-tabs-subnav {d
             <? else : ?>
             <div <?php bp_field_css_class(); ?>>
                 <h3 class="profile-fields--label"><?php bp_the_profile_field_name(); ?></h3>
-                <div class="profile-fields--value"><?php bp_the_profile_field_value(); ?>
+                <div class="profile-fields--value">
+                    <?php bp_the_profile_field_value(); ?>
                 </div>
             </div>
             <?php endif; ?>
