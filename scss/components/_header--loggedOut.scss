@@ -1,33 +1,40 @@
 /* Spark Button Styles */
 #loggedOutDesktopButtons {
 	.sprk-btn {
+		transition: $transition--standard;
 		a.x-anchor {
 			@include sparkBorder;
 			border-radius: 100em;
-			&:hover {
-				background-color: $color-primary;
-				span.x-anchor-text-primary {
-					color: white;
-				}
-			}
 			span.x-anchor-text-primary {
 				padding: 0.5em 1.25em;
-				color: $color-primary;
 			}
 		}
+		&.btn--login {
+			a.x-anchor {
+				span.x-anchor-text-primary {
+					color: $color-primary;
+				}
+				&:hover {
+					background-color: $color-primary;
+					span.x-anchor-text-primary {
+						color: white;
+					}
+				}
+			}
+		}
+
 		&.btn--register {
 			a.x-anchor {
 				background-color: $color-primary;
-				&:hover {
-					background-color: transparent;
-					border: 3px solid $color-primary;
-					span.x-anchor-text-primary {
-						color: $color-primary;
-					}
-				}
 				span.x-anchor-text-primary {
 					font-family: 'Abril Fatface', serif;
 					color: white;
+				}
+				&:hover {
+					background-color: transparent;
+					span.x-anchor-text-primary {
+						color: $color-primary;
+					}
 				}
 			}
 		}
