@@ -33,6 +33,7 @@ add_action('wp_enqueue_scripts', 'child_enqueue_styles');
 include_once get_theme_file_path('/inc/wp-job-manager__filters.php');
 include_once get_theme_file_path('/inc/paid-memberships-pro__register-helper.php');
 include_once get_theme_file_path('/inc/buddypress__filters.php');
+include_once get_theme_file_path('/inc/woocommerce__filters.php');
 
 function accessRestricted() {
     echo '<div class="access-restricted">You must have a premium membership to view this content.<span class="access-restricted--links"><a href="/product-category/membership" class="upsell">Get yours now!</a><a class="dismissThis">Dismiss this notice.</a></span></div>';
@@ -63,18 +64,3 @@ function remove_x_buddypress() {
     remove_action('x_enqueue_styles', 'x_buddypress_enqueue_styles', 10, 2);
 }
 add_action('after_setup_theme', 'remove_x_buddypress');
-
-
-
-/**
- * Auto Complete all WooCommerce orders.
- */
-add_action('woocommerce_thankyou', 'custom_woocommerce_auto_complete_order');
-function custom_woocommerce_auto_complete_order($order_id) {
-    if (!$order_id) {
-        return;
-    }
-
-    $order = wc_get_order($order_id);
-    $order->update_status('completed');
-}
