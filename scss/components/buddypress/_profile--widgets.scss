@@ -43,6 +43,14 @@
 		}
 	}
 }
-div#buddypress .profile h2 {
-	margin: 0;
+div#buddypress .profile {
+	.next-level-info {
+		@include displayFlex(column, flex-start, stretch);
+		.field_personal-message {
+			width: 100%;
+		}
+	}
+	h2 {
+		margin: 0;
+	}
 }

@@ -1,67 +1,89 @@
-// Jobs Loop
-.job_filters {
-	background-color: transparent;
-	.search_jobs {
-		@include sparkBorder(transparent);
-		background-color: $color-grey--light;
-	}
-	.job-types {
-		margin: 1em 0;
-		padding: 1em 0;
-		&--header {
-			margin: 0;
+div.job_listings {
+	// Jobs Loop
+	.job_filters {
+		background-color: transparent;
+		.search_jobs {
+			@include sparkBorder(transparent);
+			background-color: $color-grey--light;
 		}
-		&__list {
-			background-color: transparent;
-			border: none;
-			li {
+		.job-types {
+			margin: 1em 0;
+			padding: 1em 0;
+			&--header {
+				margin: 0;
+			}
+			&__list {
+				background-color: transparent;
 				border: none;
-				float: unset;
-			}
-			.job-type {
-				color: black;
-			}
-		}
-		.showing_jobs {
-			background-color: $color-grey--light;
-			width: 100%;
-		}
-	}
-}
-.job_listing {
-	&__summary {
-		&--title {
-			color: black;
-			font-size: 2em;
-			span.job-manager-applications-applied-notice {
-				color: $color-ice-blue;
-				&::before {
-					content: unset;
+				li {
+					border: none;
+					float: unset;
 				}
-				&::after {
-					content: '\f147';
-					display: inline-block;
-					width: 16px;
-					height: 16px;
-					font-size: 16px;
-					font-family: dashicons;
-					vertical-align: top;
-					-webkit-font-smoothing: anti-aliased;
+				.job-type {
+					color: black;
 				}
 			}
+			.showing_jobs {
+				background-color: $color-grey--light;
+				width: 100%;
+			}
 		}
 	}
-	&__details {
-		@include respond(Tablet) {
-			@include sparkBorder($color-grey--light);
-			background-color: $color-grey--light;
-			padding: 1em;
-		}
-	}
+	ul.job_listings {
+		.job_listing {
+			&__summary {
+				&--title {
+					color: black;
+					font-size: 2em;
+					span.job-manager-applications-applied-notice {
+						color: $color-ice-blue;
+						&::before {
+							content: unset;
+						}
+						&::after {
+							content: '\f147';
+							display: inline-block;
+							width: 16px;
+							height: 16px;
+							font-size: 16px;
+							font-family: dashicons;
+							vertical-align: top;
+							-webkit-font-smoothing: anti-aliased;
+						}
+					}
+				}
+			}
+			&__details {
+				@include respond(Tablet) {
+					@include sparkBorder($color-grey--light);
+					background-color: $color-grey--light;
+					padding: 1em;
+				}
+			}
 
-	&__company-logo {
-		border-radius: 100em;
-		overflow: hidden;
+			&__company-logo {
+				border-radius: 100em;
+				overflow: hidden;
+				margin: unset;
+				width: 150px;
+				height: 150px;
+				padding: 10px;
+				@include sparkBorder;
+				border-radius: 100em;
+				img.company_logo {
+					@include respond(Tablet) {
+						visibility: unset;
+					}
+					object-fit: contain;
+					width: 100%;
+					height: 100%;
+					position: relative;
+					left: unset;
+					float: unset;
+					margin: 0;
+				}
+			}
+		}
 	}
 }
 /* FEATURED STYLES */
