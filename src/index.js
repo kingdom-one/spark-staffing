@@ -2,7 +2,6 @@ import '../scss/bp-spark.scss';
 
 import Footer from './modules/footerScripts';
 import Header from './modules/headers';
-import { sparkFeaturedJob } from './modules/jobsLoop';
 import { packageSelector } from './modules/postAJob';
 import { replacedRequiredTag, controlAsterisk } from './modules/requiredFields';
 import highlightApplications from './modules/jobApplications';
@@ -22,7 +21,6 @@ function init() {
 	}
 	if (URL.includes('profile') && URL.includes('shop'))
 		profileScipts.hideWooNav();
-	if (URL.includes('jobs')) setTimeout(sparkFeaturedJob, 2500);
 	if (URL.includes('post-a-job')) packageSelector();
 	if (URL.includes('job-dashboard')) highlightApplications();
 }

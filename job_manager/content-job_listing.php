@@ -18,13 +18,18 @@ if (!defined('ABSPATH')) {
 }
 
 global $post;
+$featured = get_featured_job_ids();
 ?>
-<li <?php job_listing_class('job_listing'); ?> data-longitude="<?php echo esc_attr($post->geolocation_long); ?>" data-latitude="<?php echo esc_attr($post->geolocation_lat); ?>">
+<li <?php job_listing_class('job_listing'); ?> data-longitude="<?php echo esc_attr($post->geolocation_long); ?>"
+    data-latitude="<?php echo esc_attr($post->geolocation_lat); ?>">
     <a href="<?php the_job_permalink(); ?>" class="job_listing__container">
         <figure class="job_listing__company-logo">
             <?php the_company_logo('large'); ?>
         </figure>
         <div class="job_listing__summary">
+            <? if (in_array($post->ID, $featured)) : ?>
+            <span class="spark__job-feature">Featured Job</span>
+            <? endif; ?>
             <h3 class="job_listing__summary--title">
                 <?php wpjm_the_job_title(); ?>
             </h3>
@@ -41,11 +46,11 @@ global $post;
                 <?php do_action('job_listing_meta_start'); ?>
 
                 <?php if (get_option('job_manager_enable_types')) { ?>
-                    <?php $types = wpjm_get_the_job_types(); ?>
-                    <?php if (!empty($types)) : foreach ($types as $type) : ?>
-                            <li class="job-type__<?php echo esc_attr(sanitize_title($type->slug)); ?>">
-                                <?php echo esc_html($type->name); ?></li>
-                    <?php endforeach;
+                <?php $types = wpjm_get_the_job_types(); ?>
+                <?php if (!empty($types)) : foreach ($types as $type) : ?>
+                <li class="job-type__<?php echo esc_attr(sanitize_title($type->slug)); ?>">
+                    <?php echo esc_html($type->name); ?></li>
+                <?php endforeach;
                     endif; ?>
                 <?php } ?>
 
