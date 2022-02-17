@@ -1,4 +1,4 @@
-export default class Footer {
+class Footer {
 	constructor() {
 		this.sparkCopyrightInjection();
 		this.homepageCredits();
@@ -19,3 +19,4 @@ export default class Footer {
 		copyright.insertAdjacentHTML('afterend', iconCredits);
 	}
 }
+export default new Footer();

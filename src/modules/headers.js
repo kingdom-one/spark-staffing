@@ -1,4 +1,4 @@
-export default class Header {
+class Header {
 	constructor() {
 		this.preventPageReload();
 	}
@@ -11,3 +11,4 @@ export default class Header {
 		});
 	}
 }
+export default new Header();

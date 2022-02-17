@@ -8,8 +8,6 @@ import highlightApplications from './modules/jobApplications';
 import { ProfileScripts } from './modules/profileScripts';
 import dismissals from './modules/dismissThis';
 function init() {
-	const footer = new Footer();
-	const header = new Header();
 	const profileScipts = new ProfileScripts();
 	let URL = window.location.href;
 	replacedRequiredTag();
