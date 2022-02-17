@@ -18,7 +18,7 @@ if (!is_user_logged_in()) echo '<style>#item-buttons,.x-item-list-tabs-subnav {d
                                                                             bp_the_profile_group_slug(); ?>">
         <h2 class="bp-profile__section--header">
             <?php
-                        $user = wp_get_current_user();
+                        $user = get_userdata(bp_displayed_user_id());
                         if (bp_get_the_profile_group_id() === 2) {
                             echo bp_get_the_profile_group_name() . ' ' . $user->first_name;
                         } elseif (bp_get_the_profile_group_id() === 4) {

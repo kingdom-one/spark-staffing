@@ -47,20 +47,18 @@ do_action('bp_before_member_header');
                         <? bp_member_profile_data('field=Location'); ?>
                     </em>
                 </span>
-                <?php if (bp_is_my_profile() || $memberType === 'candidate' && pmpro_hasMembershipLevel(array('3', '4'))) {
-                    echo '<div class="premium-access">';
-                    if (bp_get_member_profile_data('field=Open to new opportunities?') == 'Yes') {
-                        echo '<span>Open to Opportunities!</span>';
-                    }
-                    if (bp_get_member_profile_data('field=Open to Relocating?') == 'Yes') {
-                        echo '<span>Open to Relocating!</span>';
-                    };
-                    echo '</div>';
-                } elseif ($memberType == 'church') {
-                    return;
-                } else {
-                    accessRestricted();
-                } ?>
+                <?php
+                function open_or_closed() {
+                    $string1 = (bp_get_member_profile_data('field=Open to new opportunities?') == 'Yes') ? '<span>Open to Opportunities!</span>' : '<span>Not open to Job Offers at this time.</span>';
+                    $string2 = (bp_get_member_profile_data('field=Open to Relocating?') == 'Yes') ?
+                        '<span>Open to Relocating!</span>' : '<span>Not open to relocating at this time.</span>';
+                    return $string1 . $string2;
+                }
+                if ($memberType != 'candidate') return;
+                if (bp_is_my_profile() || pmpro_hasMembershipLevel(array('3', '4'))) {
+                    echo '<div class="premium-access">' . open_or_closed() . '</div>';
+                } else accessRestricted();
+                ?>
             </div><!-- #item-meta -->
         </div><!-- #item-header-content -->
     </div>

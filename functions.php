@@ -24,7 +24,7 @@ add_filter('x_enqueue_parent_stylesheet', '__return_true');
 /** Load in spark* staffing styles & scripts */
 function child_enqueue_styles() {
     // enqueue child styles
-    wp_enqueue_style('sparkStyles', get_stylesheet_directory_uri() . '/build/index.css', array(), '3.2.1');
+    wp_enqueue_style('sparkStyles', get_stylesheet_directory_uri() . '/build/index.css', array(), '3.2.2');
     // enuque child scripts
     wp_enqueue_script('spark-js', get_stylesheet_directory_uri() . '/build/index.js', array(), '1.1.6', true);
     wp_localize_script('spark-js', 'sparkData', array(
@@ -38,6 +38,9 @@ include_once get_theme_file_path('/inc/paid-memberships-pro__register-helper.php
 include_once get_theme_file_path('/inc/buddypress__filters.php');
 include_once get_theme_file_path('/inc/woocommerce__filters.php');
 
+/** Echoes a `div` with the class "access-restricted." Inside are two links to a.) get a membership or b.) dismiss the notice.
+ * @return string HTML markup
+ */
 function accessRestricted() {
     echo '<div class="access-restricted">You must have a premium membership to view this content.<span class="access-restricted--links"><a href="/product-category/membership" class="upsell">Get yours now!</a><a class="dismissThis">Dismiss this notice.</a></span></div>';
 }

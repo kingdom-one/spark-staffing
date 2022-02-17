@@ -30,6 +30,7 @@ article.type-job_listing {
 		}
 		max-height: min-content;
 		max-width: max-content;
+		@include displayFlex(column, flex-start, stretch);
 	}
 	.job_application {
 		grid-row: 3/4;
