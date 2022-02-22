@@ -12,7 +12,48 @@ article.resume {
 	.wp-job-manager-bookmarks-form {
 		align-self: flex-start;
 	}
-	.resume__header {
-		margin-bottom: 2em;
+	.resume {
+		&__header {
+			margin-bottom: 2em;
+			.row {
+				@include displayFlex(row, space-evenly, center);
+				&--1 {
+					margin: 2em;
+					.candidate {
+						&--photo {
+							.candidate_photo {
+								position: relative;
+								margin: 0;
+								top: unset;
+								left: unset;
+								float: unset;
+								vertical-align: unset;
+							}
+						}
+						&__info {
+							@include displayFlex(column);
+							&--meta {
+								@include displayFlex(row, space-evenly);
+							}
+						}
+						&__links {
+							@include displayFlex(column);
+							margin-left: auto;
+							&--link {
+								margin: 0;
+								float: unset;
+							}
+						}
+					}
+				}
+				&--2 {
+					@include displayFlex(column, flex-start, stretch);
+					padding: 2em;
+				}
+			}
+		}
+		&_contact {
+			@include displayFlex(column);
+		}
 	}
 }

@@ -20,27 +20,31 @@ if (resume_manager_user_can_view_resume($post->ID)) : ?>
 <div class="single-resume-content">
     <?php do_action('single_resume_start'); ?>
     <aside class="resume__header resume-aside">
-        <figure class="candidate--photo">
-            <?php the_candidate_photo('full'); ?>
-        </figure>
-        <div class="candidate__info">
-            <h2 class="candidate__info--name">
-                <? echo bp_core_get_userlink(get_the_author_meta('ID')) ?>
-            </h2>
-            <p class="candidate__info--job-title"><?php the_candidate_title(); ?></p>
-            <div class="candidate__info--meta">
-                <p class="candidate__info--location"><?php the_candidate_location(); ?>
-                </p>
-                <span class="space"> • </span>
-                <p class="candidate__info--profile">
-                    <a href="<? echo bp_core_get_userlink(get_the_author_meta('ID'), false, true) ?>">
-                        View Profile
-                    </a>
-                </p>
+        <div class="row row--1">
+            <figure class="candidate--photo">
+                <?php the_candidate_photo('full'); ?>
+            </figure>
+            <div class="candidate__info">
+                <h2 class="candidate__info--name">
+                    <? echo bp_core_get_userlink(get_the_author_meta('ID')) ?>
+                </h2>
+                <p class="candidate__info--job-title"><?php the_candidate_title(); ?></p>
+                <div class="candidate__info--meta">
+                    <p class="candidate__info--location"><?php the_candidate_location(); ?>
+                    </p>
+                    <span class="space"> • </span>
+                    <p class="candidate__info--profile">
+                        <a href="<? echo bp_core_get_userlink(get_the_author_meta('ID'), false, true) ?>">
+                            View Profile
+                        </a>
+                    </p>
+                </div>
             </div>
+            <?php the_resume_links(); ?>
         </div>
-        <?php the_resume_links(); ?>
-        <?php the_candidate_video(); ?>
+        <div class="row row--2">
+            <?php the_candidate_video(); ?>
+        </div>
     </aside>
 
     <section class="resume__section resume_description resume__section--description">

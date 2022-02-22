@@ -1,6 +1,6 @@
 {
-  "name": "pro-child",
-  "version": "1.0.0",
+  "name": "spark-staffing",
+  "version": "2.0.0",
   "description": "for spark* staffing WP Site",
   "main": "index.js",
   "scripts": {

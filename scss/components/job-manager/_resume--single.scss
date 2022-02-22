@@ -5,7 +5,6 @@
 	}
 	.resume {
 		&__header {
-			@include displayFlex(row, flex-start, center);
 			@include sparkBorder($color-secondary);
 			margin: 0;
 			padding: 1em;
@@ -19,19 +18,11 @@
 					.candidate_photo {
 						width: auto;
 						height: auto;
-						// border-radius: 100%;
-						position: relative;
-						margin: 0;
-						top: unset;
-						left: unset;
-						float: unset;
-						vertical-align: unset;
 						object-fit: cover;
 						object-position: center;
 					}
 				}
 				&__info {
-					@include displayFlex(column);
 					margin-left: 1em;
 					font-size: 1.4em;
 					& > * {
@@ -46,7 +37,6 @@
 						font-weight: 700;
 					}
 					&--meta {
-						@include displayFlex(row, space-evenly);
 						color: $color-grey--dark;
 						font-size: 1rem;
 						& > * {
@@ -68,12 +58,8 @@
 					}
 				}
 				&__links {
-					@include displayFlex(column);
-					margin-left: auto;
 					&--link {
 						color: white;
-						margin: 0;
-						float: unset;
 						&:not(:last-child) {
 							margin-right: 10px;
 						}
@@ -111,13 +97,11 @@
 			}
 		}
 		&_contact {
-			@include displayFlex(column);
 			overflow: visible;
 			input {
 				@extend .button;
 				@include sparkBorder(transparent);
-				transition: all 0.2s ease;
-				border-radius: 10px;
+				transition: $transition--standard;
 				background-color: $color-primary;
 				color: white;
 				&:hover {
