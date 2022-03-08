@@ -2,7 +2,7 @@
 	& > fieldset {
 		@include displayFlex;
 	}
-	.ui-sortable {
+	.ui-sortable:not(fieldset fieldset .ui-sortable) {
 		@include sparkBorder(darken($color-grey--light, 10%));
 		padding: 10px;
 		background-color: white;
