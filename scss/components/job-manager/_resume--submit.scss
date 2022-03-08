@@ -1,0 +1,39 @@
+#submit-resume-form {
+	& > fieldset {
+		@include displayFlex;
+	}
+	.ui-sortable {
+		@include sparkBorder(darken($color-grey--light, 10%));
+		padding: 10px;
+		background-color: white;
+		&:hover {
+			@include cssHover;
+			transition: $transition--standard;
+		}
+	}
+
+	.resume-manager {
+		&-data-row {
+			@include displayFlex(column, flex-start, stretch);
+		}
+		&-remove-row {
+			align-self: flex-end;
+			width: unset;
+			padding: 1em 0;
+			color: $color-primary;
+			overflow: unset;
+			position: unset;
+			margin: unset;
+			right: unset;
+			top: unset;
+			height: auto;
+			&:before {
+				position: unset;
+				top: unset;
+				left: unset;
+				padding-right: 5px;
+				align-self: flex-end;
+			}
+		}
+	}
+}
