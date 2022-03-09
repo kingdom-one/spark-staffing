@@ -5,7 +5,7 @@ import { SITE_URL } from './abstracts';
 /** Replace asterisk with spark brand on BuddyPress or WooCommerce pages */
 export function replacedRequiredTag() {
 	const requiredTag = document.querySelectorAll('.required');
-	const sparkAsterisk = `<img src="${SITE_URL}/wp-content/uploads/2021/11/cropped-Icon-Simple.png" class="required--icon" style="width:18px;height=18px">`;
+	const sparkAsterisk = `<img src="${SITE_URL}/wp-content/uploads/2021/11/Icon-Simple.png" class="required--icon" style="width:18px;height=18px">`;
 	if (requiredTag) {
 		requiredTag.forEach((el) => {
 			el.textContent = '';
