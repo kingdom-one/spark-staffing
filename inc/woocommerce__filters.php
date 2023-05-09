@@ -1,6 +1,14 @@
 <?php
 
 
+add_filter('wp_head', 'add_margin_to_product_page');
+
+function add_margin_to_product_page() {
+    if (is_product() && 1184 === get_the_ID()) {
+        echo "<style>.x-main { margin-top: 5em; }</style>";
+    }
+}
+
 /**
  * Auto Complete all WooCommerce orders.
  */
