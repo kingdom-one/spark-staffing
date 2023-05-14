@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Template for choosing a package during the Job Listing submission.
  *
@@ -28,10 +27,8 @@ if ($packages || $user_packages) :
 				$package = wc_paid_listings_get_package($package);
 			?>
     <li class="user-job-package <?php echo $package->is_featured() ? 'user-job-package-featured' : '' ?>">
-        <input type="radio" <?php checked($checked, 1); ?> name="job_package" value="user-<?php echo $key; ?>"
-            id="user-package-<?php echo $package->get_id(); ?>" />
-        <label
-            for="user-package-<?php echo $package->get_id(); ?>"><?php echo $package->get_title(); ?></label><br /><span>
+        <input type="radio" <?php checked($checked, 1); ?> name="job_package" value="user-<?php echo $key; ?>" id="user-package-<?php echo $package->get_id(); ?>" />
+        <label for="user-package-<?php echo $package->get_id(); ?>"><?php echo $package->get_title(); ?></label><br /><span>
             <?php
 						$featured_marking = $package->is_featured() ? __('featured', 'wp-job-manager-wc-paid-listings') : '';
 						if ($package->get_limit()) {
@@ -71,8 +68,7 @@ if ($packages || $user_packages) :
 			?>
     <li class="job-package <?php echo $product->is_job_listing_featured() ? 'job-package-featured' : '' ?>">
         <input type="radio" <?php checked($checked, 1);
-										$checked = 0; ?> name="job_package" value="<?php echo $product->get_id(); ?>"
-            id="package-<?php echo $product->get_id(); ?>" />
+										$checked = 0; ?> name="job_package" value="<?php echo $product->get_id(); ?>" id="package-<?php echo $product->get_id(); ?>" />
         <label for="package-<?php echo $product->get_id(); ?>"><?php echo $product->get_title(); ?></label><br />
         <?php if (!empty($post->post_excerpt)) : ?>
         <?php echo apply_filters('woocommerce_short_description', $post->post_excerpt) ?>

@@ -1,0 +1,26 @@
+{
+    "name": "kingdom-one/spark-staffing",
+    "description": "A better staffing website, powered by Wordpress",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "KingdomOne\\SparkStaffing\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Kingdom One",
+            "email": "kj@kingdomone.co"
+        }
+    ],
+    "require-dev": {
+        "wp-coding-standards/wpcs": "^2.3",
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+        "squizlabs/php_codesniffer": "^3.7"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}
