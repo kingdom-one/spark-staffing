@@ -1,0 +1,33 @@
+@use "../abstracts/variables" as v;
+%text_input {
+	width: 60%;
+}
+.survey {
+	margin-top: 3rem;
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: 1rem;
+	align-content: stretch;
+	&__form {
+		label {
+			font-weight: 700;
+			margin-top: 1rem;
+		}
+		input[type="text"] {
+			@extend %text_input;
+		}
+		input[type="email"] {
+			@extend %text_input;
+		}
+	}
+
+	&__pricing {
+		border: 2px solid v.$color-purple;
+		border-radius: v.$rounded-border;
+		background-color: white;
+		padding: 1rem 2rem;
+		h2 {
+			margin: 0;
+		}
+	}
+}
