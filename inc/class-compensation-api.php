@@ -1,70 +1,81 @@
 <?php
+/**
+ * The Compensation API methods.
+ *
+ * @package KingdomOne
+ */
+
+/**
+ * Class Compensation_API.
+ */
 class Compensation_API {
-    public function __construct()
-    {
-        // require plugin_dir_path() . '';
-    }
-    private function init_curl($endpoint) {
+    /** The cURL
+     *
+     * @param {string} $endpoint the drip.co api endpoint
+     */
+    private function init_curl(string $endpoint ) {
         $base_url = "https://api.getdrip.com/v2/" . DRIP_ACCOUNT_ID . "/";
-        $ch = curl_init($base_url . $endpoint);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        $ch = curl_init( $base_url . $endpoint );
+        curl_setopt( $ch, CURLOPT_HTTPHEADER, array(
             'User-Agent: spark',
             'Content-Type: application/json',
             'Authorization: Basic ' . base64_encode(DRIP_API_KEY)
         ));
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
+        curl_setopt( $ch, CURLOPT_POST, true );
         return $ch;
     }
     /** Create or Updates a subscriber in Drip.Co database
      * @param array $data the subscriber data as an associative array
      * @return string | bool a string with the curl response, or a boolean
      */
-    public function add_person_to_workflow(array $data): string | bool {
+    private function add_person_to_workflow(array $data): string | bool {
         $endpoint = '/workflows/37220422/subscribers';
-        $payload = array('subscribers' => array($data));
-        $ch = $this->init_curl($endpoint);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
-        $result = curl_exec($ch);
-        $http_code = curl_getinfo($ch,CURLINFO_HTTP_CODE);
+        $payload = array( 'subscribers' => array( $data ) );
+        $ch = $this->init_curl( $endpoint );
+        curl_setopt( $ch, CURLOPT_POSTFIELDS, json_encode( $payload ) );
+        $result = curl_exec( $ch );
+        $http_code = curl_getinfo( $ch, CURLINFO_HTTP_CODE );
         curl_close($ch);
         return $http_code;
     }
-    public function update_woocommerce_cart($http_code) {
+    private function get_the_variation_id(array $form_data):int {
+        $ministry_size = $form_data['ministry-size'];
+        $participant = $form_data['participant'];
+
+        if ( 'Small/Medium' === $ministry_size && 'Participant' === $participant ) {
+            return 699;     
+        } else if ( 'Large' === $ministry_size && 'Participant' === $participant ) {
+			return 701;
+		} else if ( 'Mega/Multi' === $ministry_size && 'Participant' === $participant ) {
+			return 699;
+		} else if ( 'Small/Medium' === $ministry_size && 'Non-Participant' === $participant ) {
+			return 703;
+		} elseif ( 'Large' === $ministry_size && 'Non-Participant' === $participant ) {
+			return 702;
+		} elseif ( 'Mega/Multi' === $ministry_size && 'Non-Participant' === $participant ) {
+			return 704;
+		}
+
+    }
+    private function update_woocommerce_cart($http_code,$form_data) {
         // Successful request, subscriber added to Drip.com
         if (201 === $http_code) {
+            $product_id = 698; // Replace with the actual product ID
+            $variation_id = $this->get_the_variation_id($form_data);
 
-        // Update the user's cart in WooCommerce
-        $productID = 123; // Replace with the actual product ID
-        $quantity = 1; // Replace with the desired quantity
-
-        // Initialize WooCommerce API
-        include_once('path/to/woocommerce-api.php'); // Adjust the path to the WooCommerce API library
-
-        $consumerKey = 'YOUR_CONSUMER_KEY'; // Replace with your WooCommerce API consumer key
-        $consumerSecret = 'YOUR_CONSUMER_SECRET'; // Replace with your WooCommerce API consumer secret
-        $storeURL = get_site_url() . '/store'; // Replace with your store URL
-
-        $woocommerce = new Automattic\WooCommerce\Client($storeURL, $consumerKey, $consumerSecret, [
-            'version' => 'wc/v3',
-        ]);
-
-        // Create or update the cart for the user
-        $cartResponse = $woocommerce->post('cart', [
-            'customer_id' => get_current_user_id(), // Replace with the user's ID or any identifier
-            'line_items' => [
-                [
-                    'product_id' => $productID,
-                    'quantity' => $quantity,
-                ],
-            ],
-        ]);
-
-        // Redirect the user to the checkout page
-        wp_redirect('/checkout');
-        exit();
-    } else {
-        //
+            WC()->cart->add_to_cart($product_id, variation_id:$variation_id);
+            wp_redirect('/checkout');
+        } else {
+            // throw some error
+        }
     }
-}
+    public function submit_form($form) {
+        $subscriber = array(
+            'first_name' => $form['Name'],
+            'email'      => $form['email'],
+        );
+        $response = $this->add_person_to_workflow($subscriber);
+        $this->update_woocommerce_cart($response,$form);
+    }
 }

@@ -62,11 +62,8 @@ get_header();
 </div>
 <?php
 if ( count( $_POST ) > 0 ) {
-	$subscriber = array(
-		'first_name' => $_POST['Name'],
-		'email'      => $_POST['email'],
-	);
-	$api->add_person_to_workflow( $subscriber );
+	$api->submit_form( $_POST );
 }
 ?>
-<?php get_footer(); ?>
+<?php
+get_footer();
