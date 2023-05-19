@@ -31,14 +31,13 @@ class Compensation_API {
 	 * @return string|bool a string with the curl response, or a boolean
 	 */
 	private function add_person_to_workflow(array $data): string {
-		// $endpoint = '/workflows/37220422/subscribers';
-		// $payload = array( 'subscribers' => array( $data ) );
-		// $ch = $this->init_curl( $endpoint );
-		// curl_setopt( $ch, CURLOPT_POSTFIELDS, json_encode( $payload ) );
-		// $result = curl_exec( $ch );
-		// $http_code = curl_getinfo( $ch, CURLINFO_HTTP_CODE );
-		// curl_close($ch);
-		$http_code = "201";
+		$endpoint = '/workflows/37220422/subscribers';
+		$payload = array( 'subscribers' => array( $data ) );
+		$ch = $this->init_curl( $endpoint );
+		curl_setopt( $ch, CURLOPT_POSTFIELDS, json_encode( $payload ) );
+		$result = curl_exec( $ch );
+		$http_code = curl_getinfo( $ch, CURLINFO_HTTP_CODE );
+		curl_close($ch);
 		return $http_code;
 	}
 
@@ -55,9 +54,9 @@ class Compensation_API {
 		} else if ( 'Large' === $ministry_size && 'Participant' === $participant ) {
 			return 701;
 		} else if ( 'Mega/Multi' === $ministry_size && 'Participant' === $participant ) {
-			return 699;
-		} else if ( 'Small/Medium' === $ministry_size && 'Non-Participant' === $participant ) {
 			return 703;
+		} else if ( 'Small/Medium' === $ministry_size && 'Non-Participant' === $participant ) {
+			return 700;
 		} elseif ( 'Large' === $ministry_size && 'Non-Participant' === $participant ) {
 			return 702;
 		} elseif ( 'Mega/Multi' === $ministry_size && 'Non-Participant' === $participant ) {
@@ -73,8 +72,6 @@ class Compensation_API {
 
 			WC()->cart->add_to_cart($product_id, 1, $variation_id);
 			wp_redirect('/checkout');
-		} else {
-			var_dump($http_code);
 		}
 	}
 	public function submit_form($form) {
