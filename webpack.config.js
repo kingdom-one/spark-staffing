@@ -6,7 +6,7 @@ module.exports = {
 	...{
 		entry: {
 			index: `./src/index.js`,
-			compensation: './src/compensation/index.js',
+			compensation: './scss/pages/compensation-survey.scss',
 		},
 
 		output: {

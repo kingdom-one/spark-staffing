@@ -53,10 +53,10 @@ get_header();
 				</div>
 				<input type='submit' class="submit button" value="Checkout" />
 			</form>
-			<div class="survey__pricing">
+			<!-- <div class="survey__pricing">
 				<span class="h3">Pricing<span id="pricing-ministry-name"></span>:</span>
 				<div id="product-price"></div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </div>
